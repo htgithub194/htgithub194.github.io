@@ -1,0 +1,1485 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../tunnel/tunnel/">
+      
+      
+        <link rel="next" href="../../../programming_concept/conditional_variable/conditional_variable/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>QEMU Cluster - htgithub94</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../styles/horizontal_nav_bar.css">
+    
+      <link rel="stylesheet" href="../../../styles/tags.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#qemu-cluster" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="htgithub94" class="md-header__button md-logo" aria-label="htgithub94" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            htgithub94
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              QEMU Cluster
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="htgithub94" class="md-nav__button md-logo" aria-label="htgithub94" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    htgithub94
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Rust basic
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Rust basic
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rust/async/async/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Async Await are just the key words for Concurrency
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rust/memory_layout/memory_layout/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Memory layout of some data types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rust/trai_bound_and_dispatching/trai_bound_and_dispatching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Trait bound and ways for dispatching
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rust/closure/closure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    How Closure is implemented
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rust/enums/enums/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Enum is not just an integer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rust/send_sync/send_sync/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Send & Sync trait
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rust/clone/derive_clone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Derive Clone
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Rust Axum
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Rust Axum
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rust/axum/axum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Axum is so power full !
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rust/axum/FromRef/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FromRef to extract sub-state
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Linux kernel
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Linux kernel
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../kernel/watchdog/watchdog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Watchdog module
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../kernel/preempt/preempt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Preempt
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../kernel/mini_alpine/mini_alpine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Minirootfs Alpine & internet connection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Networking
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Networking
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tunnel/tunnel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tunnel interface
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    QEMU Cluster
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    QEMU Cluster
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#goal-1-create-and-connect-multiple-qemu-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Goal 1: Create and connect multiple Qemu nodes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Goal 1: Create and connect multiple Qemu nodes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boot-qemu-node-using-alpine-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      boot Qemu node using alpine image
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-overlay-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      create Overlay image
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-screen-to-store-qemu-consoles" class="md-nav__link">
+    <span class="md-ellipsis">
+      using screen to store QEMU consoles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connect-multiple-qemu-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      connect multiple QEMU nodes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-netns-node-inside-qemu" class="md-nav__link">
+    <span class="md-ellipsis">
+      create netns node inside QEMU
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#goal-2-create-and-connect-multiple-netns-inside-qemu-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Goal 2: Create and connect multiple netns inside Qemu nodes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Goal 2: Create and connect multiple netns inside Qemu nodes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-iproute2" class="md-nav__link">
+    <span class="md-ellipsis">
+      install iproute2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-netns" class="md-nav__link">
+    <span class="md-ellipsis">
+      create netns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-and-connect-netnss-from-multiple-qemu-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      create and connect netns(s) from multiple Qemu nodes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Others
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Others
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_concept/conditional_variable/conditional_variable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Conditional Variable & Rust channel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming_concept/dependency_injection/dependency_injection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dependency Injection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#goal-1-create-and-connect-multiple-qemu-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Goal 1: Create and connect multiple Qemu nodes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Goal 1: Create and connect multiple Qemu nodes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boot-qemu-node-using-alpine-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      boot Qemu node using alpine image
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-overlay-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      create Overlay image
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-screen-to-store-qemu-consoles" class="md-nav__link">
+    <span class="md-ellipsis">
+      using screen to store QEMU consoles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connect-multiple-qemu-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      connect multiple QEMU nodes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-netns-node-inside-qemu" class="md-nav__link">
+    <span class="md-ellipsis">
+      create netns node inside QEMU
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#goal-2-create-and-connect-multiple-netns-inside-qemu-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Goal 2: Create and connect multiple netns inside Qemu nodes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Goal 2: Create and connect multiple netns inside Qemu nodes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-iproute2" class="md-nav__link">
+    <span class="md-ellipsis">
+      install iproute2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-netns" class="md-nav__link">
+    <span class="md-ellipsis">
+      create netns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-and-connect-netnss-from-multiple-qemu-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      create and connect netns(s) from multiple Qemu nodes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="qemu-cluster">QEMU cluster</h1>
+<ul>
+<li>Goal 1: Create and connect multiple Qemu nodes</li>
+<li>Goal 2: Create and connect multiple netns inside Qemu nodes</li>
+</ul>
+<h2 id="goal-1-create-and-connect-multiple-qemu-nodes">Goal 1: Create and connect multiple Qemu nodes</h2>
+<p><img alt="qemu cluster" src="../images/qemu_nodes.dio.svg" /></p>
+<h3 id="boot-qemu-node-using-alpine-image">boot Qemu node using alpine image</h3>
+<pre><code class="language-shell"># create virtual disk
+qemu-img create -f qcow2 alpine.qcow2 1G
+</code></pre>
+<pre><code class="language-shell"># boot from iso image
+# `-boot d` means boot from cdrom
+qemu-system-x86_64 \
+  -boot d \
+  -cdrom alpine-standard-3.22.0-x86_64.iso \
+  -m 512 \
+  -hda alpine.backing.qcow2 \
+  -nographic \
+  -enable-kvm
+</code></pre>
+<pre><code class="language-shell"># boot from backing file
+# `-boot c` means boot from disk
+qemu-system-x86_64 \
+  -boot c \
+  -m 512 \
+  -hda alpine.backing.qcow2 \
+  -nographic \
+  -enable-kvm
+</code></pre>
+<ul>
+<li>Note:<ul>
+<li>must run <code>setup-alpine</code> in order to install bootable disk</li>
+<li>chose <code>sda</code> -&gt; <code>sys</code> -&gt; (y) for erasing the disk</li>
+</ul>
+</li>
+</ul>
+<h3 id="create-overlay-image">create Overlay image</h3>
+<pre><code class="language-shell"># create overlay image
+qemu-img create -f qcow2 -b alpine.backing.qcow2 -F qcow2 alpine.overlay.img
+</code></pre>
+<pre><code class="language-shell"># boot from overlay image
+qemu-system-x86_64 \
+  -m 512 \
+  -hda alpine.overlay.img \
+  -enable-kvm \
+  -boot c \
+  -nographic
+</code></pre>
+<h3 id="using-screen-to-store-qemu-consoles">using <code>screen</code> to store QEMU consoles</h3>
+<pre><code class="language-shell"># create session
+screen -S qemu
+#
+# boot from overlay
+#
+
+# detach: Ctrl + A, then D
+
+# attach: 
+screen -r qemu
+
+</code></pre>
+<h3 id="connect-multiple-qemu-nodes">connect multiple QEMU nodes</h3>
+<pre><code class="language-shell"># create bridge
+sudo ip link add name br0 type bridge
+sudo ip addr add 192.168.100.1/24 dev br0
+sudo ip link set br0 up
+
+# config iptables for br0
+iptables -I FORWARD -p all -i br0 -j ACCEPT
+iptables -I INPUT -p all -i br0 -j ACCEPT
+iptables -I OUTPUT -p all -o br0 -j ACCEPT
+
+# create tap device
+sudo ip tuntap add dev tap0 mode tap user $USER
+sudo ip link set tap0 master br0
+sudo ip link set tap0 up
+</code></pre>
+<pre><code class="language-shell"># boot from overlay &amp; plugin the tap
+qemu-system-x86_64 \
+  -m 512 \
+  -hda alpine.overlay.qcow2 \
+  -netdev tap,id=net0,ifname=tap0,script=no,downscript=no \
+  -device e1000,netdev=net0 \
+  -enable-kvm \
+  -nographic
+
+# setup interface 
+# Interface: eth0
+# IP: 192.168.100.10
+# Gateway: 192.168.100.1
+setup-interfaces
+
+# assign ip 
+ip addr add 192.168.100.10/24 dev eth0
+</code></pre>
+<ul>
+<li>Note:<ul>
+<li>MAC address is auto generated</li>
+<li>E.g: <code>52:54:00:12:34:56</code><ul>
+<li>where <code>52:54:00</code> is Qemu prefix</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="create-netns-node-inside-qemu">create netns node inside QEMU</h3>
+<pre><code class="language-shell"># another overlay image for netns
+qemu-img create -f qcow2 -b alpine.overlay.qcow2 -F qcow2 alpine.overlay.tap0.qcow2
+qemu-img create -f qcow2 -b alpine.overlay.qcow2 -F qcow2 alpine.overlay.tap1.qcow2
+</code></pre>
+<ul>
+<li>Create multiple qemu node</li>
+</ul>
+<pre><code class="language-shell"># node 0
+qemu-system-x86_64 \
+-m 512 \
+-hda alpine.overlay.tap0.qcow2 \
+-netdev tap,id=net0,ifname=tap0,script=no,downscript=no \
+-device e1000,netdev=net0,mac=52:54:00:00:00:01 \
+-enable-kvm \
+-nographic
+</code></pre>
+<pre><code class="language-shell"># node 1
+
+# create tap1 device
+sudo ip tuntap add dev tap1 mode tap user $USER
+sudo ip link set tap1 master br0
+sudo ip link set tap1 up
+
+# boot node 1
+qemu-system-x86_64 \
+-m 512 \
+-hda alpine.overlay.tap1.qcow2 \
+-netdev tap,id=net1,ifname=tap1,script=no,downscript=no \
+-device virtio-net-pci,netdev=net1,mac=52:54:00:00:00:02 \
+-enable-kvm \
+-nographic
+
+# change ip address to 192.168.100.20
+vi /etc/network/interfaces
+service networking restart
+</code></pre>
+<ul>
+<li>Now we have 2 Qemu nodes.<ul>
+<li>Node 0 with IP 192.168.100.10</li>
+<li>Node 1 with IP 192.168.100.20</li>
+<li>2 Nodes connect with brigde <code>br0</code> via tap devices</li>
+<li>2 Nodes can ping eachother</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-shell"># from node 0
+localhost:~# ip addr show eth0
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP 0
+    link/ether 52:54:00:00:00:01 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.100.10/24 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::5054:ff:fe00:1/64 scope link 
+       valid_lft forever preferred_lft forever
+localhost:~# ping 192.168.100.20
+PING 192.168.100.20 (192.168.100.20): 56 data bytes
+64 bytes from 192.168.100.20: seq=0 ttl=64 time=0.259 ms
+64 bytes from 192.168.100.20: seq=1 ttl=64 time=0.288 ms
+64 bytes from 192.168.100.20: seq=2 ttl=64 time=0.287 ms
+</code></pre>
+<pre><code class="language-shell"># from node 1
+localhost:~# ip a show eth0
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP 0
+    link/ether 52:54:00:00:00:02 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.100.20/24 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::5054:ff:fe00:2/64 scope link 
+       valid_lft forever preferred_lft forever
+localhost:~# ping 192.168.100.20
+PING 192.168.100.20 (192.168.100.20): 56 data bytes
+64 bytes from 192.168.100.20: seq=0 ttl=64 time=0.030 ms
+64 bytes from 192.168.100.20: seq=1 ttl=64 time=0.035 ms
+64 bytes from 192.168.100.20: seq=2 ttl=64 time=0.035 ms
+</code></pre>
+<h2 id="goal-2-create-and-connect-multiple-netns-inside-qemu-nodes">Goal 2: Create and connect multiple netns inside Qemu nodes</h2>
+<p><img alt="qemu cluster" src="../images/qemu_nodes_netns.dio.svg" /></p>
+<h3 id="install-iproute2">install iproute2</h3>
+<ul>
+<li>The iproute2 package in base ISO image does not provide <code>netns</code> option.</li>
+<li>So, we will download the full version of iproute2 from <a href="https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/">alpine CDN</a>
+  <code>shell
+    # download package
+    wget https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/libelf-0.193-r0.apk
+    wget https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/libmnl-1.0.5-r2.apk
+    wget https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/iproute2-minimal-6.15.0-r0.apk
+    wget https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/ifupdown-ng-iproute2-0.12.1-r7.apk
+    wget https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/libxtables-1.8.11-r1.apk
+    wget https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/iproute2-tc-6.15.0-r0.apk
+    wget https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/iproute2-ss-6.15.0-r0.apk
+    wget https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/iproute2-6.15.0-r0.apk</code></li>
+</ul>
+<p>```shell
+  # move to Node0
+  scp *.apk root@192.168.100.10:/root</p>
+<p># 
+  ssh root@192.168.100.10
+  apk add --allow-untrusted ./*.apk</p>
+<p># now <code>ip netns</code> is ready to use
+  ```</p>
+<h3 id="create-netns">create netns</h3>
+<ul>
+<li>Setting up netns like this:</li>
+</ul>
+<p><img alt="qemu cluster" src="../images/qemu_nodes_netns_1.dio.svg" /></p>
+<p>```shell
+  # Configuration
+  PHY_IF="eth0"
+  NET1="ns1"
+  NET2="ns2"
+  IP1="192.168.100.11/24"
+  IP2="192.168.100.12/24"
+  GW="192.168.100.1"</p>
+<p># Enable IP forwarding
+  echo 1 &gt; /proc/sys/net/ipv4/ip_forward</p>
+<p># Create network namespaces
+  ip netns add $NET1
+  ip netns add $NET2</p>
+<p># Create macvlan interfaces linked to $PHY_IF
+  ip link add macvlan1 link $PHY_IF type macvlan mode bridge
+  ip link add macvlan2 link $PHY_IF type macvlan mode bridge</p>
+<p># Assign interfaces to namespaces
+  ip link set macvlan1 netns $NET1
+  ip link set macvlan2 netns $NET2</p>
+<p># Bring up interfaces inside namespaces
+  ip netns exec $NET1 ip addr add $IP1 dev macvlan1
+  ip netns exec $NET2 ip addr add $IP2 dev macvlan2
+  ip netns exec $NET1 ip link set dev macvlan1 up
+  ip netns exec $NET2 ip link set dev macvlan2 up</p>
+<p># loopback up
+  ip netns exec $NET1 ip link set lo up
+  ip netns exec $NET2 ip link set lo up
+  ```</p>
+<ul>
+<li>Note 1. Why macvlan?</li>
+<li>by default, netns does not have a MAC address</li>
+<li>So, we create a macvlan interface and move it into netns</li>
+<li>Kernel give macvlan interface an unique MAC address</li>
+<li>macvlan interface is bond to <code>eth0</code> where eth0 is <code>tap0</code>, and <code>tap0</code> has <code>br0</code> as master</li>
+<li>
+<p>The flow of layer 2 is: netns -&gt; macvlan interface -&gt; <code>tap0</code> -&gt; <code>br0</code></p>
+</li>
+<li>
+<p>Now the 2 netns can ping each other:</p>
+</li>
+</ul>
+<p><code>shell
+  localhost:~# ip netns exec ns1 ping 192.168.100.12
+  PING 192.168.100.12 (192.168.100.12): 56 data bytes
+  64 bytes from 192.168.100.12: seq=0 ttl=64 time=0.033 ms
+  64 bytes from 192.168.100.12: seq=1 ttl=64 time=0.040 ms</code></p>
+<ul>
+<li>
+<p>The flow of ICMP package:
+  <img alt="qemu cluster" src="../images/qemu_nodes_netns_1_flow.dio.svg" /></p>
+</li>
+<li>
+<p>Because macvlan allow each netns has it's own MAC address
+    So, bridge <code>br0</code> can catch ethenet package send from <code>ns1</code> and forward it to <code>ns2</code></p>
+</li>
+<li>
+<p>Using netcat to test the connection between 2 netns.</p>
+<ul>
+<li>Using tcpdump to see the package is sent to <code>br0</code> (192.168.100.1)
+  <img alt="test with netcat" src="../images/qemu_nodes_netns_1_test_nc.png" /></li>
+</ul>
+</li>
+</ul>
+<h3 id="create-and-connect-netnss-from-multiple-qemu-nodes">create and connect netns(s) from multiple Qemu nodes</h3>
+<ul>
+<li>On Qemu Node2, create 2 netns the same way as we did on Qemu Node1</li>
+<li>Remember to change IP address of netns  to <code>.21</code> and <code>.22</code></li>
+</ul>
+<p><img alt="test with netcat" src="../images/qemu_nodes_netns_2.dio.svg" /></p>
+<ul>
+<li>Ping from netns inside Node2 to netns inside Node1</li>
+</ul>
+<p><code>shell
+  localhost:~# ip netns exec ns1 ip a
+  1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+      link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+      inet 127.0.0.1/8 scope host lo
+        valid_lft forever preferred_lft forever
+      inet6 ::1/128 scope host proto kernel_lo 
+        valid_lft forever preferred_lft forever
+  5: macvlan1@if2: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UP group default qlen 1000
+      link/ether 7a:9c:73:31:91:8e brd ff:ff:ff:ff:ff:ff link-netnsid 0
+      inet 192.168.100.21/24 scope global macvlan1
+        valid_lft forever preferred_lft forever
+      inet6 fe80::789c:73ff:fe31:918e/64 scope link proto kernel_ll 
+        valid_lft forever preferred_lft forever
+  localhost:~# ip netns exec ns1 ping 192.168.100.11
+  PING 192.168.100.11 (192.168.100.11): 56 data bytes
+  64 bytes from 192.168.100.11: seq=0 ttl=64 time=0.213 ms
+  64 bytes from 192.168.100.11: seq=1 ttl=64 time=0.382 ms
+  64 bytes from 192.168.100.11: seq=2 ttl=64 time=0.318</code></p>
+<ul>
+<li>
+<p>We can also use <code>netcat</code> to let netns inside Node1 talks to netns inside Node2</p>
+</li>
+<li>
+<p>This setup allow the cluster to be able to scale-up</p>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": {"index_page": "tags.md"}, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+    
+  </body>
+</html>

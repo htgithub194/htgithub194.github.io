@@ -9,21 +9,25 @@
       
       
       
+        <link rel="prev" href="../../..">
       
       
-      <link rel="icon" href="/assets/images/favicon.png">
+        <link rel="next" href="../../memory_layout/memory_layout/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
     
     
       
-        <title>htgithub94</title>
+        <title>Async Await are just the key words for Concurrency - htgithub94</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -42,11 +46,11 @@
       
     
     
-      <link rel="stylesheet" href="/styles/horizontal_nav_bar.css">
+      <link rel="stylesheet" href="../../../styles/horizontal_nav_bar.css">
     
-      <link rel="stylesheet" href="/styles/tags.css">
+      <link rel="stylesheet" href="../../../styles/tags.css">
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -71,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#async-await" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -83,7 +92,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="htgithub94" class="md-header__button md-logo" aria-label="htgithub94" data-md-component="logo">
+    <a href="../../.." title="htgithub94" class="md-header__button md-logo" aria-label="htgithub94" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -103,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Async Await are just the key words for Concurrency
             
           </span>
         </div>
@@ -193,7 +202,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="htgithub94" class="md-nav__button md-logo" aria-label="htgithub94" data-md-component="logo">
+    <a href="../../.." title="htgithub94" class="md-nav__button md-logo" aria-label="htgithub94" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -211,7 +220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -230,18 +239,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -257,7 +268,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Rust basic
@@ -268,10 +279,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/rust/async/async/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Async Await are just the key words for Concurrency
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -282,6 +315,53 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concurrency-vs-paralellism" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concurrency vs Paralellism
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#runtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      Runtime
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -294,7 +374,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rust/memory_layout/memory_layout/" class="md-nav__link">
+      <a href="../../memory_layout/memory_layout/" class="md-nav__link">
         
   
   
@@ -317,7 +397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rust/trai_bound_and_dispatching/trai_bound_and_dispatching/" class="md-nav__link">
+      <a href="../../trai_bound_and_dispatching/trai_bound_and_dispatching/" class="md-nav__link">
         
   
   
@@ -340,7 +420,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rust/closure/closure/" class="md-nav__link">
+      <a href="../../closure/closure/" class="md-nav__link">
         
   
   
@@ -363,7 +443,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rust/enums/enums/" class="md-nav__link">
+      <a href="../../enums/enums/" class="md-nav__link">
         
   
   
@@ -386,7 +466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rust/send_sync/send_sync/" class="md-nav__link">
+      <a href="../../send_sync/send_sync/" class="md-nav__link">
         
   
   
@@ -409,7 +489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rust/clone/derive_clone/" class="md-nav__link">
+      <a href="../../clone/derive_clone/" class="md-nav__link">
         
   
   
@@ -477,7 +557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rust/axum/axum/" class="md-nav__link">
+      <a href="../../axum/axum/" class="md-nav__link">
         
   
   
@@ -500,7 +580,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rust/axum/FromRef/" class="md-nav__link">
+      <a href="../../axum/FromRef/" class="md-nav__link">
         
   
   
@@ -568,7 +648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/kernel/watchdog/watchdog/" class="md-nav__link">
+      <a href="../../../kernel/watchdog/watchdog/" class="md-nav__link">
         
   
   
@@ -591,7 +671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/kernel/preempt/preempt/" class="md-nav__link">
+      <a href="../../../kernel/preempt/preempt/" class="md-nav__link">
         
   
   
@@ -614,7 +694,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/kernel/mini_alpine/mini_alpine/" class="md-nav__link">
+      <a href="../../../kernel/mini_alpine/mini_alpine/" class="md-nav__link">
         
   
   
@@ -682,7 +762,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/networking/tunnel/tunnel/" class="md-nav__link">
+      <a href="../../../networking/tunnel/tunnel/" class="md-nav__link">
         
   
   
@@ -705,7 +785,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/networking/qemu_network/qemu/" class="md-nav__link">
+      <a href="../../../networking/qemu_network/qemu/" class="md-nav__link">
         
   
   
@@ -773,7 +853,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/programming_concept/conditional_variable/conditional_variable/" class="md-nav__link">
+      <a href="../../../programming_concept/conditional_variable/conditional_variable/" class="md-nav__link">
         
   
   
@@ -796,7 +876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/programming_concept/dependency_injection/dependency_injection/" class="md-nav__link">
+      <a href="../../../programming_concept/dependency_injection/dependency_injection/" class="md-nav__link">
         
   
   
@@ -836,6 +916,43 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concurrency-vs-paralellism" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concurrency vs Paralellism
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#runtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      Runtime
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -847,8 +964,309 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+
+<h1 id="async-await">Async Await</h1>
+<h3 id="overview">Overview</h3>
+<p><img alt="overview" src="../images/overview.drawio.svg" title="overview" /></p>
+<ul>
+<li>To get a better understand about async-await, we should get to understand about concurrency programming.</li>
+</ul>
+<h3 id="concurrency-vs-paralellism">Concurrency vs Paralellism</h3>
+<ul>
+<li>
+<p>Paralellism &amp; Concurrency is two approachs to handle multiple tasks at the same time.</p>
+</li>
+<li>
+<p>Paralellism:</p>
+<ul>
+<li>Each thread handle 1 task.</li>
+<li>Use multiple threads to handle multiple tasks.</li>
+</ul>
+</li>
+<li>
+<p>Concurrency:</p>
+<ul>
+<li>Each thread can handle multiple tasks -&gt;&gt; no need much thread.</li>
+<li>At a point of time, one thread can execute only 1 task, but the thread can switch between it's tasks.</li>
+</ul>
+<p><img alt="concurency_vs_paralellism" src="../images/concurency_vs_paralellism.drawio.svg" title="concurency_vs_paralellism" /></p>
+</li>
+<li>
+<p>Comments &amp; Questions:</p>
+<ul>
+<li>In both approachs, one thread can execute 1 task at a time. Why use Concurrency over Paralellism ?</li>
+<li>In the image, it's seem Paralellism can finish the Green Task faster than Concurrency ?</li>
+<li>Paralellism can isolated task. It looks much better.</li>
+<li>How Concurrency knows how to mix the task ?</li>
+</ul>
+</li>
+<li>
+<p>The answers for those questions above is inside the task.
+    Concurrency will show it's advantage when work with the tasks which have to wait for events from I/O.
+    The CPU core runs much faster than I/O devices. So, for e.g, it has to wait for I/O drivers to write something to disk, or wait for I/O socket, ...etc.</p>
+<p><img alt="tasks" src="../images/tasks.drawio.svg" title="tasks" /></p>
+</li>
+<li>
+<p>Idle CPU core is a waste of resource.</p>
+<ul>
+<li>In Paralellism, thread must yeild the CPU to another thread, and let the kernel schedule to have chance to run again.
+    Ofcourse, the next thread might belong to another program.</li>
+<li>In Concurrency, NO yeilding happends. Thread will switch to another task, if current task are waiting for I/O.</li>
+</ul>
+<p><img alt="concurency_vs_paralellism_in_deep_" src="../images/concurency_vs_paralellism_in_deep.drawio.svg" title="concurency_vs_paralellism_in_deep_" /></p>
+</li>
+<li>
+<p>The image shows that the Green Task might be completed earlier, compare to Paralellism.</p>
+</li>
+<li>
+<p>But, Paralellism is easier to implement, because Kernel helps to take care all the threads.</p>
+</li>
+<li>
+<p>To implement Concurrency, we need to implement mechanism for thread to be able to hold tasks and switch between tasks.
+It's time for Runtime to comes as a rescuer.</p>
+</li>
+</ul>
+<h3 id="runtime">Runtime</h3>
+<ul>
+<li>
+<p>The most popular runtime for Rust is <em>Tokio runtime</em></p>
+</li>
+<li>
+<p>Runtime provide mechanisms for:</p>
+<ul>
+<li>Store list of tasks run in concurrency</li>
+<li>Which task will be run next</li>
+<li>When to re-invoke a pending task</li>
+<li>I/O functions for async programming
+...</li>
+</ul>
+<p>```rust
+// example from https://tokio.rs/tokio/tutorial/spawning
+use tokio::net::TcpListener;</p>
+<h1 id="tokiomain">[tokio::main]</h1>
+<p>async fn main() {
+    let listener = TcpListener::bind("127.0.0.1:6379").await.unwrap();</p>
+<pre><code>loop {
+    let (socket, _) = listener.accept().await.unwrap();
+    // A new task is spawned for each inbound socket. The socket is
+    // moved to the new task and processed there.
+    tokio::spawn(async move {
+        process(socket).await;
+    });
+}
+</code></pre>
+<p>}
+```</p>
+</li>
+<li>
+<p>Note for #[tokio::main]</p>
+<p>```rust</p>
+<h1 id="tokiomain_1">[tokio::main]</h1>
+<p>async fn main() {
+    code_inside_main_fn();
+}</p>
+<p>// is equivalent to</p>
+<p>fn main() {
+    let mut rt = tokio::runtime::Runtime::new().unwrap();
+    rt.block_on(async {
+        code_inside_main_fn();
+    })
+}
+```</p>
+</li>
+<li>
+<p>Tokio run time has 2 operation mode:</p>
+<ul>
+<li>Single-thread runtime: all tasks, executor, reactor are placed inside 1 thread.</li>
+<li>Multi-thread runtime: using multiple thread to execute tasks (thread pool)</li>
+</ul>
+<p><img alt="thread_pool" src="../images/thread_pool.drawio.svg" title="thread pool" /></p>
+</li>
+<li>
+<p>Bellow is how a task is randomly moved to and be executed in a thread.</p>
+</li>
+<li>
+<p>The mechanism to drive I/O events is based on Operating System and the system call must be Non-Blocking.</p>
+<ul>
+<li>Linux: epoll</li>
+<li>Mac: kqueue</li>
+<li>Windows: IOCP Input/output completion port</li>
+</ul>
+<p><img alt="runtime" src="../images/runtime.drawio.svg" title="runtime" /></p>
+</li>
+<li>
+<p>In Linux, epoll can be use to ask kernel to mornitor for a I/O, which represented by a File Description (fd) number.</p>
+<ul>
+<li>Epoll is non-blocking, the result is return immediately.</li>
+</ul>
+<p><img alt="epoll" src="../images/epoll.drawio.svg" title="epoll" /></p>
+</li>
+</ul>
+<h3 id="async-await_1">Async Await</h3>
+<ul>
+<li>
+<p>Async Await key words are use to write asynchronous task.</p>
+<p>```rust
+async fn main {
+    asynchronous_task.await();
+}</p>
+<p>async fn asynchronous_task () -&gt; uszie {
+    println!{"hello world"};                    // work
+    let n_char = read_from_disk().await();      // wait ...
+    return n_char                               // work
+}
+//  is equivalent with 
+fn asynchronous_task () -&gt; impl Future<Output = usize> {
+    async {
+        // ...
+    } 
+}
+```</p>
+</li>
+<li>
+<p>Async function is somehow equipvalent with a Future. Let's find out what is Future.</p>
+</li>
+<li>
+<p>Future is defined as:</p>
+<blockquote>
+<p>A future is a value that might not have finished computing yet. This kind of “asynchronous value” makes it possible for a thread to continue doing useful work while it waits for the value to become available.</p>
+</blockquote>
+</li>
+<li>
+<p>The Future's defination matchs with the waiting part in our task above.</p>
+<p><img alt="tasks" src="../images/tasks.drawio.svg" title="tasks" /></p>
+</li>
+<li>
+<p>The core method of future, poll, attempts to resolve the future into a final value</p>
+</li>
+<li>
+<p>We can write a poll funtion in a simplest way:</p>
+<ul>
+<li>call read() with <em>O_NON_BLOCKING</em> flag, it means, check with kernel if a FD is ready to read.</li>
+<li>if fd is ready, the data is return from <em>read()</em>, future is done.</li>
+<li>if fd is not ready, <em>read()</em> returns <em>WOULD_BLOCK</em> -&gt;&gt; ask waker to monitor the fd.</li>
+<li>the poll will be called again, when waker signals executor.</li>
+</ul>
+<p>```rust
+// simplest future
+fn poll(waker) {</p>
+<pre><code>let r = read(fd, ops, O_NON_BLOCKING);
+
+if r == OK {
+    return r.data;
+}
+
+if r == WOULD_BLOCK {
+    wake.push(fd, ops);
+}
+</code></pre>
+<p>}
+```</p>
+</li>
+<li>
+<p>How to write a complex Future.</p>
+<ul>
+<li>And how the poll() function knows where to continue for the 2nd poll.</li>
+</ul>
+<p><code>rust
+// nested poll function
+fn poll () {
+    // work before read
+    // future 1
+    fut_read_socket.await();
+    // work before write
+    // future 2
+    fut_write_socket.await();
+}</code></p>
+</li>
+<li>
+<p>Actually, before the introduction of async-await, async task was implemented as a State Machine.</p>
+<p>```rust
+Enum State<T> {
+    State_Start,
+    State_Reading(Option<T>),    // before read() completed
+    State_Writing(x, y, z),     // before write() completed
+    State_End,
+}</p>
+<p>impl<T> Future for State {
+    type Output = ();</p>
+<pre><code>fn poll(&amp;mut self) -&gt; Poll&lt;Self::Output&gt; {
+
+    match self {
+
+        State::State_Start =&gt; {
+            println!{"some work before Read"};
+
+            // change state
+            *self = State::State_Reading(data, ...);
+            return self.poll();
+        }
+
+        State::State_Reading(data, ...) =&gt; {
+
+            if let Poll::Ready() = fut_read_socket.poll() {
+
+                println!{"some work before Write"};
+
+                // change state
+                *self = State::State_Writing(data, ...);
+                return self.poll();
+            }
+            else {
+                Poll::Pending
+            }
+        }
+
+    State::State_Writing(data, ...) =&gt; {
+
+            if let Poll::Ready() = fut_write_socket.poll() {
+
+                // change state
+                *self = State::State_End;
+                return self.poll();
+            }
+            else {
+                Poll::Pending
+            }
+        }
+
+        State::State_End =&gt; {
+            Poll::Ready(())
+        }
+
+    }
+}
+</code></pre>
+<p>}
+```</p>
+</li>
+<li>
+<p>By using state machine, we can ensure that we can call poll() function multiple time but some logic is not be executed more than once.</p>
+<p><img alt="statemachine" src="../images/statemachine.drawio.svg" title="statemachine" /></p>
+</li>
+<li>
+<p>The detail of how state machine work</p>
+<p><img alt="1st_poll" src="../images/1st_poll.drawio.svg" title="1st_poll" /></p>
+<p><img alt="2nd_poll" src="../images/2nd_poll.drawio.svg" title="2nd_poll" /></p>
+<p><img alt="3rd_poll" src="../images/3rd_poll.drawio.svg" title="3rd_poll" /></p>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -884,10 +1302,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "/", "features": [], "search": "/assets/javascripts/workers/search.d50fe291.min.js", "tags": {"index_page": "tags.md"}, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": {"index_page": "tags.md"}, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/assets/javascripts/bundle.56ea9cef.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
       
     
   </body>

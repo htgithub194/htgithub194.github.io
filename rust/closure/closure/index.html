@@ -9,21 +9,25 @@
       
       
       
+        <link rel="prev" href="../../trai_bound_and_dispatching/trai_bound_and_dispatching/">
       
       
-      <link rel="icon" href="/assets/images/favicon.png">
+        <link rel="next" href="../../enums/enums/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
     
     
       
-        <title>htgithub94</title>
+        <title>How Closure is implemented - htgithub94</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -42,11 +46,11 @@
       
     
     
-      <link rel="stylesheet" href="/styles/horizontal_nav_bar.css">
+      <link rel="stylesheet" href="../../../styles/horizontal_nav_bar.css">
     
-      <link rel="stylesheet" href="/styles/tags.css">
+      <link rel="stylesheet" href="../../../styles/tags.css">
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -71,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#1-closure" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -83,7 +92,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="htgithub94" class="md-header__button md-logo" aria-label="htgithub94" data-md-component="logo">
+    <a href="../../.." title="htgithub94" class="md-header__button md-logo" aria-label="htgithub94" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -103,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              How Closure is implemented
             
           </span>
         </div>
@@ -193,7 +202,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="htgithub94" class="md-nav__button md-logo" aria-label="htgithub94" data-md-component="logo">
+    <a href="../../.." title="htgithub94" class="md-nav__button md-logo" aria-label="htgithub94" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -211,7 +220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -230,18 +239,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -257,7 +268,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Rust basic
@@ -271,7 +282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rust/async/async/" class="md-nav__link">
+      <a href="../../async/async/" class="md-nav__link">
         
   
   
@@ -294,7 +305,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rust/memory_layout/memory_layout/" class="md-nav__link">
+      <a href="../../memory_layout/memory_layout/" class="md-nav__link">
         
   
   
@@ -317,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rust/trai_bound_and_dispatching/trai_bound_and_dispatching/" class="md-nav__link">
+      <a href="../../trai_bound_and_dispatching/trai_bound_and_dispatching/" class="md-nav__link">
         
   
   
@@ -337,10 +348,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/rust/closure/closure/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    How Closure is implemented
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -351,6 +382,66 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-closure" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Closure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Closure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#closure-implement-fn-trait" class="md-nav__link">
+    <span class="md-ellipsis">
+      Closure implement Fn trait
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#closure-implement-fnmut-trait" class="md-nav__link">
+    <span class="md-ellipsis">
+      Closure implement FnMut trait
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#closure-implement-fnonce-trait" class="md-nav__link">
+    <span class="md-ellipsis">
+      Closure implement FnOnce trait
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -363,7 +454,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rust/enums/enums/" class="md-nav__link">
+      <a href="../../enums/enums/" class="md-nav__link">
         
   
   
@@ -386,7 +477,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rust/send_sync/send_sync/" class="md-nav__link">
+      <a href="../../send_sync/send_sync/" class="md-nav__link">
         
   
   
@@ -409,7 +500,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rust/clone/derive_clone/" class="md-nav__link">
+      <a href="../../clone/derive_clone/" class="md-nav__link">
         
   
   
@@ -477,7 +568,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rust/axum/axum/" class="md-nav__link">
+      <a href="../../axum/axum/" class="md-nav__link">
         
   
   
@@ -500,7 +591,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rust/axum/FromRef/" class="md-nav__link">
+      <a href="../../axum/FromRef/" class="md-nav__link">
         
   
   
@@ -568,7 +659,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/kernel/watchdog/watchdog/" class="md-nav__link">
+      <a href="../../../kernel/watchdog/watchdog/" class="md-nav__link">
         
   
   
@@ -591,7 +682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/kernel/preempt/preempt/" class="md-nav__link">
+      <a href="../../../kernel/preempt/preempt/" class="md-nav__link">
         
   
   
@@ -614,7 +705,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/kernel/mini_alpine/mini_alpine/" class="md-nav__link">
+      <a href="../../../kernel/mini_alpine/mini_alpine/" class="md-nav__link">
         
   
   
@@ -682,7 +773,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/networking/tunnel/tunnel/" class="md-nav__link">
+      <a href="../../../networking/tunnel/tunnel/" class="md-nav__link">
         
   
   
@@ -705,7 +796,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/networking/qemu_network/qemu/" class="md-nav__link">
+      <a href="../../../networking/qemu_network/qemu/" class="md-nav__link">
         
   
   
@@ -773,7 +864,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/programming_concept/conditional_variable/conditional_variable/" class="md-nav__link">
+      <a href="../../../programming_concept/conditional_variable/conditional_variable/" class="md-nav__link">
         
   
   
@@ -796,7 +887,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/programming_concept/dependency_injection/dependency_injection/" class="md-nav__link">
+      <a href="../../../programming_concept/dependency_injection/dependency_injection/" class="md-nav__link">
         
   
   
@@ -837,6 +928,56 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-closure" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Closure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Closure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#closure-implement-fn-trait" class="md-nav__link">
+    <span class="md-ellipsis">
+      Closure implement Fn trait
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#closure-implement-fnmut-trait" class="md-nav__link">
+    <span class="md-ellipsis">
+      Closure implement FnMut trait
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#closure-implement-fnonce-trait" class="md-nav__link">
+    <span class="md-ellipsis">
+      Closure implement FnOnce trait
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -847,8 +988,149 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+
+  <h1>How Closure is implemented</h1>
+
+<h3 id="1-closure">1. Closure</h3>
+<ul>
+<li>
+<p>Think of closure as lambdas in C++, or arrow function in JavaScript.</p>
+</li>
+<li>
+<p>Closure is a combination of a function and a set of data (captured data).</p>
+</li>
+<li>
+<p>Or closure is a Trait object. There are 3 Traits: Fn, FnMut, FnOnce</p>
+</li>
+</ul>
+<h4 id="closure-implement-fn-trait">Closure implement Fn trait</h4>
+<ul>
+<li>Closure which implements Fn trait uses immutable reference to captures data, that why it can be called multiple times.</li>
+</ul>
+<pre><code class="language-rust">let color = String::from(&quot;green&quot;);
+let print = || println!(&quot;color: {}&quot;, color);  
+// print is a closure
+</code></pre>
+<pre><code class="language-rust">// desugar syntactic:
+struct PrintClosure {
+    color: &amp; String,
+    // borrow **immutable** ownership of the real color value
+}
+impl Fn for PrintClosure {
+    fn call(&amp;self) {
+        println!(&quot;color: {}&quot;, self.color);  
+    }
+}
+</code></pre>
+<p><img alt="fn_closure.drawio.svg" src="../images/fn_closure.drawio.svg" title="Memory map of closure as Fn Trait Object" /></p>
+<h4 id="closure-implement-fnmut-trait">Closure implement FnMut trait</h4>
+<ul>
+<li>This kind of closure use mutable reference to capture data.</li>
+<li>When closure is created, we can not create reference to the captured-data until the closure is removed, because Rust allows only 1 mutable reference at a moment.</li>
+</ul>
+<pre><code class="language-rust">let mut count = 0;
+let mut inc = || {      // notice: inc is mutable closure
+    count += 1;
+    println!(&quot;count: {}&quot;, count);
+};
+</code></pre>
+<pre><code class="language-rust">// desugar syntactic:
+struct IncClosure {
+    count: &amp;mut i32,
+    // borrow **mutable** ownership of the count value
+}
+impl FnMut for IncClosure {
+    fn call_mut(&amp;self) {
+        println!(&quot;color: {}&quot;, self.color);  
+    }
+}
+</code></pre>
+<h4 id="closure-implement-fnonce-trait">Closure implement FnOnce trait</h4>
+<ul>
+<li>
+<p>This closure takes ownership of captured-data.</p>
+</li>
+<li>
+<p>Approach 1: Use FnOnce closure when the capture data is drop at the first call.</p>
+</li>
+</ul>
+<pre><code class="language-rust">let movable = Box::new(3);
+let consume = || {
+    println!(&quot;movable: {:?}&quot;, movable);
+    mem::drop(movable);
+};
+// from now, movable lost it's value, can not be used
+</code></pre>
+<pre><code class="language-rust">// desugar syntactic:
+struct ConsumeClosure {
+    movable: Box&lt;i32&gt;,
+}
+impl FnOnce for ConsumeClosure {
+    fn call_once(&amp;self) {
+        println!(&quot;movable: {:?}&quot;, self.movable);
+        mem::drop(self.movable);
+        // &quot;drop&quot; causes this closure can be called only 1 time.
+    }
+}
+</code></pre>
+<ul>
+<li>
+<p>Approach 2: Use the FnOnce closure to capture inner data.</p>
+<ul>
+<li>For e.g: The <strong>local_string</strong> will outlive the closure returned by create_closure().</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-rust">fn create_closure() -&gt; impl Fn() {
+    let local_string = String::from(&quot;hello&quot;);
+
+    // return a closure
+    || {
+        // compiler might create a Fn closure
+        println!(&quot;local: &quot;, local_string);
+    }
+
+    // local_string is destroyed, the memory which contains &quot;hello&quot; is removed
+}
+
+// call closure here return an error
+let created_closure = create_closure();
+created_closure();   // error
+</code></pre>
+<ul>
+<li>Using <strong>move</strong> to move the value to inside closure, forces closure to take ownership. Also means that compiler will create FnOnce closure</li>
+</ul>
+<pre><code class="language-rust">fn create_closure() -&gt; impl Fn() {
+    let local_string = String::from(&quot;hello&quot;);
+
+    move || {
+        println!(&quot;local: &quot;, local_string);
+    }
+}
+</code></pre>
+<pre><code class="language-rust">// desugar syntactic:
+struct AnonymousClosure {
+    local_string: String,
+    // local_string will be move to AnonymousClosure.local_string
+}
+</code></pre>
+<p><img alt="move_closure.drawio.svg" src="../images/move_closure.drawio.svg" title="Move closure" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -884,10 +1166,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "/", "features": [], "search": "/assets/javascripts/workers/search.d50fe291.min.js", "tags": {"index_page": "tags.md"}, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": {"index_page": "tags.md"}, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/assets/javascripts/bundle.56ea9cef.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
       
     
   </body>

@@ -9,21 +9,25 @@
       
       
       
+        <link rel="prev" href="../../async/async/">
       
       
-      <link rel="icon" href="/assets/images/favicon.png">
+        <link rel="next" href="../../trai_bound_and_dispatching/trai_bound_and_dispatching/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
     
     
       
-        <title>htgithub94</title>
+        <title>Memory layout of some data types - htgithub94</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -42,11 +46,11 @@
       
     
     
-      <link rel="stylesheet" href="/styles/horizontal_nav_bar.css">
+      <link rel="stylesheet" href="../../../styles/horizontal_nav_bar.css">
     
-      <link rel="stylesheet" href="/styles/tags.css">
+      <link rel="stylesheet" href="../../../styles/tags.css">
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -71,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#struct-tupple" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -83,7 +92,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="htgithub94" class="md-header__button md-logo" aria-label="htgithub94" data-md-component="logo">
+    <a href="../../.." title="htgithub94" class="md-header__button md-logo" aria-label="htgithub94" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -103,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Memory layout of some data types
             
           </span>
         </div>
@@ -193,7 +202,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="htgithub94" class="md-nav__button md-logo" aria-label="htgithub94" data-md-component="logo">
+    <a href="../../.." title="htgithub94" class="md-nav__button md-logo" aria-label="htgithub94" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -211,7 +220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -230,18 +239,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -257,7 +268,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Rust basic
@@ -271,7 +282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rust/async/async/" class="md-nav__link">
+      <a href="../../async/async/" class="md-nav__link">
         
   
   
@@ -291,10 +302,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/rust/memory_layout/memory_layout/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Memory layout of some data types
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -305,6 +336,123 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#struct-tupple" class="md-nav__link">
+    <span class="md-ellipsis">
+      Struct &amp; tupple
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#array" class="md-nav__link">
+    <span class="md-ellipsis">
+      Array
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reference
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vector" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vector
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#string" class="md-nav__link">
+    <span class="md-ellipsis">
+      String
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enum" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enum
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#box" class="md-nav__link">
+    <span class="md-ellipsis">
+      Box
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#copy-clone-trait" class="md-nav__link">
+    <span class="md-ellipsis">
+      Copy &amp; Clone Trait
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trait-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trait Object
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#closure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Closure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reference count
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -317,7 +465,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rust/trai_bound_and_dispatching/trai_bound_and_dispatching/" class="md-nav__link">
+      <a href="../../trai_bound_and_dispatching/trai_bound_and_dispatching/" class="md-nav__link">
         
   
   
@@ -340,7 +488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rust/closure/closure/" class="md-nav__link">
+      <a href="../../closure/closure/" class="md-nav__link">
         
   
   
@@ -363,7 +511,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rust/enums/enums/" class="md-nav__link">
+      <a href="../../enums/enums/" class="md-nav__link">
         
   
   
@@ -386,7 +534,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rust/send_sync/send_sync/" class="md-nav__link">
+      <a href="../../send_sync/send_sync/" class="md-nav__link">
         
   
   
@@ -409,7 +557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rust/clone/derive_clone/" class="md-nav__link">
+      <a href="../../clone/derive_clone/" class="md-nav__link">
         
   
   
@@ -477,7 +625,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rust/axum/axum/" class="md-nav__link">
+      <a href="../../axum/axum/" class="md-nav__link">
         
   
   
@@ -500,7 +648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rust/axum/FromRef/" class="md-nav__link">
+      <a href="../../axum/FromRef/" class="md-nav__link">
         
   
   
@@ -568,7 +716,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/kernel/watchdog/watchdog/" class="md-nav__link">
+      <a href="../../../kernel/watchdog/watchdog/" class="md-nav__link">
         
   
   
@@ -591,7 +739,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/kernel/preempt/preempt/" class="md-nav__link">
+      <a href="../../../kernel/preempt/preempt/" class="md-nav__link">
         
   
   
@@ -614,7 +762,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/kernel/mini_alpine/mini_alpine/" class="md-nav__link">
+      <a href="../../../kernel/mini_alpine/mini_alpine/" class="md-nav__link">
         
   
   
@@ -682,7 +830,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/networking/tunnel/tunnel/" class="md-nav__link">
+      <a href="../../../networking/tunnel/tunnel/" class="md-nav__link">
         
   
   
@@ -705,7 +853,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/networking/qemu_network/qemu/" class="md-nav__link">
+      <a href="../../../networking/qemu_network/qemu/" class="md-nav__link">
         
   
   
@@ -773,7 +921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/programming_concept/conditional_variable/conditional_variable/" class="md-nav__link">
+      <a href="../../../programming_concept/conditional_variable/conditional_variable/" class="md-nav__link">
         
   
   
@@ -796,7 +944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/programming_concept/dependency_injection/dependency_injection/" class="md-nav__link">
+      <a href="../../../programming_concept/dependency_injection/dependency_injection/" class="md-nav__link">
         
   
   
@@ -837,6 +985,113 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#struct-tupple" class="md-nav__link">
+    <span class="md-ellipsis">
+      Struct &amp; tupple
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#array" class="md-nav__link">
+    <span class="md-ellipsis">
+      Array
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reference
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vector" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vector
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#string" class="md-nav__link">
+    <span class="md-ellipsis">
+      String
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enum" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enum
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#box" class="md-nav__link">
+    <span class="md-ellipsis">
+      Box
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#copy-clone-trait" class="md-nav__link">
+    <span class="md-ellipsis">
+      Copy &amp; Clone Trait
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trait-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trait Object
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#closure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Closure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reference count
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -847,8 +1102,247 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+
+  <h1>Memory layout of some data types</h1>
+
+<h3 id="struct-tupple">Struct &amp; tupple</h3>
+<pre><code class="language-rust">struct User {
+    id: char,
+    active: u8,
+    age: i32,
+    ...
+}
+</code></pre>
+<pre><code class="language-rust">// tupple lives on stack
+let tupple : (char, u8 i32) = ('a', 100, 500);
+</code></pre>
+<p><img alt="struct.drawio.svg" src="../images/struct.drawio.svg" title="Memory layout of struct" /></p>
+<h3 id="array">Array</h3>
+<pre><code class="language-rust">// array lives on Stack
+let array : [i32, 3] = [5, 10, 15];
+</code></pre>
+<p><img alt="array.drawio.svg" src="../images/array.drawio.svg" title="Memory layout of array" /></p>
+<h3 id="reference">Reference</h3>
+<ul>
+<li>Reference contains an address.</li>
+<li>
+<p>8bytes on 64bit OS. 4 bytes on 32bit OS.</p>
+</li>
+<li>
+<p>Mutable &amp; Immutable reference are same in memory layout. It's a deference in how they're used.</p>
+</li>
+</ul>
+<pre><code class="language-rust">let i : i32 = 10;
+let ref : &amp;i32 = &amp;i;
+</code></pre>
+<p><img alt="reference.drawio.svg" src="../images/reference.drawio.svg" title="Memory layout of reference" /></p>
+<h3 id="vector">Vector</h3>
+<pre><code class="language-rust">let v: Vec&lt;i32&gt; = vec![5, 10, 15];
+let sl : &amp;[i32] = &amp;v[0..2];
+</code></pre>
+<p><img alt="vector.drawio.svg" src="../images/vector.drawio.svg" title="Memory layout of vector" /></p>
+<h3 id="string">String</h3>
+<p>String
+* <em>String</em> is standard container.</p>
+<pre><code class="language-rust">let hello_String = String::from(&quot;Hello&quot;)
+</code></pre>
+<p><img alt="String.drawio.svg" src="../images/String.drawio.svg" title="Memory layout of String" /></p>
+<p>Literal string
+* <em>str</em> is rust's core string type.
+* Literal string points to data in Code segment</p>
+<pre><code class="language-rust">let literal_str = &quot;Literal String&quot;
+let slice = &amp;literal_str[8..]
+// str and slice have same memory layout
+</code></pre>
+<p><img alt="str.drawio.svg" src="../images/str.drawio.svg" title="Memory layout of str" /></p>
+<h3 id="enum">Enum</h3>
+<pre><code class="language-rust">// C style enum
+enum IP{
+    v4,
+    v6 = 500,
+}
+
+// C style union
+union MyTag {
+    int i;
+    double d;
+    char s[16];
+}
+
+// Rust style enum: tagged union
+enum CarTag{
+    TagNumber(i32),
+    TagString(String),
+}
+</code></pre>
+<p><img alt="enum.drawio.svg" src="../images/enum.drawio.svg" title="Memory layout of enum" /></p>
+<p><img alt="enum_suite_case.drawio.svg" src="../images/enum_suite_case.drawio.svg" title="Enum as suitecase" /></p>
+<ul>
+<li>
+<p>Size of enum IP is the size of the highest value.</p>
+</li>
+<li>
+<p>Size of enum CarTag is the sum of sizes of tag, TagString</p>
+</li>
+<li>
+<p>Using smartpoint, e.g: Box, to reduce the size of enum</p>
+</li>
+</ul>
+<pre><code class="language-rust">enum CarTag{
+    ...
+    TagBox(Box&lt;String&gt;),    // Box is pointer which is fixed size
+    ...
+}
+</code></pre>
+<p><img alt="box_enum.drawio.svg" src="../images/box_enum.drawio.svg" title="Memory layout of enum with box" /></p>
+<ul>
+<li>Rust automatically optimizes <code>Options&lt;T&gt;</code> which contains smart pointer data type (e.g: Box)</li>
+</ul>
+<pre><code class="language-rust">// Option
+enum Option&lt;T&gt;{
+    None
+    Some(T),
+}
+
+// Option with smart pointer
+let opt: Options&lt;Box&lt;i32&gt;&gt; = Options(Box::new(100)));
+</code></pre>
+<p><img alt="option.drawio.svg" src="../images/option.drawio.svg" title="Memory layout of option" /></p>
+<ul>
+<li>
+<p>In case of optimization Options<T>, the matching pattern works by check if the pointer is NULL or not, corresponding to <em>None</em> and <em>Some</em></p>
+</li>
+<li>
+<p>Matching pattern with enum is just a comparation of the tag value.</p>
+</li>
+</ul>
+<p><img alt="match_enum_asembly.png" src="../images/match_enum_asembly.png" title="Asmebly of Matching pattern" /></p>
+<h3 id="box">Box</h3>
+<ul>
+<li>Use smart pointer Box&lt;&gt; to store data on Heap</li>
+</ul>
+<pre><code class="language-rust">    let b = Box::new(5);
+</code></pre>
+<p><img alt="box.drawio.svg" src="../images/box.drawio.svg" title="Box" /></p>
+<ul>
+<li>
+<p>There a 2 use case:</p>
+<ul>
+<li>Case 1: Declare a variable which has unknow size at compile time
+```rust
+trait Vehicle { 
+    fn drive(&amp;self);
+}</li>
+</ul>
+<p>let t : dyn Vehicle         // Wrong: declare t as an unknow size data
+let t : Box<dyn Vehicle>;   // Correct: declare t as a pointer which point to trai object in heap
+t = Box::new(Car);
+t.drive();
+```</p>
+<ul>
+<li>Case 2: Recursive data type.
+<code>rust
+// : 
+enum List {
+    Cons(i32, List),        // Wrong: size of List is unknow
+    Cons(i32, Box&lt;List&gt;),   // Correct: sizeof Box is known
+    Nil,
+}</code>
+<img alt="box_recursive_type.png" src="../images/box_recursive_type.png" title="Recursive data type" /></li>
+</ul>
+</li>
+</ul>
+<h3 id="copy-clone-trait">Copy &amp; Clone Trait</h3>
+<pre><code class="language-rust">// default: move semantics
+let s1 = String::from(&quot;Hello&quot;);
+let s2 = s1;            // s1 no longer valid
+
+// Implicit in-expensive bit-wise copy
+let a1: i32 = 10;
+let a2: i32 = a1;
+
+// Explicit bit-wise copy
+let s2 = s1.clone();    // s1 and s2 both are valid
+</code></pre>
+<p><img alt="copy_move_clone.drawio.svg" src="../images/copy_move_clone.drawio.svg" title="Some trait's behaviors" /></p>
+<ul>
+<li>Clone is supertrait of Copy</li>
+<li>Copy is simply a bit-wise copy</li>
+</ul>
+<h3 id="trait-object">Trait Object</h3>
+<ul>
+<li>Reference or pointer of value, which implement a Trait, is called Trait Object:</li>
+</ul>
+<pre><code class="language-rust">trait Shape {
+    fn area(&amp;self);
+}
+
+struct Rectangle {
+    top_left: ...,
+    bottom_right: ...,
+}
+
+impl Shape for Rectangle {
+    fn area(...)
+}
+
+let rec = Rectangle;
+
+let t : dyn Shape;  // Wrong: declare t as an unknow size data
+let t : &amp;dyn Shape = &amp;rec;      // Correct
+let t : Box&lt;dyn Shape&gt; = &amp;rec;  // Correct
+// trait object is known size.
+// trait object is a fat pointer which contains 2 other pointers
+</code></pre>
+<p><img alt="trait_object.drawio.svg" src="../images/trait_object.drawio.svg" title="Memory map of Trait Object" /></p>
+<p>Use trait object for Dynamic dispatching.
+<a href="../../trai_bound_and_dispatching/trai_bound_and_dispatching/">Read more on Trait bound and dispatching ...</a></p>
+<h3 id="closure">Closure</h3>
+<p>Rust uses struct to present closure.</p>
+<pre><code class="language-rust">let color = String::from(&quot;green&quot;);
+let print = || println!(&quot;color: {}&quot;, color);  
+// print is a closure
+
+// exec closure:
+print()
+</code></pre>
+<p><img alt="fn_closure.drawio.svg" src="../images/fn_closure.drawio.svg" title="Memory map of closure as Fn Trait Object" /></p>
+<p><a href="../../closure/closure/">Read more on closure ...</a></p>
+<h3 id="reference-count">Reference count</h3>
+<ul>
+<li>Using RC to have multiple pointers point to the same value</li>
+</ul>
+<p><img alt="refcount.drawio.svg" src="../images/refcount.drawio.svg" title="Memory map of Reference count" /></p>
+<ul>
+<li>Data race in multithread:</li>
+</ul>
+<p><img alt="rc_datarace.drawio.svg" src="../images/rc_datarace.drawio.svg" title="Data race" /></p>
+<ul>
+<li>
+<p>Use Atomic Reference Count (Arc) to avoid data race.</p>
+<p>Arc costs small extra performance.</p>
+<p>Both Rc &amp; Arc are immutable. Use mutex to mutate the data.</p>
+</li>
+</ul>
+<pre><code class="language-rust">let arc_mutext : Arc&lt;Mutex&lt;i32&gt;&gt; = Arc::new(Mutex::new(100))
+</code></pre>
+<p><img alt="atomic_rc.drawio.svg" src="../images/atomic_rc.drawio.svg" title="Atomic Refernce Count" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -884,10 +1378,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "/", "features": [], "search": "/assets/javascripts/workers/search.d50fe291.min.js", "tags": {"index_page": "tags.md"}, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": {"index_page": "tags.md"}, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/assets/javascripts/bundle.56ea9cef.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
       
     
   </body>

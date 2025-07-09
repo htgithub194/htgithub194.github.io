@@ -9,21 +9,25 @@
       
       
       
+        <link rel="prev" href="../../../networking/qemu_network/qemu/">
       
       
-      <link rel="icon" href="/assets/images/favicon.png">
+        <link rel="next" href="../../dependency_injection/dependency_injection/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
     
     
       
-        <title>htgithub94</title>
+        <title>Conditional Variable & Rust channel - htgithub94</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -42,11 +46,11 @@
       
     
     
-      <link rel="stylesheet" href="/styles/horizontal_nav_bar.css">
+      <link rel="stylesheet" href="../../../styles/horizontal_nav_bar.css">
     
-      <link rel="stylesheet" href="/styles/tags.css">
+      <link rel="stylesheet" href="../../../styles/tags.css">
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -71,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#conditional-variable" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -83,7 +92,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="htgithub94" class="md-header__button md-logo" aria-label="htgithub94" data-md-component="logo">
+    <a href="../../.." title="htgithub94" class="md-header__button md-logo" aria-label="htgithub94" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -103,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Conditional Variable & Rust channel
             
           </span>
         </div>
@@ -193,7 +202,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="htgithub94" class="md-nav__button md-logo" aria-label="htgithub94" data-md-component="logo">
+    <a href="../../.." title="htgithub94" class="md-nav__button md-logo" aria-label="htgithub94" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -211,7 +220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -271,7 +280,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rust/async/async/" class="md-nav__link">
+      <a href="../../../rust/async/async/" class="md-nav__link">
         
   
   
@@ -294,7 +303,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rust/memory_layout/memory_layout/" class="md-nav__link">
+      <a href="../../../rust/memory_layout/memory_layout/" class="md-nav__link">
         
   
   
@@ -317,7 +326,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rust/trai_bound_and_dispatching/trai_bound_and_dispatching/" class="md-nav__link">
+      <a href="../../../rust/trai_bound_and_dispatching/trai_bound_and_dispatching/" class="md-nav__link">
         
   
   
@@ -340,7 +349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rust/closure/closure/" class="md-nav__link">
+      <a href="../../../rust/closure/closure/" class="md-nav__link">
         
   
   
@@ -363,7 +372,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rust/enums/enums/" class="md-nav__link">
+      <a href="../../../rust/enums/enums/" class="md-nav__link">
         
   
   
@@ -386,7 +395,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rust/send_sync/send_sync/" class="md-nav__link">
+      <a href="../../../rust/send_sync/send_sync/" class="md-nav__link">
         
   
   
@@ -409,7 +418,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rust/clone/derive_clone/" class="md-nav__link">
+      <a href="../../../rust/clone/derive_clone/" class="md-nav__link">
         
   
   
@@ -477,7 +486,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rust/axum/axum/" class="md-nav__link">
+      <a href="../../../rust/axum/axum/" class="md-nav__link">
         
   
   
@@ -500,7 +509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rust/axum/FromRef/" class="md-nav__link">
+      <a href="../../../rust/axum/FromRef/" class="md-nav__link">
         
   
   
@@ -568,7 +577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/kernel/watchdog/watchdog/" class="md-nav__link">
+      <a href="../../../kernel/watchdog/watchdog/" class="md-nav__link">
         
   
   
@@ -591,7 +600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/kernel/preempt/preempt/" class="md-nav__link">
+      <a href="../../../kernel/preempt/preempt/" class="md-nav__link">
         
   
   
@@ -614,7 +623,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/kernel/mini_alpine/mini_alpine/" class="md-nav__link">
+      <a href="../../../kernel/mini_alpine/mini_alpine/" class="md-nav__link">
         
   
   
@@ -682,7 +691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/networking/tunnel/tunnel/" class="md-nav__link">
+      <a href="../../../networking/tunnel/tunnel/" class="md-nav__link">
         
   
   
@@ -705,7 +714,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/networking/qemu_network/qemu/" class="md-nav__link">
+      <a href="../../../networking/qemu_network/qemu/" class="md-nav__link">
         
   
   
@@ -732,18 +741,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -759,7 +770,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Others
@@ -770,10 +781,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/programming_concept/conditional_variable/conditional_variable/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Conditional Variable & Rust channel
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -784,6 +817,35 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#defination" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defination
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -796,7 +858,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/programming_concept/dependency_injection/dependency_injection/" class="md-nav__link">
+      <a href="../../dependency_injection/dependency_injection/" class="md-nav__link">
         
   
   
@@ -836,6 +898,25 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#defination" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defination
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -847,8 +928,148 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+
+<h1 id="conditional-variable">Conditional Variable</h1>
+<h3 id="defination">Defination</h3>
+<ul>
+<li>
+<p>A Synchronization primative.</p>
+<ul>
+<li>Alow thread to wait for a specific condition</li>
+<li>Thread goes to sleep when waiting</li>
+</ul>
+</li>
+<li>
+<p>What is the difference between ConditionVariable vs Mutext?</p>
+<ul>
+<li>Mutext:<ul>
+<li>Thread waits for Mutex to be unlocked</li>
+</ul>
+</li>
+<li>ConditionVariable:<ul>
+<li>Thread waits for a notification</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>The difference is seem not much clear. Let's take an example of a channel which will be used by multiple threads.</p>
+</li>
+<li>
+<p>The channel consits of a Queue to hold a shared data.</p>
+<ul>
+<li>A thread can push data to the channel.</li>
+<li>Another thread can read data from channel.</li>
+</ul>
+</li>
+<li>
+<p>We can think of using mutex to protect the shared data. At a given point of time, only 1 thread can have access and modify the shared data.</p>
+</li>
+</ul>
+<p><img alt="1st_design_channel" src="../images/1st_design_channel.drawio.svg" title="1st_design_channel" /></p>
+<ul>
+<li>The 1st design has a problem:<ul>
+<li>The consume thread has no way to know if the channel is empty or not.</li>
+<li>So, consume thread might try to acquire the Mutex lock for nothing (in case queue is empty),</li>
+<li>And, consume thread also has to release the Mutex lock, so the produce thread can push data in queue.</li>
+<li>It means, the consume thread has to acquire the lock, see nothing in the queue, and release it, and then re-acquire, ...</li>
+</ul>
+</li>
+</ul>
+<p><img alt="problem" src="../images/problem.drawio.svg" title="problem" /></p>
+<ul>
+<li>
+<p>Conditional Variable comes to the rescue. Let's imagine the scenario:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Consume thread</th>
+<th></th>
+<th style="text-align: right;">Produce thread</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">acquire Mutex lock</td>
+<td></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">see nothing in queue</td>
+<td></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">setups a Conditional Variable</td>
+<td></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Release mutex</td>
+<td></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">goes to sleep</td>
+<td></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td></td>
+<td style="text-align: right;">acquire Mutex lock</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td></td>
+<td style="text-align: right;">push data on queue</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td></td>
+<td style="text-align: right;">release Mutex lock</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td></td>
+<td style="text-align: right;">use the Conditional Variable to notify to Consume Thread</td>
+</tr>
+<tr>
+<td style="text-align: left;">wakeup by Conditional Variable</td>
+<td></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">acquire Mutex lock</td>
+<td></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">read from queue</td>
+<td></td>
+<td style="text-align: right;"></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p><img alt="2nd_design_channel" src="../images/2nd_design_channel.drawio.svg" title="2nd_design_channel" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -884,10 +1105,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "/", "features": [], "search": "/assets/javascripts/workers/search.d50fe291.min.js", "tags": {"index_page": "tags.md"}, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": {"index_page": "tags.md"}, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/assets/javascripts/bundle.56ea9cef.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
       
     
   </body>
