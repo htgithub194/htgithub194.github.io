@@ -220,7 +220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../mkdocs/" class="md-nav__link">
         
   
   
@@ -707,6 +707,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#goal-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Goal 2
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#active-apk" class="md-nav__link">
+    <span class="md-ellipsis">
+      Active APK
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#active-openssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Active Openssh
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -964,6 +991,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#goal-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Goal 2
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#active-apk" class="md-nav__link">
+    <span class="md-ellipsis">
+      Active APK
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#active-openssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Active Openssh
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -987,22 +1041,22 @@
 <ul>
 <li>
 <p>Small size image
-<code>shell
--rw-------  1 root root 5.6M Jun  8 21:24 initramfs-virt
--rw-r--r--  1 root root  12M Jun  8 07:09 vmlinuz-virt</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>-rw-------<span class="w">  </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">5</span>.6M<span class="w"> </span>Jun<span class="w">  </span><span class="m">8</span><span class="w"> </span><span class="m">21</span>:24<span class="w"> </span>initramfs-virt
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>-rw-r--r--<span class="w">  </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">  </span>12M<span class="w"> </span>Jun<span class="w">  </span><span class="m">8</span><span class="w"> </span><span class="m">07</span>:09<span class="w"> </span>vmlinuz-virt
+</code></pre></div></p>
 </li>
 <li>
 <p>Run in RAM only:
-<code>shell
-qemu-system-x86_64 \
--m 512M \
--kernel vmlinuz-virt \
--initrd initramfs-virt \
--netdev tap,id=net0,ifname=tap0,script=no,downscript=no \
--device virtio-net-pci,netdev=net0 \
--append "console=ttyS0 init=/init" \
--enable-kvm \
--nographic</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>qemu-system-x86_64<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>-m<span class="w"> </span>512M<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>-kernel<span class="w"> </span>vmlinuz-virt<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>-initrd<span class="w"> </span>initramfs-virt<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>-netdev<span class="w"> </span>tap,id<span class="o">=</span>net0,ifname<span class="o">=</span>tap0,script<span class="o">=</span>no,downscript<span class="o">=</span>no<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>-device<span class="w"> </span>virtio-net-pci,netdev<span class="o">=</span>net0<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>-append<span class="w"> </span><span class="s2">&quot;console=ttyS0 init=/init&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>-enable-kvm<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>-nographic
+</code></pre></div></p>
 </li>
 </ul>
 </li>
@@ -1013,66 +1067,66 @@ qemu-system-x86_64 \
 </ul>
 <h3 id="goal-1">Goal 1</h3>
 <h4 id="steps">Steps:</h4>
-<pre><code class="language-shell">#
-wget https://dl-cdn.alpinelinux.org/alpine/v3.22/releases/x86_64/alpine-minirootfs-3.22.0-x86_64.tar.gz
-#
-mkdir rootfs
-tar -xzf alpine-minirootfs-3.22.0-x86_64.tar.gz -C rootfs
-#
-cd rootfs
-#
-mount --bind /proc proc
-mount --bind /dev dev
-mount --bind /sys sys
-#
-echo &quot;nameserver 8.8.8.8&quot; &gt; etc/resolv.conf
-#
-chroot . /bin/sh
-#
-apk add alpine-base linux-virt mkinitfs
-#   /lib/modules/6.12.31-0-virt
-mkinitfs -k 6.12.31-0-virt
-
-
-# images located at boot
-ls /boot
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">#</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>wget<span class="w"> </span>https://dl-cdn.alpinelinux.org/alpine/v3.22/releases/x86_64/alpine-minirootfs-3.22.0-x86_64.tar.gz
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1">#</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>mkdir<span class="w"> </span>rootfs
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>tar<span class="w"> </span>-xzf<span class="w"> </span>alpine-minirootfs-3.22.0-x86_64.tar.gz<span class="w"> </span>-C<span class="w"> </span>rootfs
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c1">#</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="nb">cd</span><span class="w"> </span>rootfs
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="c1">#</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>mount<span class="w"> </span>--bind<span class="w"> </span>/proc<span class="w"> </span>proc
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>mount<span class="w"> </span>--bind<span class="w"> </span>/dev<span class="w"> </span>dev
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>mount<span class="w"> </span>--bind<span class="w"> </span>/sys<span class="w"> </span>sys
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="c1">#</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;nameserver 8.8.8.8&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>etc/resolv.conf
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="c1">#</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>chroot<span class="w"> </span>.<span class="w"> </span>/bin/sh
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="c1">#</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>apk<span class="w"> </span>add<span class="w"> </span>alpine-base<span class="w"> </span>linux-virt<span class="w"> </span>mkinitfs
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="c1">#   /lib/modules/6.12.31-0-virt</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>mkinitfs<span class="w"> </span>-k<span class="w"> </span><span class="m">6</span>.12.31-0-virt
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="c1"># images located at boot</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>ls<span class="w"> </span>/boot
+</code></pre></div>
 <h4 id="detail-each-steps">Detail each steps:</h4>
 <ul>
 <li>
 <p>Download minirootfs from alpine homepage</p>
-<p>```shell</p>
-<h1 id="_1"></h1>
-<p>wget https://dl-cdn.alpinelinux.org/alpine/v3.22/releases/x86_64/alpine-minirootfs-3.22.0-x86_64.tar.gz</p>
-<h1 id="_2"></h1>
-<p>mkdir rootfs</p>
-<h1 id="_3"></h1>
-<p>tar -xzf alpine-minirootfs-3.22.0-x86_64.tar.gz -C rootfs
-```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">#</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>wget<span class="w"> </span>https://dl-cdn.alpinelinux.org/alpine/v3.22/releases/x86_64/alpine-minirootfs-3.22.0-x86_64.tar.gz
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1">#</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>mkdir<span class="w"> </span>rootfs
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1">#</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>tar<span class="w"> </span>-xzf<span class="w"> </span>alpine-minirootfs-3.22.0-x86_64.tar.gz<span class="w"> </span>-C<span class="w"> </span>rootfs
+</code></pre></div>
 </li>
 <li>
 <p>chroot to rootfs</p>
-<p>```shell</p>
-<h1 id="bind-host-rootfs">bind host -&gt; rootfs</h1>
-<p>cd rootfs
-mount --bind /proc proc
-mount --bind /dev dev
-mount --bind /sys sys</p>
-<h1 id="provide-dns-for-rootfs">provide DNS for rootfs</h1>
-<p>echo "nameserver 8.8.8.8" &gt; etc/resolv.conf</p>
-<h1 id="chroot-to-rootfs">chroot to rootfs</h1>
-<p>chroot . /bin/sh
-```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># bind host -&gt; rootfs</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">cd</span><span class="w"> </span>rootfs
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>mount<span class="w"> </span>--bind<span class="w"> </span>/proc<span class="w"> </span>proc
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>mount<span class="w"> </span>--bind<span class="w"> </span>/dev<span class="w"> </span>dev
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>mount<span class="w"> </span>--bind<span class="w"> </span>/sys<span class="w"> </span>sys
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c1"># provide DNS for rootfs</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;nameserver 8.8.8.8&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>etc/resolv.conf
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="c1"># chroot to rootfs</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>chroot<span class="w"> </span>.<span class="w"> </span>/bin/sh
+</code></pre></div>
 </li>
 <li>
 <p>inside chroot, update package</p>
-<p><code>shell
-apk add alpine-base linux-virt mkinitfs</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>apk<span class="w"> </span>add<span class="w"> </span>alpine-base<span class="w"> </span>linux-virt<span class="w"> </span>mkinitfs
+</code></pre></div>
 <ul>
 <li>
 <p>Note1. Change repository by:
-    <code>shell
-    echo "http://dl-cdn.alpinelinux.org/alpine/v3.22/main" &gt;&gt; /etc/apk/repositories</code></p>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;http://dl-cdn.alpinelinux.org/alpine/v3.22/main&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/etc/apk/repositories
+</code></pre></div></p>
 </li>
 <li>
 <p>Note 2. <code>alpine-base</code> provide:
@@ -1098,16 +1152,16 @@ apk add alpine-base linux-virt mkinitfs</code></p>
 </li>
 <li>
 <p>Note 4. Install some usefull package basedon your need:</p>
-<p><code>shell
-apk add iproute2</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>apk<span class="w"> </span>add<span class="w"> </span>iproute2
+</code></pre></div>
 </li>
 </ul>
 </li>
 <li>
 <p>Make initrd</p>
-<p><code>shell
- mkinitfs -F "base virtio" -k 6.12.31-0-virt
-==&gt; initramfs: creating /boot/initramfs-virt for 6.12.31-0-virt</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="w"> </span>mkinitfs<span class="w"> </span>-F<span class="w"> </span><span class="s2">&quot;base virtio&quot;</span><span class="w"> </span>-k<span class="w"> </span><span class="m">6</span>.12.31-0-virt
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="o">==</span>&gt;<span class="w"> </span>initramfs:<span class="w"> </span>creating<span class="w"> </span>/boot/initramfs-virt<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="m">6</span>.12.31-0-virt
+</code></pre></div>
 <ul>
 <li>
 <p>Node 0. <code>base virtio</code> is features</p>
@@ -1118,136 +1172,142 @@ apk add iproute2</code></p>
 </li>
 <li>
 <p>Note 1. <code>/etc/mkinitfs/mkinitfs.conf</code> contain features for initrd</p>
-<p>```shell</p>
-<h1 id="default-configure-is">default configure is:</h1>
-<h1 id="featuresata-base-cdrom-ext4-keymap-kms-mmc-nvme-raid-scsi-usb-virtio">features="ata base cdrom ext4 keymap kms mmc nvme raid scsi usb virtio"</h1>
-<h1 id="_4"></h1>
-<h1 id="_5"></h1>
-<h1 id="custom-mkinitfs-conf">custom mkinitfs conf:</h1>
-<h1 id="_6"></h1>
-<h1 id="specify-features-to-include">Specify features to include</h1>
-<p>features="base,virtio"</p>
-<h1 id="kernel-modules-path-optional-defaults-to-libmodules">Kernel modules path (optional, defaults to /lib/modules/<version>)</h1>
-<p>modloop=/lib/modules/6.12.31-0-virt</p>
-<h1 id="additional-files-optional-if-not-using-featuredfiles">Additional files (optional, if not using feature.d/*.files)</h1>
-<p>add_files="/sbin/openrc-init /bin/sh"
-```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># default configure is:</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="c1">#    features=&quot;ata base cdrom ext4 keymap kms mmc nvme raid scsi usb virtio&quot;</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="c1">#</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="c1">#</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="c1"># custom mkinitfs conf:</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="c1">#</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="c1"># Specify features to include</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="nv">features</span><span class="o">=</span><span class="s2">&quot;base,virtio&quot;</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="c1"># Kernel modules path (optional, defaults to /lib/modules/&lt;version&gt;)</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="nv">modloop</span><span class="o">=</span>/lib/modules/6.12.31-0-virt
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="c1"># Additional files (optional, if not using feature.d/*.files)</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="nv">add_files</span><span class="o">=</span><span class="s2">&quot;/sbin/openrc-init /bin/sh&quot;</span>
+</code></pre></div>
 </li>
 <li>
 <p>Note 2. files &amp; modules are defined at <code>/etc/mkinitfs/features.d</code></p>
 <ul>
-<li>
-<p>E.g: define new features
-    ```shell
-    /etc/mkinitfs/features.d # cat netfilter.modules 
-    kernel/net/netfilter/*</p>
-<p>/etc/mkinitfs/features.d # cat netfilter.files
-/usr/sbin/ipvsadm
-```</p>
-</li>
+<li>E.g: define new features
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>/etc/mkinitfs/features.d<span class="w"> </span><span class="c1"># cat netfilter.modules </span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>kernel/net/netfilter/*
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>/etc/mkinitfs/features.d<span class="w"> </span><span class="c1"># cat netfilter.files</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>/usr/sbin/ipvsadm
+</code></pre></div></li>
 </ul>
 </li>
 </ul>
 </li>
 <li>
 <p>QEMU boot</p>
-<p><code>shell
-qemu-system-x86_64 \
--m 512 \
--kernel vmlinuz-virt \
--initrd initramfs-virt \
--append "console=ttyS0 init=/init" \
--nographic</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>qemu-system-x86_64<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>-m<span class="w"> </span><span class="m">512</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>-kernel<span class="w"> </span>vmlinuz-virt<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>-initrd<span class="w"> </span>initramfs-virt<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>-append<span class="w"> </span><span class="s2">&quot;console=ttyS0 init=/init&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>-nographic
+</code></pre></div>
 </li>
 </ul>
 <h3 id="goal-2">Goal 2</h3>
 <ul>
 <li>
 <p>Create bridge <code>br0</code> and <code>tap0</code></p>
-<p>```shell
-sudo ip link add name br0 type bridge
-sudo ip addr add 192.168.100.1/24 dev br0
-sudo ip link set br0 up</p>
-<h1 id="create-tap-device">create tap device</h1>
-<p>sudo ip tuntap add dev tap0 mode tap user $USER
-sudo ip link set tap0 master br0
-sudo ip link set tap0 up
-```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>sudo<span class="w"> </span>ip<span class="w"> </span>link<span class="w"> </span>add<span class="w"> </span>name<span class="w"> </span>br0<span class="w"> </span><span class="nb">type</span><span class="w"> </span>bridge
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>sudo<span class="w"> </span>ip<span class="w"> </span>addr<span class="w"> </span>add<span class="w"> </span><span class="m">192</span>.168.100.1/24<span class="w"> </span>dev<span class="w"> </span>br0
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>sudo<span class="w"> </span>ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>br0<span class="w"> </span>up
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="c1"># create tap device</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>sudo<span class="w"> </span>ip<span class="w"> </span>tuntap<span class="w"> </span>add<span class="w"> </span>dev<span class="w"> </span>tap0<span class="w"> </span>mode<span class="w"> </span>tap<span class="w"> </span>user<span class="w"> </span><span class="nv">$USER</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>sudo<span class="w"> </span>ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>tap0<span class="w"> </span>master<span class="w"> </span>br0
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>sudo<span class="w"> </span>ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>tap0<span class="w"> </span>up
+</code></pre></div>
 </li>
 <li>
 <p>route between <code>eth0</code> -&gt; <code>br0</code>:</p>
-<p>```shell</p>
-<h1 id="alow-traffic-from-br0-eth0-internet">alow traffic from br0 -&gt; eth0 -&gt; internet</h1>
-<p>iptables -A FORWARD -i br0 -o eth0 -j ACCEPT</p>
-<h1 id="alow-traffic-back-from-eth0-br0">alow traffic back from eth0 -&gt; br0</h1>
-<p>iptables -A FORWARD -i eth0 -o br0 -m state --state ESTABLISHED,RELATED -j ACCEPT</p>
-<h1 id="nat">NAT</h1>
-<p>sudo iptables -t nat -A POSTROUTING -s 192.168.100.0/24 -o eth0 -j MASQUERADE
-```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># alow traffic from br0 -&gt; eth0 -&gt; internet</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>iptables<span class="w"> </span>-A<span class="w"> </span>FORWARD<span class="w"> </span>-i<span class="w"> </span>br0<span class="w"> </span>-o<span class="w"> </span>eth0<span class="w"> </span>-j<span class="w"> </span>ACCEPT
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="c1"># alow traffic back from eth0 -&gt; br0</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>iptables<span class="w"> </span>-A<span class="w"> </span>FORWARD<span class="w"> </span>-i<span class="w"> </span>eth0<span class="w"> </span>-o<span class="w"> </span>br0<span class="w"> </span>-m<span class="w"> </span>state<span class="w"> </span>--state<span class="w"> </span>ESTABLISHED,RELATED<span class="w"> </span>-j<span class="w"> </span>ACCEPT
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="c1"># NAT</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w"> </span>sudo<span class="w"> </span>iptables<span class="w"> </span>-t<span class="w"> </span>nat<span class="w"> </span>-A<span class="w"> </span>POSTROUTING<span class="w"> </span>-s<span class="w"> </span><span class="m">192</span>.168.100.0/24<span class="w"> </span>-o<span class="w"> </span>eth0<span class="w"> </span>-j<span class="w"> </span>MASQUERADE
+</code></pre></div>
 </li>
 <li>
 <p>boot QEMU with</p>
-<p><code>shell
-qemu-system-x86_64 \
--m 512M \
--kernel vmlinuz-virt \
--initrd initramfs-virt \
--netdev tap,id=net0,ifname=tap0,script=no,downscript=no \
--device virtio-net-pci,netdev=net0 \
--append "console=ttyS0 init=/init" \
--enable-kvm \
--nographic</code></p>
-<p>```shell</p>
-<h1 id="config-ip">config ip</h1>
-<p>ip a add 192.168.100.200/24 dev eth0
-ip link set eth0 up</p>
-<h1 id="config-route">config route</h1>
-<p>ip route add default via 192.168.100.1 dev eth0</p>
-<h1 id="dns">DNS</h1>
-<p>echo "nameserver 8.8.8.8" &gt; /etc/resolv.conf
-```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>qemu-system-x86_64<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>-m<span class="w"> </span>512M<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>-kernel<span class="w"> </span>vmlinuz-virt<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>-initrd<span class="w"> </span>initramfs-virt<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>-netdev<span class="w"> </span>tap,id<span class="o">=</span>net0,ifname<span class="o">=</span>tap0,script<span class="o">=</span>no,downscript<span class="o">=</span>no<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>-device<span class="w"> </span>virtio-net-pci,netdev<span class="o">=</span>net0<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>-append<span class="w"> </span><span class="s2">&quot;console=ttyS0 init=/init&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>-enable-kvm<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>-nographic
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1"># config ip</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>ip<span class="w"> </span>a<span class="w"> </span>add<span class="w"> </span><span class="m">192</span>.168.100.200/24<span class="w"> </span>dev<span class="w"> </span>eth0
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>eth0<span class="w"> </span>up
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="c1"># config route</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>ip<span class="w"> </span>route<span class="w"> </span>add<span class="w"> </span>default<span class="w"> </span>via<span class="w"> </span><span class="m">192</span>.168.100.1<span class="w"> </span>dev<span class="w"> </span>eth0
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="c1"># DNS</span>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;nameserver 8.8.8.8&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/etc/resolv.conf
+</code></pre></div>
 <ul>
 <li>
 <p>Note 0: use <code>virtio-net-pci</code> device because Alpine has virtio driver
-    <code>shell
-    lsmod | grep vir
-    virtio_net            118784  0 
-    net_failover           24576  1 virtio_net</code></p>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>lsmod<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>vir
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>virtio_net<span class="w">            </span><span class="m">118784</span><span class="w">  </span><span class="m">0</span><span class="w"> </span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>net_failover<span class="w">           </span><span class="m">24576</span><span class="w">  </span><span class="m">1</span><span class="w"> </span>virtio_net
+</code></pre></div></p>
 </li>
 <li>
 <p>Note 1:
-    ```shell
-    # route
-    ip route
-    default via 192.168.100.1 dev eth0 
-    192.168.100.0/24 dev eth0 scope link  src 192.168.100.200 </p>
-<h1 id="ip-addr">ip addr</h1>
-<p>ip a show eth0
-2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP qlen 1000
-    link/ether 52:54:00:12:34:56 brd ff:ff:ff:ff:ff:ff
-    inet 192.168.100.200/24 scope global eth0
-    valid_lft forever preferred_lft forever
-    inet6 fe80::5054:ff:fe12:3456/64 scope link 
-    valid_lft forever preferred_lft forever</p>
-<h1 id="ping-local">ping local</h1>
-<p>ping -c 3 192.168.100.1
-PING 192.168.100.1 (192.168.100.1): 56 data bytes
-64 bytes from 192.168.100.1: seq=0 ttl=64 time=0.203 ms
-64 bytes from 192.168.100.1: seq=1 ttl=64 time=0.198 ms
-64 bytes from 192.168.100.1: seq=2 ttl=64 time=0.220 ms</p>
-<p>--- 192.168.100.1 ping statistics ---
-3 packets transmitted, 3 packets received, 0% packet loss
-round-trip min/avg/max = 0.198/0.207/0.220 ms</p>
-<h1 id="ping-google">ping google</h1>
-<p>ping -c 3 google.com
-PING google.com (142.250.198.206): 56 data bytes
-64 bytes from 142.250.198.206: seq=0 ttl=114 time=51.240 ms
-64 bytes from 142.250.198.206: seq=1 ttl=114 time=51.227 ms
-64 bytes from 142.250.198.206: seq=2 ttl=114 time=51.228 ms</p>
-<p>--- google.com ping statistics ---
-3 packets transmitted, 3 packets received, 0% packet loss
-round-trip min/avg/max = 51.227/51.231/51.240 ms
-```</p>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># route</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>ip<span class="w"> </span>route
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>default<span class="w"> </span>via<span class="w"> </span><span class="m">192</span>.168.100.1<span class="w"> </span>dev<span class="w"> </span>eth0<span class="w"> </span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="m">192</span>.168.100.0/24<span class="w"> </span>dev<span class="w"> </span>eth0<span class="w"> </span>scope<span class="w"> </span>link<span class="w">  </span>src<span class="w"> </span><span class="m">192</span>.168.100.200<span class="w"> </span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="c1"># ip addr</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>ip<span class="w"> </span>a<span class="w"> </span>show<span class="w"> </span>eth0
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="m">2</span>:<span class="w"> </span>eth0:<span class="w"> </span>&lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt;<span class="w"> </span>mtu<span class="w"> </span><span class="m">1500</span><span class="w"> </span>qdisc<span class="w"> </span>pfifo_fast<span class="w"> </span>state<span class="w"> </span>UP<span class="w"> </span>qlen<span class="w"> </span><span class="m">1000</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">    </span>link/ether<span class="w"> </span><span class="m">52</span>:54:00:12:34:56<span class="w"> </span>brd<span class="w"> </span>ff:ff:ff:ff:ff:ff
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="w">    </span>inet<span class="w"> </span><span class="m">192</span>.168.100.200/24<span class="w"> </span>scope<span class="w"> </span>global<span class="w"> </span>eth0
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="w">    </span>valid_lft<span class="w"> </span>forever<span class="w"> </span>preferred_lft<span class="w"> </span>forever
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="w">    </span>inet6<span class="w"> </span>fe80::5054:ff:fe12:3456/64<span class="w"> </span>scope<span class="w"> </span>link<span class="w"> </span>
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="w">    </span>valid_lft<span class="w"> </span>forever<span class="w"> </span>preferred_lft<span class="w"> </span>forever
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a>
+<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a><span class="c1"># ping local</span>
+<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a>ping<span class="w"> </span>-c<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">192</span>.168.100.1
+<a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a>PING<span class="w"> </span><span class="m">192</span>.168.100.1<span class="w"> </span><span class="o">(</span><span class="m">192</span>.168.100.1<span class="o">)</span>:<span class="w"> </span><span class="m">56</span><span class="w"> </span>data<span class="w"> </span>bytes
+<a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a><span class="m">64</span><span class="w"> </span>bytes<span class="w"> </span>from<span class="w"> </span><span class="m">192</span>.168.100.1:<span class="w"> </span><span class="nv">seq</span><span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="nv">ttl</span><span class="o">=</span><span class="m">64</span><span class="w"> </span><span class="nv">time</span><span class="o">=</span><span class="m">0</span>.203<span class="w"> </span>ms
+<a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a><span class="m">64</span><span class="w"> </span>bytes<span class="w"> </span>from<span class="w"> </span><span class="m">192</span>.168.100.1:<span class="w"> </span><span class="nv">seq</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="nv">ttl</span><span class="o">=</span><span class="m">64</span><span class="w"> </span><span class="nv">time</span><span class="o">=</span><span class="m">0</span>.198<span class="w"> </span>ms
+<a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a><span class="m">64</span><span class="w"> </span>bytes<span class="w"> </span>from<span class="w"> </span><span class="m">192</span>.168.100.1:<span class="w"> </span><span class="nv">seq</span><span class="o">=</span><span class="m">2</span><span class="w"> </span><span class="nv">ttl</span><span class="o">=</span><span class="m">64</span><span class="w"> </span><span class="nv">time</span><span class="o">=</span><span class="m">0</span>.220<span class="w"> </span>ms
+<a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a>
+<a id="__codelineno-17-22" name="__codelineno-17-22" href="#__codelineno-17-22"></a>---<span class="w"> </span><span class="m">192</span>.168.100.1<span class="w"> </span>ping<span class="w"> </span>statistics<span class="w"> </span>---
+<a id="__codelineno-17-23" name="__codelineno-17-23" href="#__codelineno-17-23"></a><span class="m">3</span><span class="w"> </span>packets<span class="w"> </span>transmitted,<span class="w"> </span><span class="m">3</span><span class="w"> </span>packets<span class="w"> </span>received,<span class="w"> </span><span class="m">0</span>%<span class="w"> </span>packet<span class="w"> </span>loss
+<a id="__codelineno-17-24" name="__codelineno-17-24" href="#__codelineno-17-24"></a>round-trip<span class="w"> </span>min/avg/max<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>.198/0.207/0.220<span class="w"> </span>ms
+<a id="__codelineno-17-25" name="__codelineno-17-25" href="#__codelineno-17-25"></a>
+<a id="__codelineno-17-26" name="__codelineno-17-26" href="#__codelineno-17-26"></a><span class="c1"># ping google</span>
+<a id="__codelineno-17-27" name="__codelineno-17-27" href="#__codelineno-17-27"></a>ping<span class="w"> </span>-c<span class="w"> </span><span class="m">3</span><span class="w"> </span>google.com
+<a id="__codelineno-17-28" name="__codelineno-17-28" href="#__codelineno-17-28"></a>PING<span class="w"> </span>google.com<span class="w"> </span><span class="o">(</span><span class="m">142</span>.250.198.206<span class="o">)</span>:<span class="w"> </span><span class="m">56</span><span class="w"> </span>data<span class="w"> </span>bytes
+<a id="__codelineno-17-29" name="__codelineno-17-29" href="#__codelineno-17-29"></a><span class="m">64</span><span class="w"> </span>bytes<span class="w"> </span>from<span class="w"> </span><span class="m">142</span>.250.198.206:<span class="w"> </span><span class="nv">seq</span><span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="nv">ttl</span><span class="o">=</span><span class="m">114</span><span class="w"> </span><span class="nv">time</span><span class="o">=</span><span class="m">51</span>.240<span class="w"> </span>ms
+<a id="__codelineno-17-30" name="__codelineno-17-30" href="#__codelineno-17-30"></a><span class="m">64</span><span class="w"> </span>bytes<span class="w"> </span>from<span class="w"> </span><span class="m">142</span>.250.198.206:<span class="w"> </span><span class="nv">seq</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="nv">ttl</span><span class="o">=</span><span class="m">114</span><span class="w"> </span><span class="nv">time</span><span class="o">=</span><span class="m">51</span>.227<span class="w"> </span>ms
+<a id="__codelineno-17-31" name="__codelineno-17-31" href="#__codelineno-17-31"></a><span class="m">64</span><span class="w"> </span>bytes<span class="w"> </span>from<span class="w"> </span><span class="m">142</span>.250.198.206:<span class="w"> </span><span class="nv">seq</span><span class="o">=</span><span class="m">2</span><span class="w"> </span><span class="nv">ttl</span><span class="o">=</span><span class="m">114</span><span class="w"> </span><span class="nv">time</span><span class="o">=</span><span class="m">51</span>.228<span class="w"> </span>ms
+<a id="__codelineno-17-32" name="__codelineno-17-32" href="#__codelineno-17-32"></a>
+<a id="__codelineno-17-33" name="__codelineno-17-33" href="#__codelineno-17-33"></a>---<span class="w"> </span>google.com<span class="w"> </span>ping<span class="w"> </span>statistics<span class="w"> </span>---
+<a id="__codelineno-17-34" name="__codelineno-17-34" href="#__codelineno-17-34"></a><span class="m">3</span><span class="w"> </span>packets<span class="w"> </span>transmitted,<span class="w"> </span><span class="m">3</span><span class="w"> </span>packets<span class="w"> </span>received,<span class="w"> </span><span class="m">0</span>%<span class="w"> </span>packet<span class="w"> </span>loss
+<a id="__codelineno-17-35" name="__codelineno-17-35" href="#__codelineno-17-35"></a>round-trip<span class="w"> </span>min/avg/max<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">51</span>.227/51.231/51.240<span class="w"> </span>ms
+</code></pre></div></p>
 </li>
 </ul>
 </li>
@@ -1256,28 +1316,29 @@ round-trip min/avg/max = 51.227/51.231/51.240 ms
 <ul>
 <li>First call to <code>apk</code> was failed</li>
 </ul>
-<pre><code class="language-shell">$ apk update
-ERROR: Unable to lock database: No such file or directory
-ERROR: Failed to open apk database: No such file or directory
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>$<span class="w"> </span>apk<span class="w"> </span>update
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>ERROR:<span class="w"> </span>Unable<span class="w"> </span>to<span class="w"> </span>lock<span class="w"> </span>database:<span class="w"> </span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>ERROR:<span class="w"> </span>Failed<span class="w"> </span>to<span class="w"> </span>open<span class="w"> </span>apk<span class="w"> </span>database:<span class="w"> </span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory
+</code></pre></div>
 <ul>
 <li>
 <p>The reason is mini-rootfs does not have 3 files/direct: <code>/etc/apk/world</code> and <code>/var/lib/</code> and <code>/lib/apk/db</code></p>
 <ul>
 <li>Just create the 2 files/dir
-```shell</li>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1">#</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>touch<span class="w"> </span>/etc/apk/world
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="c1"># must add `alpine-base` </span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;alpine-base&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/etc/apk/world
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;openssl&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/etc/apk/world
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="c1">#</span>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>/var/lib
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>/lib/apk/db
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="c1"># this will work</span>
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>apk<span class="w"> </span>update
+</code></pre></div></li>
 </ul>
-<h1 id="_7"></h1>
-<p>touch /etc/apk/world</p>
-<h1 id="must-add-alpine-base">must add <code>alpine-base</code></h1>
-<p>echo "alpine-base" &gt; /etc/apk/world
-echo "openssl" &gt;&gt; /etc/apk/world</p>
-<h1 id="_8"></h1>
-<p>mkdir -p /var/lib
-mkdir -p /lib/apk/db</p>
-<h1 id="this-will-work">this will work</h1>
-<p>apk update
-```</p>
 </li>
 <li>
 <p>Note: </p>
@@ -1287,35 +1348,35 @@ mkdir -p /lib/apk/db</p>
 </li>
 <li>
 <p>Edit repository Url:
-<code>shell
-echo "http://dl-cdn.alpinelinux.org/alpine/v3.22/main" &gt; /etc/apk/repositories</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;http://dl-cdn.alpinelinux.org/alpine/v3.22/main&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/etc/apk/repositories
+</code></pre></div></p>
 </li>
 <li>
 <p>Add openrc:
-<code>shell
-apk fix openrc</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>apk<span class="w"> </span>fix<span class="w"> </span>openrc
+</code></pre></div></p>
 </li>
 </ul>
 </li>
 </ul>
 <h3 id="active-openssh">Active Openssh</h3>
-<pre><code class="language-shell"># install
-apk add openssh
-
-# create dummy user and keygen
-echo 'sshd:x:50:50:sshd:/var/empty:/sbin/nologin' &gt;&gt; /etc/passwd
-/usr/bin/ssh-keygen -A
-
-# Start
-/usr/sbin/sshd -D -e &amp;
-</code></pre>
-<pre><code class="language-shell"># restart sshd
-# Stop if running
-pkill sshd
-
-# Start fresh
-/usr/sbin/sshd -D -e &amp;
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="c1"># install</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>apk<span class="w"> </span>add<span class="w"> </span>openssh
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="c1"># create dummy user and keygen</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;sshd:x:50:50:sshd:/var/empty:/sbin/nologin&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/etc/passwd
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>/usr/bin/ssh-keygen<span class="w"> </span>-A
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="c1"># Start</span>
+<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>/usr/sbin/sshd<span class="w"> </span>-D<span class="w"> </span>-e<span class="w"> </span><span class="p">&amp;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="c1"># restart sshd</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="c1"># Stop if running</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>pkill<span class="w"> </span>sshd
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="c1"># Start fresh</span>
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>/usr/sbin/sshd<span class="w"> </span>-D<span class="w"> </span>-e<span class="w"> </span><span class="p">&amp;</span>
+</code></pre></div>
 
 
 

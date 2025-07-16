@@ -220,7 +220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../mkdocs/" class="md-nav__link">
         
   
   
@@ -1109,22 +1109,22 @@
   <h1>Memory layout of some data types</h1>
 
 <h3 id="struct-tupple">Struct &amp; tupple</h3>
-<pre><code class="language-rust">struct User {
-    id: char,
-    active: u8,
-    age: i32,
-    ...
-}
-</code></pre>
-<pre><code class="language-rust">// tupple lives on stack
-let tupple : (char, u8 i32) = ('a', 100, 500);
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">User</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="kt">char</span><span class="p">,</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="n">active</span><span class="p">:</span><span class="w"> </span><span class="kt">u8</span><span class="p">,</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="n">age</span><span class="p">:</span><span class="w"> </span><span class="kt">i32</span><span class="p">,</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="o">..</span><span class="p">.</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// tupple lives on stack</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kd">let</span><span class="w"> </span><span class="n">tupple</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="p">,</span><span class="w"> </span><span class="kt">u8</span><span class="w"> </span><span class="kt">i32</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">500</span><span class="p">);</span>
+</code></pre></div>
 <p><img alt="struct.drawio.svg" src="../images/struct.drawio.svg" title="Memory layout of struct" /></p>
 <h3 id="array">Array</h3>
-<pre><code class="language-rust">// array lives on Stack
-let array : [i32, 3] = [5, 10, 15];
-</code></pre>
-<p><img alt="array.drawio.svg" src="../images/array.drawio.svg" title="Memory layout of array" /></p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// array lives on Stack</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kd">let</span><span class="w"> </span><span class="n">array</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="kt">i32</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p">];</span>
+</code></pre></div>
+<img alt="array.drawio.svg" src="../images/array.drawio.svg" title="Memory layout of array" /></p>
 <h3 id="reference">Reference</h3>
 <ul>
 <li>Reference contains an address.</li>
@@ -1135,50 +1135,50 @@ let array : [i32, 3] = [5, 10, 15];
 <p>Mutable &amp; Immutable reference are same in memory layout. It's a deference in how they're used.</p>
 </li>
 </ul>
-<pre><code class="language-rust">let i : i32 = 10;
-let ref : &amp;i32 = &amp;i;
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">let</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kt">i32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kd">let</span><span class="w"> </span><span class="k">ref</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">i32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">i</span><span class="p">;</span>
+</code></pre></div>
 <p><img alt="reference.drawio.svg" src="../images/reference.drawio.svg" title="Memory layout of reference" /></p>
 <h3 id="vector">Vector</h3>
-<pre><code class="language-rust">let v: Vec&lt;i32&gt; = vec![5, 10, 15];
-let sl : &amp;[i32] = &amp;v[0..2];
-</code></pre>
-<p><img alt="vector.drawio.svg" src="../images/vector.drawio.svg" title="Memory layout of vector" /></p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">let</span><span class="w"> </span><span class="n">v</span><span class="p">:</span><span class="w"> </span><span class="nb">Vec</span><span class="o">&lt;</span><span class="kt">i32</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="fm">vec!</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p">];</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kd">let</span><span class="w"> </span><span class="n">sl</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="p">[</span><span class="kt">i32</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="o">..</span><span class="mi">2</span><span class="p">];</span>
+</code></pre></div>
+<img alt="vector.drawio.svg" src="../images/vector.drawio.svg" title="Memory layout of vector" /></p>
 <h3 id="string">String</h3>
 <p>String
 * <em>String</em> is standard container.</p>
-<pre><code class="language-rust">let hello_String = String::from(&quot;Hello&quot;)
-</code></pre>
-<p><img alt="String.drawio.svg" src="../images/String.drawio.svg" title="Memory layout of String" /></p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">let</span><span class="w"> </span><span class="n">hello_String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span><span class="p">::</span><span class="n">from</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">)</span>
+</code></pre></div>
+<img alt="String.drawio.svg" src="../images/String.drawio.svg" title="Memory layout of String" /></p>
 <p>Literal string
 * <em>str</em> is rust's core string type.
-* Literal string points to data in Code segment</p>
-<pre><code class="language-rust">let literal_str = &quot;Literal String&quot;
-let slice = &amp;literal_str[8..]
-// str and slice have same memory layout
-</code></pre>
-<p><img alt="str.drawio.svg" src="../images/str.drawio.svg" title="Memory layout of str" /></p>
+* Literal string points to data in Code segment
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">let</span><span class="w"> </span><span class="n">literal_str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Literal String&quot;</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kd">let</span><span class="w"> </span><span class="n">slice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">literal_str</span><span class="p">[</span><span class="mi">8</span><span class="o">..</span><span class="p">]</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1">// str and slice have same memory layout</span>
+</code></pre></div>
+<img alt="str.drawio.svg" src="../images/str.drawio.svg" title="Memory layout of str" /></p>
 <h3 id="enum">Enum</h3>
-<pre><code class="language-rust">// C style enum
-enum IP{
-    v4,
-    v6 = 500,
-}
-
-// C style union
-union MyTag {
-    int i;
-    double d;
-    char s[16];
-}
-
-// Rust style enum: tagged union
-enum CarTag{
-    TagNumber(i32),
-    TagString(String),
-}
-</code></pre>
-<p><img alt="enum.drawio.svg" src="../images/enum.drawio.svg" title="Memory layout of enum" /></p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1">// C style enum</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="k">enum</span><span class="w"> </span><span class="nc">IP</span><span class="p">{</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="n">v4</span><span class="p">,</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="n">v6</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="p">}</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="c1">// C style union</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="k">union</span><span class="w"> </span><span class="nc">MyTag</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">    </span><span class="n">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">    </span><span class="n">double</span><span class="w"> </span><span class="n">d</span><span class="p">;</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">s</span><span class="p">[</span><span class="mi">16</span><span class="p">];</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="p">}</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="c1">// Rust style enum: tagged union</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="k">enum</span><span class="w"> </span><span class="nc">CarTag</span><span class="p">{</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="w">    </span><span class="n">TagNumber</span><span class="p">(</span><span class="kt">i32</span><span class="p">),</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="w">    </span><span class="n">TagString</span><span class="p">(</span><span class="nb">String</span><span class="p">),</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="p">}</span>
+</code></pre></div>
+<img alt="enum.drawio.svg" src="../images/enum.drawio.svg" title="Memory layout of enum" /></p>
 <p><img alt="enum_suite_case.drawio.svg" src="../images/enum_suite_case.drawio.svg" title="Enum as suitecase" /></p>
 <ul>
 <li>
@@ -1191,27 +1191,27 @@ enum CarTag{
 <p>Using smartpoint, e.g: Box, to reduce the size of enum</p>
 </li>
 </ul>
-<pre><code class="language-rust">enum CarTag{
-    ...
-    TagBox(Box&lt;String&gt;),    // Box is pointer which is fixed size
-    ...
-}
-</code></pre>
-<p><img alt="box_enum.drawio.svg" src="../images/box_enum.drawio.svg" title="Memory layout of enum with box" /></p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">enum</span><span class="w"> </span><span class="nc">CarTag</span><span class="p">{</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="o">..</span><span class="p">.</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="n">TagBox</span><span class="p">(</span><span class="nb">Box</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span><span class="p">),</span><span class="w">    </span><span class="c1">// Box is pointer which is fixed size</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="o">..</span><span class="p">.</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="p">}</span>
+</code></pre></div>
+<img alt="box_enum.drawio.svg" src="../images/box_enum.drawio.svg" title="Memory layout of enum with box" /></p>
 <ul>
-<li>Rust automatically optimizes <code>Options&lt;T&gt;</code> which contains smart pointer data type (e.g: Box)</li>
-</ul>
-<pre><code class="language-rust">// Option
-enum Option&lt;T&gt;{
-    None
-    Some(T),
-}
-
-// Option with smart pointer
-let opt: Options&lt;Box&lt;i32&gt;&gt; = Options(Box::new(100)));
-</code></pre>
-<p><img alt="option.drawio.svg" src="../images/option.drawio.svg" title="Memory layout of option" /></p>
-<ul>
+<li>
+<p>Rust automatically optimizes <code>Options&lt;T&gt;</code> which contains smart pointer data type (e.g: Box)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1">// Option</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">enum</span><span class="w"> </span><span class="nb">Option</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">{</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="nb">None</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="nb">Some</span><span class="p">(</span><span class="n">T</span><span class="p">),</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="p">}</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="c1">// Option with smart pointer</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="kd">let</span><span class="w"> </span><span class="n">opt</span><span class="p">:</span><span class="w"> </span><span class="nc">Options</span><span class="o">&lt;</span><span class="nb">Box</span><span class="o">&lt;</span><span class="kt">i32</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Options</span><span class="p">(</span><span class="nb">Box</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="mi">100</span><span class="p">)));</span>
+</code></pre></div>
+<img alt="option.drawio.svg" src="../images/option.drawio.svg" title="Memory layout of option" /></p>
+</li>
 <li>
 <p>In case of optimization Options<T>, the matching pattern works by check if the pointer is NULL or not, corresponding to <em>None</em> and <em>Some</em></p>
 </li>
@@ -1224,49 +1224,51 @@ let opt: Options&lt;Box&lt;i32&gt;&gt; = Options(Box::new(100)));
 <ul>
 <li>Use smart pointer Box&lt;&gt; to store data on Heap</li>
 </ul>
-<pre><code class="language-rust">    let b = Box::new(5);
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Box</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+</code></pre></div>
 <p><img alt="box.drawio.svg" src="../images/box.drawio.svg" title="Box" /></p>
 <ul>
 <li>
 <p>There a 2 use case:</p>
 <ul>
-<li>Case 1: Declare a variable which has unknow size at compile time
-```rust
-trait Vehicle { 
-    fn drive(&amp;self);
-}</li>
-</ul>
-<p>let t : dyn Vehicle         // Wrong: declare t as an unknow size data
-let t : Box<dyn Vehicle>;   // Correct: declare t as a pointer which point to trai object in heap
-t = Box::new(Car);
-t.drive();
-```</p>
-<ul>
-<li>Case 2: Recursive data type.
-<code>rust
-// : 
-enum List {
-    Cons(i32, List),        // Wrong: size of List is unknow
-    Cons(i32, Box&lt;List&gt;),   // Correct: sizeof Box is known
-    Nil,
-}</code>
-<img alt="box_recursive_type.png" src="../images/box_recursive_type.png" title="Recursive data type" /></li>
+<li>
+<p>Case 1: Declare a variable which has unknow size at compile time
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">trait</span><span class="w"> </span><span class="n">Vehicle</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="k">fn</span><span class="w"> </span><span class="nf">drive</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">);</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="p">}</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="kd">let</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nc">dyn</span><span class="w"> </span><span class="n">Vehicle</span><span class="w">         </span><span class="c1">// Wrong: declare t as an unknow size data</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="kd">let</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nb">Box</span><span class="o">&lt;</span><span class="k">dyn</span><span class="w"> </span><span class="n">Vehicle</span><span class="o">&gt;</span><span class="p">;</span><span class="w">   </span><span class="c1">// Correct: declare t as a pointer which point to trai object in heap</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Box</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="n">Car</span><span class="p">);</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="n">t</span><span class="p">.</span><span class="n">drive</span><span class="p">();</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Case 2: Recursive data type.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1">// : </span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="k">enum</span><span class="w"> </span><span class="nc">List</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="n">Cons</span><span class="p">(</span><span class="kt">i32</span><span class="p">,</span><span class="w"> </span><span class="n">List</span><span class="p">),</span><span class="w">        </span><span class="c1">// Wrong: size of List is unknow</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="n">Cons</span><span class="p">(</span><span class="kt">i32</span><span class="p">,</span><span class="w"> </span><span class="nb">Box</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&gt;</span><span class="p">),</span><span class="w">   </span><span class="c1">// Correct: sizeof Box is known</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span><span class="n">Nil</span><span class="p">,</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="p">}</span>
+</code></pre></div>
+<img alt="box_recursive_type.png" src="../images/box_recursive_type.png" title="Recursive data type" /></p>
+</li>
 </ul>
 </li>
 </ul>
 <h3 id="copy-clone-trait">Copy &amp; Clone Trait</h3>
-<pre><code class="language-rust">// default: move semantics
-let s1 = String::from(&quot;Hello&quot;);
-let s2 = s1;            // s1 no longer valid
-
-// Implicit in-expensive bit-wise copy
-let a1: i32 = 10;
-let a2: i32 = a1;
-
-// Explicit bit-wise copy
-let s2 = s1.clone();    // s1 and s2 both are valid
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1">// default: move semantics</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="kd">let</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span><span class="p">::</span><span class="n">from</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">);</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="kd">let</span><span class="w"> </span><span class="n">s2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s1</span><span class="p">;</span><span class="w">            </span><span class="c1">// s1 no longer valid</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="c1">// Implicit in-expensive bit-wise copy</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="kd">let</span><span class="w"> </span><span class="n">a1</span><span class="p">:</span><span class="w"> </span><span class="kt">i32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="kd">let</span><span class="w"> </span><span class="n">a2</span><span class="p">:</span><span class="w"> </span><span class="kt">i32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a1</span><span class="p">;</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="c1">// Explicit bit-wise copy</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="kd">let</span><span class="w"> </span><span class="n">s2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s1</span><span class="p">.</span><span class="n">clone</span><span class="p">();</span><span class="w">    </span><span class="c1">// s1 and s2 both are valid</span>
+</code></pre></div>
 <p><img alt="copy_move_clone.drawio.svg" src="../images/copy_move_clone.drawio.svg" title="Some trait's behaviors" /></p>
 <ul>
 <li>Clone is supertrait of Copy</li>
@@ -1274,41 +1276,41 @@ let s2 = s1.clone();    // s1 and s2 both are valid
 </ul>
 <h3 id="trait-object">Trait Object</h3>
 <ul>
-<li>Reference or pointer of value, which implement a Trait, is called Trait Object:</li>
+<li>Reference or pointer of value, which implement a Trait, is called Trait Object:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">trait</span><span class="w"> </span><span class="n">Shape</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span><span class="k">fn</span><span class="w"> </span><span class="nf">area</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">);</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="p">}</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="k">struct</span><span class="w"> </span><span class="nc">Rectangle</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">    </span><span class="n">top_left</span><span class="p">:</span><span class="w"> </span><span class="o">..</span><span class="p">.,</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">    </span><span class="n">bottom_right</span><span class="p">:</span><span class="w"> </span><span class="o">..</span><span class="p">.,</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="p">}</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="k">impl</span><span class="w"> </span><span class="n">Shape</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Rectangle</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="w">    </span><span class="k">fn</span><span class="w"> </span><span class="nf">area</span><span class="p">(</span><span class="o">..</span><span class="p">.)</span>
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="p">}</span>
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="kd">let</span><span class="w"> </span><span class="n">rec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Rectangle</span><span class="p">;</span>
+<a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>
+<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a><span class="kd">let</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nc">dyn</span><span class="w"> </span><span class="n">Shape</span><span class="p">;</span><span class="w">  </span><span class="c1">// Wrong: declare t as an unknow size data</span>
+<a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a><span class="kd">let</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="nc">dyn</span><span class="w"> </span><span class="n">Shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">rec</span><span class="p">;</span><span class="w">      </span><span class="c1">// Correct</span>
+<a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a><span class="kd">let</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nb">Box</span><span class="o">&lt;</span><span class="k">dyn</span><span class="w"> </span><span class="n">Shape</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">rec</span><span class="p">;</span><span class="w">  </span><span class="c1">// Correct</span>
+<a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a><span class="c1">// trait object is known size.</span>
+<a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a><span class="c1">// trait object is a fat pointer which contains 2 other pointers</span>
+</code></pre></div></li>
 </ul>
-<pre><code class="language-rust">trait Shape {
-    fn area(&amp;self);
-}
-
-struct Rectangle {
-    top_left: ...,
-    bottom_right: ...,
-}
-
-impl Shape for Rectangle {
-    fn area(...)
-}
-
-let rec = Rectangle;
-
-let t : dyn Shape;  // Wrong: declare t as an unknow size data
-let t : &amp;dyn Shape = &amp;rec;      // Correct
-let t : Box&lt;dyn Shape&gt; = &amp;rec;  // Correct
-// trait object is known size.
-// trait object is a fat pointer which contains 2 other pointers
-</code></pre>
 <p><img alt="trait_object.drawio.svg" src="../images/trait_object.drawio.svg" title="Memory map of Trait Object" /></p>
 <p>Use trait object for Dynamic dispatching.
 <a href="../../trai_bound_and_dispatching/trai_bound_and_dispatching/">Read more on Trait bound and dispatching ...</a></p>
 <h3 id="closure">Closure</h3>
 <p>Rust uses struct to present closure.</p>
-<pre><code class="language-rust">let color = String::from(&quot;green&quot;);
-let print = || println!(&quot;color: {}&quot;, color);  
-// print is a closure
-
-// exec closure:
-print()
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kd">let</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span><span class="p">::</span><span class="n">from</span><span class="p">(</span><span class="s">&quot;green&quot;</span><span class="p">);</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="kd">let</span><span class="w"> </span><span class="n">print</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;color: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="p">);</span><span class="w">  </span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="c1">// print is a closure</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="c1">// exec closure:</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="n">print</span><span class="p">()</span>
+</code></pre></div>
 <p><img alt="fn_closure.drawio.svg" src="../images/fn_closure.drawio.svg" title="Memory map of closure as Fn Trait Object" /></p>
 <p><a href="../../closure/closure/">Read more on closure ...</a></p>
 <h3 id="reference-count">Reference count</h3>
@@ -1324,11 +1326,11 @@ print()
 <li>
 <p>Use Atomic Reference Count (Arc) to avoid data race.</p>
 <p>Arc costs small extra performance.</p>
-<p>Both Rc &amp; Arc are immutable. Use mutex to mutate the data.</p>
+<p>Both Rc &amp; Arc are immutable. Use mutex to mutate the data.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kd">let</span><span class="w"> </span><span class="n">arc_mutext</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nc">Arc</span><span class="o">&lt;</span><span class="n">Mutex</span><span class="o">&lt;</span><span class="kt">i32</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arc</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="n">Mutex</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
+</code></pre></div></p>
 </li>
 </ul>
-<pre><code class="language-rust">let arc_mutext : Arc&lt;Mutex&lt;i32&gt;&gt; = Arc::new(Mutex::new(100))
-</code></pre>
 <p><img alt="atomic_rc.drawio.svg" src="../images/atomic_rc.drawio.svg" title="Atomic Refernce Count" /></p>
 
 

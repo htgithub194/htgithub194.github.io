@@ -220,7 +220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../mkdocs/" class="md-nav__link">
         
   
   
@@ -903,21 +903,20 @@
 <li>E.g:
 <a href="https://github.com/torvalds/linux/blob/38fec10eb60d687e30c8c6b5420d86e8149f7557/drivers/watchdog/iTCO_wdt.c#L593" title="/v6.14/drivers/watchdog/iTCO_wdt.c">iTCO_wdt_probe</a></li>
 </ul>
-<p>```C
-static int iTCO_wdt_probe(struct platform_device *pdev) {
-    ...</p>
-<pre><code>if (!iTCO_wdt_set_running(p)) {
-    /*
-    * If the watchdog was not running set NO_REBOOT now to
-    * prevent later reboots.
-    */
-    p-&gt;update_no_reboot_bit(p-&gt;no_reboot_priv, true);
-}
-
-...
-</code></pre>
-<p>}
-```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">iTCO_wdt_probe</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">platform_device</span><span class="w"> </span><span class="o">*</span><span class="n">pdev</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="p">...</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">iTCO_wdt_set_running</span><span class="p">(</span><span class="n">p</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">        </span><span class="cm">/*</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="cm">        * If the watchdog was not running set NO_REBOOT now to</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="cm">        * prevent later reboots.</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="cm">        */</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">update_no_reboot_bit</span><span class="p">(</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">no_reboot_priv</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="p">...</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="p">}</span>
+</code></pre></div>
 </li>
 <li>
 <p>Use PING from Kernel via: <em>CONFIG_WATCHDOG_HANDLE_BOOT_ENABLED</em></p>

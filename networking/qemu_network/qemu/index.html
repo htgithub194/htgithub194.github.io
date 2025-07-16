@@ -220,7 +220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../mkdocs/" class="md-nav__link">
         
   
   
@@ -1126,28 +1126,28 @@
 <h2 id="goal-1-create-and-connect-multiple-qemu-nodes">Goal 1: Create and connect multiple Qemu nodes</h2>
 <p><img alt="qemu cluster" src="../images/qemu_nodes.dio.svg" /></p>
 <h3 id="boot-qemu-node-using-alpine-image">boot Qemu node using alpine image</h3>
-<pre><code class="language-shell"># create virtual disk
-qemu-img create -f qcow2 alpine.qcow2 1G
-</code></pre>
-<pre><code class="language-shell"># boot from iso image
-# `-boot d` means boot from cdrom
-qemu-system-x86_64 \
-  -boot d \
-  -cdrom alpine-standard-3.22.0-x86_64.iso \
-  -m 512 \
-  -hda alpine.backing.qcow2 \
-  -nographic \
-  -enable-kvm
-</code></pre>
-<pre><code class="language-shell"># boot from backing file
-# `-boot c` means boot from disk
-qemu-system-x86_64 \
-  -boot c \
-  -m 512 \
-  -hda alpine.backing.qcow2 \
-  -nographic \
-  -enable-kvm
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># create virtual disk</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>qemu-img<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>qcow2<span class="w"> </span>alpine.qcow2<span class="w"> </span>1G
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># boot from iso image</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># `-boot d` means boot from cdrom</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>qemu-system-x86_64<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span>-boot<span class="w"> </span>d<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span>-cdrom<span class="w"> </span>alpine-standard-3.22.0-x86_64.iso<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span>-m<span class="w"> </span><span class="m">512</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span>-hda<span class="w"> </span>alpine.backing.qcow2<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span>-nographic<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span>-enable-kvm
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># boot from backing file</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># `-boot c` means boot from disk</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>qemu-system-x86_64<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span>-boot<span class="w"> </span>c<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span>-m<span class="w"> </span><span class="m">512</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span>-hda<span class="w"> </span>alpine.backing.qcow2<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span>-nographic<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span>-enable-kvm
+</code></pre></div>
 <ul>
 <li>Note:<ul>
 <li>must run <code>setup-alpine</code> in order to install bootable disk</li>
@@ -1156,64 +1156,63 @@ qemu-system-x86_64 \
 </li>
 </ul>
 <h3 id="create-overlay-image">create Overlay image</h3>
-<pre><code class="language-shell"># create overlay image
-qemu-img create -f qcow2 -b alpine.backing.qcow2 -F qcow2 alpine.overlay.img
-</code></pre>
-<pre><code class="language-shell"># boot from overlay image
-qemu-system-x86_64 \
-  -m 512 \
-  -hda alpine.overlay.img \
-  -enable-kvm \
-  -boot c \
-  -nographic
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># create overlay image</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>qemu-img<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>qcow2<span class="w"> </span>-b<span class="w"> </span>alpine.backing.qcow2<span class="w"> </span>-F<span class="w"> </span>qcow2<span class="w"> </span>alpine.overlay.img
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># boot from overlay image</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>qemu-system-x86_64<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span>-m<span class="w"> </span><span class="m">512</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span>-hda<span class="w"> </span>alpine.overlay.img<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span>-enable-kvm<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span>-boot<span class="w"> </span>c<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span>-nographic
+</code></pre></div>
 <h3 id="using-screen-to-store-qemu-consoles">using <code>screen</code> to store QEMU consoles</h3>
-<pre><code class="language-shell"># create session
-screen -S qemu
-#
-# boot from overlay
-#
-
-# detach: Ctrl + A, then D
-
-# attach: 
-screen -r qemu
-
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># create session</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>screen<span class="w"> </span>-S<span class="w"> </span>qemu
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1">#</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># boot from overlay</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="c1">#</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1"># detach: Ctrl + A, then D</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="c1"># attach: </span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>screen<span class="w"> </span>-r<span class="w"> </span>qemu
+</code></pre></div>
 <h3 id="connect-multiple-qemu-nodes">connect multiple QEMU nodes</h3>
-<pre><code class="language-shell"># create bridge
-sudo ip link add name br0 type bridge
-sudo ip addr add 192.168.100.1/24 dev br0
-sudo ip link set br0 up
-
-# config iptables for br0
-iptables -I FORWARD -p all -i br0 -j ACCEPT
-iptables -I INPUT -p all -i br0 -j ACCEPT
-iptables -I OUTPUT -p all -o br0 -j ACCEPT
-
-# create tap device
-sudo ip tuntap add dev tap0 mode tap user $USER
-sudo ip link set tap0 master br0
-sudo ip link set tap0 up
-</code></pre>
-<pre><code class="language-shell"># boot from overlay &amp; plugin the tap
-qemu-system-x86_64 \
-  -m 512 \
-  -hda alpine.overlay.qcow2 \
-  -netdev tap,id=net0,ifname=tap0,script=no,downscript=no \
-  -device e1000,netdev=net0 \
-  -enable-kvm \
-  -nographic
-
-# setup interface 
-# Interface: eth0
-# IP: 192.168.100.10
-# Gateway: 192.168.100.1
-setup-interfaces
-
-# assign ip 
-ip addr add 192.168.100.10/24 dev eth0
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># create bridge</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>sudo<span class="w"> </span>ip<span class="w"> </span>link<span class="w"> </span>add<span class="w"> </span>name<span class="w"> </span>br0<span class="w"> </span><span class="nb">type</span><span class="w"> </span>bridge
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>sudo<span class="w"> </span>ip<span class="w"> </span>addr<span class="w"> </span>add<span class="w"> </span><span class="m">192</span>.168.100.1/24<span class="w"> </span>dev<span class="w"> </span>br0
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>sudo<span class="w"> </span>ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>br0<span class="w"> </span>up
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="c1"># config iptables for br0</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>iptables<span class="w"> </span>-I<span class="w"> </span>FORWARD<span class="w"> </span>-p<span class="w"> </span>all<span class="w"> </span>-i<span class="w"> </span>br0<span class="w"> </span>-j<span class="w"> </span>ACCEPT
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>iptables<span class="w"> </span>-I<span class="w"> </span>INPUT<span class="w"> </span>-p<span class="w"> </span>all<span class="w"> </span>-i<span class="w"> </span>br0<span class="w"> </span>-j<span class="w"> </span>ACCEPT
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>iptables<span class="w"> </span>-I<span class="w"> </span>OUTPUT<span class="w"> </span>-p<span class="w"> </span>all<span class="w"> </span>-o<span class="w"> </span>br0<span class="w"> </span>-j<span class="w"> </span>ACCEPT
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="c1"># create tap device</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>sudo<span class="w"> </span>ip<span class="w"> </span>tuntap<span class="w"> </span>add<span class="w"> </span>dev<span class="w"> </span>tap0<span class="w"> </span>mode<span class="w"> </span>tap<span class="w"> </span>user<span class="w"> </span><span class="nv">$USER</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>sudo<span class="w"> </span>ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>tap0<span class="w"> </span>master<span class="w"> </span>br0
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>sudo<span class="w"> </span>ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>tap0<span class="w"> </span>up
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># boot from overlay &amp; plugin the tap</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>qemu-system-x86_64<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span>-m<span class="w"> </span><span class="m">512</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">  </span>-hda<span class="w"> </span>alpine.overlay.qcow2<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">  </span>-netdev<span class="w"> </span>tap,id<span class="o">=</span>net0,ifname<span class="o">=</span>tap0,script<span class="o">=</span>no,downscript<span class="o">=</span>no<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">  </span>-device<span class="w"> </span>e1000,netdev<span class="o">=</span>net0<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">  </span>-enable-kvm<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">  </span>-nographic
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="c1"># setup interface </span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="c1"># Interface: eth0</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="c1"># IP: 192.168.100.10</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="c1"># Gateway: 192.168.100.1</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>setup-interfaces
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="c1"># assign ip </span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>ip<span class="w"> </span>addr<span class="w"> </span>add<span class="w"> </span><span class="m">192</span>.168.100.10/24<span class="w"> </span>dev<span class="w"> </span>eth0
+</code></pre></div>
 <ul>
 <li>Note:<ul>
 <li>MAC address is auto generated</li>
@@ -1225,42 +1224,42 @@ ip addr add 192.168.100.10/24 dev eth0
 </li>
 </ul>
 <h3 id="create-netns-node-inside-qemu">create netns node inside QEMU</h3>
-<pre><code class="language-shell"># another overlay image for netns
-qemu-img create -f qcow2 -b alpine.overlay.qcow2 -F qcow2 alpine.overlay.tap0.qcow2
-qemu-img create -f qcow2 -b alpine.overlay.qcow2 -F qcow2 alpine.overlay.tap1.qcow2
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># another overlay image for netns</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>qemu-img<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>qcow2<span class="w"> </span>-b<span class="w"> </span>alpine.overlay.qcow2<span class="w"> </span>-F<span class="w"> </span>qcow2<span class="w"> </span>alpine.overlay.tap0.qcow2
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>qemu-img<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>qcow2<span class="w"> </span>-b<span class="w"> </span>alpine.overlay.qcow2<span class="w"> </span>-F<span class="w"> </span>qcow2<span class="w"> </span>alpine.overlay.tap1.qcow2
+</code></pre></div>
 <ul>
 <li>Create multiple qemu node</li>
 </ul>
-<pre><code class="language-shell"># node 0
-qemu-system-x86_64 \
--m 512 \
--hda alpine.overlay.tap0.qcow2 \
--netdev tap,id=net0,ifname=tap0,script=no,downscript=no \
--device e1000,netdev=net0,mac=52:54:00:00:00:01 \
--enable-kvm \
--nographic
-</code></pre>
-<pre><code class="language-shell"># node 1
-
-# create tap1 device
-sudo ip tuntap add dev tap1 mode tap user $USER
-sudo ip link set tap1 master br0
-sudo ip link set tap1 up
-
-# boot node 1
-qemu-system-x86_64 \
--m 512 \
--hda alpine.overlay.tap1.qcow2 \
--netdev tap,id=net1,ifname=tap1,script=no,downscript=no \
--device virtio-net-pci,netdev=net1,mac=52:54:00:00:00:02 \
--enable-kvm \
--nographic
-
-# change ip address to 192.168.100.20
-vi /etc/network/interfaces
-service networking restart
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># node 0</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>qemu-system-x86_64<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>-m<span class="w"> </span><span class="m">512</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>-hda<span class="w"> </span>alpine.overlay.tap0.qcow2<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>-netdev<span class="w"> </span>tap,id<span class="o">=</span>net0,ifname<span class="o">=</span>tap0,script<span class="o">=</span>no,downscript<span class="o">=</span>no<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>-device<span class="w"> </span>e1000,netdev<span class="o">=</span>net0,mac<span class="o">=</span><span class="m">52</span>:54:00:00:00:01<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>-enable-kvm<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>-nographic
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># node 1</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="c1"># create tap1 device</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>sudo<span class="w"> </span>ip<span class="w"> </span>tuntap<span class="w"> </span>add<span class="w"> </span>dev<span class="w"> </span>tap1<span class="w"> </span>mode<span class="w"> </span>tap<span class="w"> </span>user<span class="w"> </span><span class="nv">$USER</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>sudo<span class="w"> </span>ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>tap1<span class="w"> </span>master<span class="w"> </span>br0
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>sudo<span class="w"> </span>ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>tap1<span class="w"> </span>up
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="c1"># boot node 1</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>qemu-system-x86_64<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>-m<span class="w"> </span><span class="m">512</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>-hda<span class="w"> </span>alpine.overlay.tap1.qcow2<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>-netdev<span class="w"> </span>tap,id<span class="o">=</span>net1,ifname<span class="o">=</span>tap1,script<span class="o">=</span>no,downscript<span class="o">=</span>no<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>-device<span class="w"> </span>virtio-net-pci,netdev<span class="o">=</span>net1,mac<span class="o">=</span><span class="m">52</span>:54:00:00:00:02<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>-enable-kvm<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>-nographic
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="c1"># change ip address to 192.168.100.20</span>
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>vi<span class="w"> </span>/etc/network/interfaces
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>service<span class="w"> </span>networking<span class="w"> </span>restart
+</code></pre></div>
 <ul>
 <li>Now we have 2 Qemu nodes.<ul>
 <li>Node 0 with IP 192.168.100.10</li>
@@ -1270,92 +1269,98 @@ service networking restart
 </ul>
 </li>
 </ul>
-<pre><code class="language-shell"># from node 0
-localhost:~# ip addr show eth0
-2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP 0
-    link/ether 52:54:00:00:00:01 brd ff:ff:ff:ff:ff:ff
-    inet 192.168.100.10/24 scope global eth0
-       valid_lft forever preferred_lft forever
-    inet6 fe80::5054:ff:fe00:1/64 scope link 
-       valid_lft forever preferred_lft forever
-localhost:~# ping 192.168.100.20
-PING 192.168.100.20 (192.168.100.20): 56 data bytes
-64 bytes from 192.168.100.20: seq=0 ttl=64 time=0.259 ms
-64 bytes from 192.168.100.20: seq=1 ttl=64 time=0.288 ms
-64 bytes from 192.168.100.20: seq=2 ttl=64 time=0.287 ms
-</code></pre>
-<pre><code class="language-shell"># from node 1
-localhost:~# ip a show eth0
-2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP 0
-    link/ether 52:54:00:00:00:02 brd ff:ff:ff:ff:ff:ff
-    inet 192.168.100.20/24 scope global eth0
-       valid_lft forever preferred_lft forever
-    inet6 fe80::5054:ff:fe00:2/64 scope link 
-       valid_lft forever preferred_lft forever
-localhost:~# ping 192.168.100.20
-PING 192.168.100.20 (192.168.100.20): 56 data bytes
-64 bytes from 192.168.100.20: seq=0 ttl=64 time=0.030 ms
-64 bytes from 192.168.100.20: seq=1 ttl=64 time=0.035 ms
-64 bytes from 192.168.100.20: seq=2 ttl=64 time=0.035 ms
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># from node 0</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>localhost:~#<span class="w"> </span>ip<span class="w"> </span>addr<span class="w"> </span>show<span class="w"> </span>eth0
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="m">2</span>:<span class="w"> </span>eth0:<span class="w"> </span>&lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt;<span class="w"> </span>mtu<span class="w"> </span><span class="m">1500</span><span class="w"> </span>qdisc<span class="w"> </span>pfifo_fast<span class="w"> </span>state<span class="w"> </span>UP<span class="w"> </span><span class="m">0</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span>link/ether<span class="w"> </span><span class="m">52</span>:54:00:00:00:01<span class="w"> </span>brd<span class="w"> </span>ff:ff:ff:ff:ff:ff
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">    </span>inet<span class="w"> </span><span class="m">192</span>.168.100.10/24<span class="w"> </span>scope<span class="w"> </span>global<span class="w"> </span>eth0
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">       </span>valid_lft<span class="w"> </span>forever<span class="w"> </span>preferred_lft<span class="w"> </span>forever
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">    </span>inet6<span class="w"> </span>fe80::5054:ff:fe00:1/64<span class="w"> </span>scope<span class="w"> </span>link<span class="w"> </span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">       </span>valid_lft<span class="w"> </span>forever<span class="w"> </span>preferred_lft<span class="w"> </span>forever
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>localhost:~#<span class="w"> </span>ping<span class="w"> </span><span class="m">192</span>.168.100.20
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>PING<span class="w"> </span><span class="m">192</span>.168.100.20<span class="w"> </span><span class="o">(</span><span class="m">192</span>.168.100.20<span class="o">)</span>:<span class="w"> </span><span class="m">56</span><span class="w"> </span>data<span class="w"> </span>bytes
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="m">64</span><span class="w"> </span>bytes<span class="w"> </span>from<span class="w"> </span><span class="m">192</span>.168.100.20:<span class="w"> </span><span class="nv">seq</span><span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="nv">ttl</span><span class="o">=</span><span class="m">64</span><span class="w"> </span><span class="nv">time</span><span class="o">=</span><span class="m">0</span>.259<span class="w"> </span>ms
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="m">64</span><span class="w"> </span>bytes<span class="w"> </span>from<span class="w"> </span><span class="m">192</span>.168.100.20:<span class="w"> </span><span class="nv">seq</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="nv">ttl</span><span class="o">=</span><span class="m">64</span><span class="w"> </span><span class="nv">time</span><span class="o">=</span><span class="m">0</span>.288<span class="w"> </span>ms
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="m">64</span><span class="w"> </span>bytes<span class="w"> </span>from<span class="w"> </span><span class="m">192</span>.168.100.20:<span class="w"> </span><span class="nv">seq</span><span class="o">=</span><span class="m">2</span><span class="w"> </span><span class="nv">ttl</span><span class="o">=</span><span class="m">64</span><span class="w"> </span><span class="nv">time</span><span class="o">=</span><span class="m">0</span>.287<span class="w"> </span>ms
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># from node 1</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>localhost:~#<span class="w"> </span>ip<span class="w"> </span>a<span class="w"> </span>show<span class="w"> </span>eth0
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="m">2</span>:<span class="w"> </span>eth0:<span class="w"> </span>&lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt;<span class="w"> </span>mtu<span class="w"> </span><span class="m">1500</span><span class="w"> </span>qdisc<span class="w"> </span>pfifo_fast<span class="w"> </span>state<span class="w"> </span>UP<span class="w"> </span><span class="m">0</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span>link/ether<span class="w"> </span><span class="m">52</span>:54:00:00:00:02<span class="w"> </span>brd<span class="w"> </span>ff:ff:ff:ff:ff:ff
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span>inet<span class="w"> </span><span class="m">192</span>.168.100.20/24<span class="w"> </span>scope<span class="w"> </span>global<span class="w"> </span>eth0
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">       </span>valid_lft<span class="w"> </span>forever<span class="w"> </span>preferred_lft<span class="w"> </span>forever
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">    </span>inet6<span class="w"> </span>fe80::5054:ff:fe00:2/64<span class="w"> </span>scope<span class="w"> </span>link<span class="w"> </span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">       </span>valid_lft<span class="w"> </span>forever<span class="w"> </span>preferred_lft<span class="w"> </span>forever
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>localhost:~#<span class="w"> </span>ping<span class="w"> </span><span class="m">192</span>.168.100.20
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>PING<span class="w"> </span><span class="m">192</span>.168.100.20<span class="w"> </span><span class="o">(</span><span class="m">192</span>.168.100.20<span class="o">)</span>:<span class="w"> </span><span class="m">56</span><span class="w"> </span>data<span class="w"> </span>bytes
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="m">64</span><span class="w"> </span>bytes<span class="w"> </span>from<span class="w"> </span><span class="m">192</span>.168.100.20:<span class="w"> </span><span class="nv">seq</span><span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="nv">ttl</span><span class="o">=</span><span class="m">64</span><span class="w"> </span><span class="nv">time</span><span class="o">=</span><span class="m">0</span>.030<span class="w"> </span>ms
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="m">64</span><span class="w"> </span>bytes<span class="w"> </span>from<span class="w"> </span><span class="m">192</span>.168.100.20:<span class="w"> </span><span class="nv">seq</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="nv">ttl</span><span class="o">=</span><span class="m">64</span><span class="w"> </span><span class="nv">time</span><span class="o">=</span><span class="m">0</span>.035<span class="w"> </span>ms
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="m">64</span><span class="w"> </span>bytes<span class="w"> </span>from<span class="w"> </span><span class="m">192</span>.168.100.20:<span class="w"> </span><span class="nv">seq</span><span class="o">=</span><span class="m">2</span><span class="w"> </span><span class="nv">ttl</span><span class="o">=</span><span class="m">64</span><span class="w"> </span><span class="nv">time</span><span class="o">=</span><span class="m">0</span>.035<span class="w"> </span>ms
+</code></pre></div>
 <h2 id="goal-2-create-and-connect-multiple-netns-inside-qemu-nodes">Goal 2: Create and connect multiple netns inside Qemu nodes</h2>
 <p><img alt="qemu cluster" src="../images/qemu_nodes_netns.dio.svg" /></p>
 <h3 id="install-iproute2">install iproute2</h3>
 <ul>
 <li>The iproute2 package in base ISO image does not provide <code>netns</code> option.</li>
 <li>So, we will download the full version of iproute2 from <a href="https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/">alpine CDN</a>
-  <code>shell
-    # download package
-    wget https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/libelf-0.193-r0.apk
-    wget https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/libmnl-1.0.5-r2.apk
-    wget https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/iproute2-minimal-6.15.0-r0.apk
-    wget https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/ifupdown-ng-iproute2-0.12.1-r7.apk
-    wget https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/libxtables-1.8.11-r1.apk
-    wget https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/iproute2-tc-6.15.0-r0.apk
-    wget https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/iproute2-ss-6.15.0-r0.apk
-    wget https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/iproute2-6.15.0-r0.apk</code></li>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="w">  </span><span class="c1"># download package</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span>wget<span class="w"> </span>https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/libelf-0.193-r0.apk
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">  </span>wget<span class="w"> </span>https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/libmnl-1.0.5-r2.apk
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">  </span>wget<span class="w"> </span>https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/iproute2-minimal-6.15.0-r0.apk
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">  </span>wget<span class="w"> </span>https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/ifupdown-ng-iproute2-0.12.1-r7.apk
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">  </span>wget<span class="w"> </span>https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/libxtables-1.8.11-r1.apk
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">  </span>wget<span class="w"> </span>https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/iproute2-tc-6.15.0-r0.apk
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">  </span>wget<span class="w"> </span>https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/iproute2-ss-6.15.0-r0.apk
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">  </span>wget<span class="w"> </span>https://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/iproute2-6.15.0-r0.apk
+</code></pre></div></li>
 </ul>
-<p>```shell
-  # move to Node0
-  scp *.apk root@192.168.100.10:/root</p>
-<p># 
-  ssh root@192.168.100.10
-  apk add --allow-untrusted ./*.apk</p>
-<p># now <code>ip netns</code> is ready to use
-  ```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># move to Node0</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>scp<span class="w"> </span>*.apk<span class="w"> </span>root@192.168.100.10:/root
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="c1"># </span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>ssh<span class="w"> </span>root@192.168.100.10
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>apk<span class="w"> </span>add<span class="w"> </span>--allow-untrusted<span class="w"> </span>./*.apk
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="c1"># now `ip netns` is ready to use</span>
+</code></pre></div>
 <h3 id="create-netns">create netns</h3>
 <ul>
 <li>Setting up netns like this:</li>
 </ul>
 <p><img alt="qemu cluster" src="../images/qemu_nodes_netns_1.dio.svg" /></p>
-<p>```shell
-  # Configuration
-  PHY_IF="eth0"
-  NET1="ns1"
-  NET2="ns2"
-  IP1="192.168.100.11/24"
-  IP2="192.168.100.12/24"
-  GW="192.168.100.1"</p>
-<p># Enable IP forwarding
-  echo 1 &gt; /proc/sys/net/ipv4/ip_forward</p>
-<p># Create network namespaces
-  ip netns add $NET1
-  ip netns add $NET2</p>
-<p># Create macvlan interfaces linked to $PHY_IF
-  ip link add macvlan1 link $PHY_IF type macvlan mode bridge
-  ip link add macvlan2 link $PHY_IF type macvlan mode bridge</p>
-<p># Assign interfaces to namespaces
-  ip link set macvlan1 netns $NET1
-  ip link set macvlan2 netns $NET2</p>
-<p># Bring up interfaces inside namespaces
-  ip netns exec $NET1 ip addr add $IP1 dev macvlan1
-  ip netns exec $NET2 ip addr add $IP2 dev macvlan2
-  ip netns exec $NET1 ip link set dev macvlan1 up
-  ip netns exec $NET2 ip link set dev macvlan2 up</p>
-<p># loopback up
-  ip netns exec $NET1 ip link set lo up
-  ip netns exec $NET2 ip link set lo up
-  ```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1"># Configuration</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nv">PHY_IF</span><span class="o">=</span><span class="s2">&quot;eth0&quot;</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="nv">NET1</span><span class="o">=</span><span class="s2">&quot;ns1&quot;</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="nv">NET2</span><span class="o">=</span><span class="s2">&quot;ns2&quot;</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="nv">IP1</span><span class="o">=</span><span class="s2">&quot;192.168.100.11/24&quot;</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="nv">IP2</span><span class="o">=</span><span class="s2">&quot;192.168.100.12/24&quot;</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="nv">GW</span><span class="o">=</span><span class="s2">&quot;192.168.100.1&quot;</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="c1"># Enable IP forwarding</span>
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="nb">echo</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>&gt;<span class="w"> </span>/proc/sys/net/ipv4/ip_forward
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="c1"># Create network namespaces</span>
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>ip<span class="w"> </span>netns<span class="w"> </span>add<span class="w"> </span><span class="nv">$NET1</span>
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>ip<span class="w"> </span>netns<span class="w"> </span>add<span class="w"> </span><span class="nv">$NET2</span>
+<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a>
+<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="c1"># Create macvlan interfaces linked to $PHY_IF</span>
+<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a>ip<span class="w"> </span>link<span class="w"> </span>add<span class="w"> </span>macvlan1<span class="w"> </span>link<span class="w"> </span><span class="nv">$PHY_IF</span><span class="w"> </span><span class="nb">type</span><span class="w"> </span>macvlan<span class="w"> </span>mode<span class="w"> </span>bridge
+<a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a>ip<span class="w"> </span>link<span class="w"> </span>add<span class="w"> </span>macvlan2<span class="w"> </span>link<span class="w"> </span><span class="nv">$PHY_IF</span><span class="w"> </span><span class="nb">type</span><span class="w"> </span>macvlan<span class="w"> </span>mode<span class="w"> </span>bridge
+<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a>
+<a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a><span class="c1"># Assign interfaces to namespaces</span>
+<a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a>ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>macvlan1<span class="w"> </span>netns<span class="w"> </span><span class="nv">$NET1</span>
+<a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a>ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>macvlan2<span class="w"> </span>netns<span class="w"> </span><span class="nv">$NET2</span>
+<a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a>
+<a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a><span class="c1"># Bring up interfaces inside namespaces</span>
+<a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a>ip<span class="w"> </span>netns<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="nv">$NET1</span><span class="w"> </span>ip<span class="w"> </span>addr<span class="w"> </span>add<span class="w"> </span><span class="nv">$IP1</span><span class="w"> </span>dev<span class="w"> </span>macvlan1
+<a id="__codelineno-15-26" name="__codelineno-15-26" href="#__codelineno-15-26"></a>ip<span class="w"> </span>netns<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="nv">$NET2</span><span class="w"> </span>ip<span class="w"> </span>addr<span class="w"> </span>add<span class="w"> </span><span class="nv">$IP2</span><span class="w"> </span>dev<span class="w"> </span>macvlan2
+<a id="__codelineno-15-27" name="__codelineno-15-27" href="#__codelineno-15-27"></a>ip<span class="w"> </span>netns<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="nv">$NET1</span><span class="w"> </span>ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>dev<span class="w"> </span>macvlan1<span class="w"> </span>up
+<a id="__codelineno-15-28" name="__codelineno-15-28" href="#__codelineno-15-28"></a>ip<span class="w"> </span>netns<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="nv">$NET2</span><span class="w"> </span>ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>dev<span class="w"> </span>macvlan2<span class="w"> </span>up
+<a id="__codelineno-15-29" name="__codelineno-15-29" href="#__codelineno-15-29"></a>
+<a id="__codelineno-15-30" name="__codelineno-15-30" href="#__codelineno-15-30"></a><span class="c1"># loopback up</span>
+<a id="__codelineno-15-31" name="__codelineno-15-31" href="#__codelineno-15-31"></a>ip<span class="w"> </span>netns<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="nv">$NET1</span><span class="w"> </span>ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>lo<span class="w"> </span>up
+<a id="__codelineno-15-32" name="__codelineno-15-32" href="#__codelineno-15-32"></a>ip<span class="w"> </span>netns<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="nv">$NET2</span><span class="w"> </span>ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>lo<span class="w"> </span>up
+</code></pre></div>
 <ul>
 <li>Note 1. Why macvlan?</li>
 <li>by default, netns does not have a MAC address</li>
@@ -1369,11 +1374,11 @@ PING 192.168.100.20 (192.168.100.20): 56 data bytes
 <p>Now the 2 netns can ping each other:</p>
 </li>
 </ul>
-<p><code>shell
-  localhost:~# ip netns exec ns1 ping 192.168.100.12
-  PING 192.168.100.12 (192.168.100.12): 56 data bytes
-  64 bytes from 192.168.100.12: seq=0 ttl=64 time=0.033 ms
-  64 bytes from 192.168.100.12: seq=1 ttl=64 time=0.040 ms</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>localhost:~#<span class="w"> </span>ip<span class="w"> </span>netns<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>ns1<span class="w"> </span>ping<span class="w"> </span><span class="m">192</span>.168.100.12
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>PING<span class="w"> </span><span class="m">192</span>.168.100.12<span class="w"> </span><span class="o">(</span><span class="m">192</span>.168.100.12<span class="o">)</span>:<span class="w"> </span><span class="m">56</span><span class="w"> </span>data<span class="w"> </span>bytes
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="m">64</span><span class="w"> </span>bytes<span class="w"> </span>from<span class="w"> </span><span class="m">192</span>.168.100.12:<span class="w"> </span><span class="nv">seq</span><span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="nv">ttl</span><span class="o">=</span><span class="m">64</span><span class="w"> </span><span class="nv">time</span><span class="o">=</span><span class="m">0</span>.033<span class="w"> </span>ms
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="m">64</span><span class="w"> </span>bytes<span class="w"> </span>from<span class="w"> </span><span class="m">192</span>.168.100.12:<span class="w"> </span><span class="nv">seq</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="nv">ttl</span><span class="o">=</span><span class="m">64</span><span class="w"> </span><span class="nv">time</span><span class="o">=</span><span class="m">0</span>.040<span class="w"> </span>ms
+</code></pre></div>
 <ul>
 <li>
 <p>The flow of ICMP package:
@@ -1400,25 +1405,25 @@ PING 192.168.100.20 (192.168.100.20): 56 data bytes
 <ul>
 <li>Ping from netns inside Node2 to netns inside Node1</li>
 </ul>
-<p><code>shell
-  localhost:~# ip netns exec ns1 ip a
-  1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
-      link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
-      inet 127.0.0.1/8 scope host lo
-        valid_lft forever preferred_lft forever
-      inet6 ::1/128 scope host proto kernel_lo 
-        valid_lft forever preferred_lft forever
-  5: macvlan1@if2: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UP group default qlen 1000
-      link/ether 7a:9c:73:31:91:8e brd ff:ff:ff:ff:ff:ff link-netnsid 0
-      inet 192.168.100.21/24 scope global macvlan1
-        valid_lft forever preferred_lft forever
-      inet6 fe80::789c:73ff:fe31:918e/64 scope link proto kernel_ll 
-        valid_lft forever preferred_lft forever
-  localhost:~# ip netns exec ns1 ping 192.168.100.11
-  PING 192.168.100.11 (192.168.100.11): 56 data bytes
-  64 bytes from 192.168.100.11: seq=0 ttl=64 time=0.213 ms
-  64 bytes from 192.168.100.11: seq=1 ttl=64 time=0.382 ms
-  64 bytes from 192.168.100.11: seq=2 ttl=64 time=0.318</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>localhost:~#<span class="w"> </span>ip<span class="w"> </span>netns<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>ns1<span class="w"> </span>ip<span class="w"> </span>a
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="m">1</span>:<span class="w"> </span>lo:<span class="w"> </span>&lt;LOOPBACK,UP,LOWER_UP&gt;<span class="w"> </span>mtu<span class="w"> </span><span class="m">65536</span><span class="w"> </span>qdisc<span class="w"> </span>noqueue<span class="w"> </span>state<span class="w"> </span>UNKNOWN<span class="w"> </span>group<span class="w"> </span>default<span class="w"> </span>qlen<span class="w"> </span><span class="m">1000</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">    </span>link/loopback<span class="w"> </span><span class="m">00</span>:00:00:00:00:00<span class="w"> </span>brd<span class="w"> </span><span class="m">00</span>:00:00:00:00:00
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">    </span>inet<span class="w"> </span><span class="m">127</span>.0.0.1/8<span class="w"> </span>scope<span class="w"> </span>host<span class="w"> </span>lo
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">      </span>valid_lft<span class="w"> </span>forever<span class="w"> </span>preferred_lft<span class="w"> </span>forever
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">    </span>inet6<span class="w"> </span>::1/128<span class="w"> </span>scope<span class="w"> </span>host<span class="w"> </span>proto<span class="w"> </span>kernel_lo<span class="w"> </span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">      </span>valid_lft<span class="w"> </span>forever<span class="w"> </span>preferred_lft<span class="w"> </span>forever
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="m">5</span>:<span class="w"> </span>macvlan1@if2:<span class="w"> </span>&lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt;<span class="w"> </span>mtu<span class="w"> </span><span class="m">1500</span><span class="w"> </span>qdisc<span class="w"> </span>noqueue<span class="w"> </span>state<span class="w"> </span>UP<span class="w"> </span>group<span class="w"> </span>default<span class="w"> </span>qlen<span class="w"> </span><span class="m">1000</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">    </span>link/ether<span class="w"> </span>7a:9c:73:31:91:8e<span class="w"> </span>brd<span class="w"> </span>ff:ff:ff:ff:ff:ff<span class="w"> </span>link-netnsid<span class="w"> </span><span class="m">0</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="w">    </span>inet<span class="w"> </span><span class="m">192</span>.168.100.21/24<span class="w"> </span>scope<span class="w"> </span>global<span class="w"> </span>macvlan1
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="w">      </span>valid_lft<span class="w"> </span>forever<span class="w"> </span>preferred_lft<span class="w"> </span>forever
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="w">    </span>inet6<span class="w"> </span>fe80::789c:73ff:fe31:918e/64<span class="w"> </span>scope<span class="w"> </span>link<span class="w"> </span>proto<span class="w"> </span>kernel_ll<span class="w"> </span>
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="w">      </span>valid_lft<span class="w"> </span>forever<span class="w"> </span>preferred_lft<span class="w"> </span>forever
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a>localhost:~#<span class="w"> </span>ip<span class="w"> </span>netns<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>ns1<span class="w"> </span>ping<span class="w"> </span><span class="m">192</span>.168.100.11
+<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a>PING<span class="w"> </span><span class="m">192</span>.168.100.11<span class="w"> </span><span class="o">(</span><span class="m">192</span>.168.100.11<span class="o">)</span>:<span class="w"> </span><span class="m">56</span><span class="w"> </span>data<span class="w"> </span>bytes
+<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a><span class="m">64</span><span class="w"> </span>bytes<span class="w"> </span>from<span class="w"> </span><span class="m">192</span>.168.100.11:<span class="w"> </span><span class="nv">seq</span><span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="nv">ttl</span><span class="o">=</span><span class="m">64</span><span class="w"> </span><span class="nv">time</span><span class="o">=</span><span class="m">0</span>.213<span class="w"> </span>ms
+<a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a><span class="m">64</span><span class="w"> </span>bytes<span class="w"> </span>from<span class="w"> </span><span class="m">192</span>.168.100.11:<span class="w"> </span><span class="nv">seq</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="nv">ttl</span><span class="o">=</span><span class="m">64</span><span class="w"> </span><span class="nv">time</span><span class="o">=</span><span class="m">0</span>.382<span class="w"> </span>ms
+<a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a><span class="m">64</span><span class="w"> </span>bytes<span class="w"> </span>from<span class="w"> </span><span class="m">192</span>.168.100.11:<span class="w"> </span><span class="nv">seq</span><span class="o">=</span><span class="m">2</span><span class="w"> </span><span class="nv">ttl</span><span class="o">=</span><span class="m">64</span><span class="w"> </span><span class="nv">time</span><span class="o">=</span><span class="m">0</span>.318<span class="w"> </span>
+</code></pre></div>
 <ul>
 <li>
 <p>We can also use <code>netcat</code> to let netns inside Node1 talks to netns inside Node2</p>

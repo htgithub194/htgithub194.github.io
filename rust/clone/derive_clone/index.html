@@ -220,7 +220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../mkdocs/" class="md-nav__link">
         
   
   
@@ -975,51 +975,51 @@
 </ul>
 <h3 id="implementation-for-normal-type">Implementation for normal type</h3>
 <ul>
-<li>What we write:</li>
+<li>
+<p>What we write:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#[derive(Clone)]</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">struct</span><span class="w"> </span><span class="nc">Foo</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="n">a</span><span class="p">:</span><span class="w"> </span><span class="kt">u32</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">}</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>can be translated to:</p>
+</li>
 </ul>
-<pre><code class="language-rust">#[derive(Clone)]
-struct Foo {
-    a: u32
-}
-
-</code></pre>
-<ul>
-<li>can be translated to:</li>
-</ul>
-<pre><code class="language-rust">impl Clone for Foo {
-  fn clone(&amp;self) -&gt; Self {
-    Foo {
-      a: self.a.clone(),
-    }
-  }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">impl</span><span class="w"> </span><span class="nb">Clone</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Foo</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="k">fn</span><span class="w"> </span><span class="nf">clone</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">Self</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="n">Foo</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">      </span><span class="n">a</span><span class="p">:</span><span class="w"> </span><span class="nc">self</span><span class="p">.</span><span class="n">a</span><span class="p">.</span><span class="n">clone</span><span class="p">(),</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">}</span>
+</code></pre></div>
 <h3 id="implementation-for-generric-type">Implementation for Generric type</h3>
 <ul>
 <li>What we write:</li>
 </ul>
-<pre><code class="language-rust">#[derive(Clone)]
-struct Foo &lt;T&gt; {
-    a: Rc&lt;T&gt;
-}
-
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">#[derive(Clone)]</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">struct</span><span class="w"> </span><span class="nc">Foo</span><span class="w"> </span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="n">a</span><span class="p">:</span><span class="w"> </span><span class="nc">Rc</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">}</span>
+</code></pre></div>
 <ul>
 <li>can be translated to:</li>
 </ul>
-<pre><code class="language-rust">impl&lt;T: ::core::clone::Clone&gt; ::core::clone::Clone for Foo&lt;T&gt; {
-  #[inline]
-  fn clone(&amp;self) -&gt; Foo&lt;B, C&gt; {
-    match *self {
-      Foo {
-        a: ref __self_0_0,
-      } =&gt; Foo {
-        a: ::core::clone::Clone::clone(&amp;(*__self_0_0)),
-      },
-    }
-  }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">impl</span><span class="o">&lt;</span><span class="n">T</span><span class="p">:</span><span class="w"> </span><span class="p">::</span><span class="n">core</span><span class="p">::</span><span class="n">clone</span><span class="p">::</span><span class="nb">Clone</span><span class="o">&gt;</span><span class="w"> </span><span class="p">::</span><span class="n">core</span><span class="p">::</span><span class="n">clone</span><span class="p">::</span><span class="nb">Clone</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Foo</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="cp">#[inline]</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="k">fn</span><span class="w"> </span><span class="nf">clone</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">Foo</span><span class="o">&lt;</span><span class="n">B</span><span class="p">,</span><span class="w"> </span><span class="n">C</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="k">match</span><span class="w"> </span><span class="o">*</span><span class="bp">self</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">      </span><span class="n">Foo</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">        </span><span class="n">a</span><span class="p">:</span><span class="w"> </span><span class="nc">ref</span><span class="w"> </span><span class="n">__self_0_0</span><span class="p">,</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Foo</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">        </span><span class="n">a</span><span class="p">:</span><span class="w"> </span><span class="p">::</span><span class="n">core</span><span class="p">::</span><span class="n">clone</span><span class="p">::</span><span class="nb">Clone</span><span class="p">::</span><span class="n">clone</span><span class="p">(</span><span class="o">&amp;</span><span class="p">(</span><span class="o">*</span><span class="n">__self_0_0</span><span class="p">)),</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">      </span><span class="p">},</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="p">}</span>
+</code></pre></div>
 <ul>
 <li>Thing to notice for generic type is that:<ul>
 <li>event <em>RC\<T></em> can guarantee to be clonable for any type <em>T</em></li>
@@ -1027,8 +1027,8 @@ struct Foo &lt;T&gt; {
 </ul>
 </li>
 </ul>
-<pre><code class="language-rust">impl&lt;T: ::core::clone::Clone&gt; ::core::clone::Clone for Foo&lt;T&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">impl</span><span class="o">&lt;</span><span class="n">T</span><span class="p">:</span><span class="w"> </span><span class="p">::</span><span class="n">core</span><span class="p">::</span><span class="n">clone</span><span class="p">::</span><span class="nb">Clone</span><span class="o">&gt;</span><span class="w"> </span><span class="p">::</span><span class="n">core</span><span class="p">::</span><span class="n">clone</span><span class="p">::</span><span class="nb">Clone</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Foo</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span>
+</code></pre></div>
 
 
 
