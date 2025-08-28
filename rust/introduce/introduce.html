@@ -70,7 +70,7 @@
 ;" data-marpit-pagination-total="27" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/which.excalidraw.svg&quot;);background-size:80%;"><figcaption>height:</figcaption></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="5" data-class="slide-base invert" data-paginate="true" data-theme="default" data-style="@import './theme.css';
 " lang="en-US" class="slide-base invert" data-marpit-pagination="5" style="--class:slide-base invert;--paginate:true;--theme:default;--style:@import './theme.css';
 ;" data-marpit-pagination-total="27" data-marpit-advanced-background="content">
-<h2 id="history-of-rust-1">History of Rust</h2>
+<h2 id="rust-inside">Rust inside</h2>
 </section>
 </foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-class="slide-base invert" data-paginate="true" data-theme="default" data-style="@import './theme.css';
 " lang="en-US" class="slide-base invert" data-marpit-pagination="5" style="" data-marpit-pagination-total="27" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-class="slide-base invert" data-paginate="true" data-theme="default" data-style="@import './theme.css';
@@ -109,7 +109,7 @@
 <li>
 <p>Rust Compiler:</p>
 <ul>
-<li>Throws error on compile if it detect code violate it's rules.</li>
+<li>Throws errors on compilation if it detect codes violate it's rules.</li>
 <li>Virtually guaranteed to be memory-safe if compile successfully</li>
 </ul>
 </li>
@@ -151,7 +151,7 @@
 <h2 id="performance">Performance</h2>
 <ul>
 <li>Build to native machine code --&gt; fast ~ C/C++</li>
-<li>No GC -&gt; faster than Java, Go, Python</li>
+<li>No GC -&gt; faster than Java, Go</li>
 <li>Zero-cost abstraction (same as C++ if not using vtable)</li>
 <li>Fearless concurency by the advantage of Ownership model</li>
 </ul>
@@ -233,50 +233,42 @@
 ;" data-marpit-pagination-total="27">
 <h2 id="b-dive-deeper">B. Dive deeper</h2>
 <ul>
-<li>How Rust is archive memory safety</li>
-</ul>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-class="slide-base invert" data-paginate="true" data-theme="default" data-style="@import './theme.css';
-" lang="en-US" class="slide-base invert" data-marpit-pagination="18" style="--class:slide-base invert;--paginate:true;--theme:default;--style:@import './theme.css';
-;" data-marpit-pagination-total="27">
-<h2 id="memory-unsafety-in-cc">Memory unsafety in C/C++</h2>
-<ul>
-<li><strong>Dangling pointers</strong>: accessing memory after freeing</li>
-<li><strong>Double free</strong>: freeing the same memory twice.</li>
-<li><strong>Memory leaks</strong>: never freeing memory.</li>
-<li>Data Races in Multithreading</li>
-<li>Buffer Overflows / Out-of-Bounds Access</li>
+<li>How Rust archives memory safety</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-class="slide-base invert" data-paginate="true" data-theme="default" data-style="@import './theme.css';
+" lang="en-US" class="slide-base invert" data-marpit-pagination="18" style="--class:slide-base invert;--paginate:true;--theme:default;--style:@import './theme.css';
+;" data-marpit-pagination-total="27" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/unsafe.excalidraw.svg&quot;);background-size:90%;"><figcaption>height:</figcaption></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="18" data-class="slide-base invert" data-paginate="true" data-theme="default" data-style="@import './theme.css';
+" lang="en-US" class="slide-base invert" data-marpit-pagination="18" style="--class:slide-base invert;--paginate:true;--theme:default;--style:@import './theme.css';
+;" data-marpit-pagination-total="27" data-marpit-advanced-background="content">
+<h2 id="memory-unsafety-in-cc">Memory unsafety in C/C++</h2>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-class="slide-base invert" data-paginate="true" data-theme="default" data-style="@import './theme.css';
+" lang="en-US" class="slide-base invert" data-marpit-pagination="18" style="" data-marpit-pagination-total="27" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-class="slide-base invert" data-paginate="true" data-theme="default" data-style="@import './theme.css';
 " lang="en-US" class="slide-base invert" data-marpit-pagination="19" style="--class:slide-base invert;--paginate:true;--theme:default;--style:@import './theme.css';
-;" data-marpit-pagination-total="27" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/rules.png&quot;);background-size:40%;"><figcaption>height:</figcaption></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="19" data-class="slide-base invert" data-paginate="true" data-theme="default" data-style="@import './theme.css';
+;" data-marpit-pagination-total="27" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/rules.png&quot;);background-size:40%;"><figcaption>width:</figcaption></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="19" data-class="slide-base invert" data-paginate="true" data-theme="default" data-style="@import './theme.css';
 " lang="en-US" class="slide-base invert" data-marpit-pagination="19" style="--class:slide-base invert;--paginate:true;--theme:default;--style:@import './theme.css';
 ;" data-marpit-pagination-total="27" data-marpit-advanced-background="content">
 <h2 id="how-rust-archives-memory-safety">How Rust archives memory safety</h2>
 </section>
 </foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-class="slide-base invert" data-paginate="true" data-theme="default" data-style="@import './theme.css';
-" lang="en-US" class="slide-base invert" data-marpit-pagination="19" style="" data-marpit-pagination-total="27" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20" data-class="slide-base invert" data-paginate="true" data-theme="default" data-style="@import './theme.css';
+" lang="en-US" class="slide-base invert" data-marpit-pagination="19" style="" data-marpit-pagination-total="27" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-class="slide-base invert" data-paginate="true" data-theme="default" data-style="@import './theme.css';
 " lang="en-US" class="slide-base invert" data-marpit-pagination="20" style="--class:slide-base invert;--paginate:true;--theme:default;--style:@import './theme.css';
-;" data-marpit-pagination-total="27">
+;" data-marpit-pagination-total="27" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/archives.excalidraw.svg&quot;);background-size:70%;"><figcaption>height:</figcaption></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="20" data-class="slide-base invert" data-paginate="true" data-theme="default" data-style="@import './theme.css';
+" lang="en-US" class="slide-base invert" data-marpit-pagination="20" style="--class:slide-base invert;--paginate:true;--theme:default;--style:@import './theme.css';
+;" data-marpit-pagination-total="27" data-marpit-advanced-background="content">
 <h2 id="how-rust-archives-memory-safety-1">How Rust archives memory safety</h2>
-<ul>
-<li>Ownership model</li>
-<li>Lifetimes</li>
-<li>Communicate threads for sharing data</li>
-</ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-class="slide-base invert" data-paginate="true" data-theme="default" data-style="@import './theme.css';
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-class="slide-base invert" data-paginate="true" data-theme="default" data-style="@import './theme.css';
+" lang="en-US" class="slide-base invert" data-marpit-pagination="20" style="" data-marpit-pagination-total="27" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-class="slide-base invert" data-paginate="true" data-theme="default" data-style="@import './theme.css';
 " lang="en-US" class="slide-base invert" data-marpit-pagination="21" style="--class:slide-base invert;--paginate:true;--theme:default;--style:@import './theme.css';
-;" data-marpit-pagination-total="27">
+;" data-marpit-pagination-total="27" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/ownership2.excalidraw.svg&quot;);background-size:70%;"><figcaption>height:</figcaption></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="21" data-class="slide-base invert" data-paginate="true" data-theme="default" data-style="@import './theme.css';
+" lang="en-US" class="slide-base invert" data-marpit-pagination="21" style="--class:slide-base invert;--paginate:true;--theme:default;--style:@import './theme.css';
+;" data-marpit-pagination-total="27" data-marpit-advanced-background="content">
 <h2 id="ownership-model">Ownership model</h2>
-<ul>
-<li>Enforce safety at compile time by RULES</li>
-<li>reference and mutable-reference</li>
-<li>Value can only be edited from 1 point</li>
-</ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-class="slide-base invert" data-paginate="true" data-theme="default" data-style="@import './theme.css';
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-class="slide-base invert" data-paginate="true" data-theme="default" data-style="@import './theme.css';
+" lang="en-US" class="slide-base invert" data-marpit-pagination="21" style="" data-marpit-pagination-total="27" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-class="slide-base invert" data-paginate="true" data-theme="default" data-style="@import './theme.css';
 " lang="en-US" class="slide-base invert" data-marpit-pagination="22" style="--class:slide-base invert;--paginate:true;--theme:default;--style:@import './theme.css';
 ;" data-marpit-pagination-total="27" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/ownership.excalidraw.svg&quot;);background-size:95%;"><figcaption>height:</figcaption></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="22" data-class="slide-base invert" data-paginate="true" data-theme="default" data-style="@import './theme.css';
 " lang="en-US" class="slide-base invert" data-marpit-pagination="22" style="--class:slide-base invert;--paginate:true;--theme:default;--style:@import './theme.css';
