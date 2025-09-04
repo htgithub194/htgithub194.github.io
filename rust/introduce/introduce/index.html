@@ -8,6 +8,8 @@
       
       
       
+        <link rel="canonical" href="https://htgithub194.github.io/rust/introduce/introduce/">
+      
       
       
       
@@ -16,7 +18,7 @@
     
     
       
-        <title>Brieft introduction to Rust - htgithub94</title>
+        <title>Introduce - htgithub94</title>
       
     
     
@@ -108,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Brieft introduction to Rust
+              Introduce
             
           </span>
         </div>
@@ -216,7 +218,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mkdocs/" class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -905,6 +907,123 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#a-get-to-know-rust" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. Get to know Rust
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#history-of-rust" class="md-nav__link">
+    <span class="md-ellipsis">
+      History of Rust
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rust-inside" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rust inside
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sponsors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sponsors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notable-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notable Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-safety-rust-vs-cc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Safety. Rust vs C/C++
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-safety-rust-vs-javago" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Safety. Rust vs Java/Go
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-benchmark-vs-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance: benchmark vs C
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-benchmark-vs-go" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance: benchmark vs GO
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concurrency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concurrency
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#speed-concurrent-programming" class="md-nav__link">
+    <span class="md-ellipsis">
+      Speed: concurrent programming
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#take-away-1" class="md-nav__link">
     <span class="md-ellipsis">
       Take away 1:
@@ -914,18 +1033,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#memory-unsafety-in-cc" class="md-nav__link">
+  <a href="#b-dive-deeper" class="md-nav__link">
     <span class="md-ellipsis">
-      Memory unsafety in C/C++
+      B. Dive deeper
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#garbage-collection-in-java" class="md-nav__link">
+  <a href="#memory-unsafety-in-cc" class="md-nav__link">
     <span class="md-ellipsis">
-      Garbage Collection in Java
+      Memory unsafety in C/C++
     </span>
   </a>
   
@@ -986,36 +1105,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#multithread_1" class="md-nav__link">
+  <a href="#multithread-sharing-ownership" class="md-nav__link">
     <span class="md-ellipsis">
-      Multithread
+      Multithread. Sharing Ownership
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#speed" class="md-nav__link">
+  <a href="#multithread-sharing-reference" class="md-nav__link">
     <span class="md-ellipsis">
-      Speed
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#speed-benchmark-vs-c" class="md-nav__link">
-    <span class="md-ellipsis">
-      Speed benchmark vs C
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#speed-benchmark-vs-go" class="md-nav__link">
-    <span class="md-ellipsis">
-      Speed benchmark vs GO
+      Multithread. Sharing Reference
     </span>
   </a>
   
@@ -1046,6 +1147,14 @@
 
 
 
+<style>
+img[alt~="top-right"] {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+</style>
+
 <h1 id="brieft-introduction-to-rust">Brieft introduction to Rust</h1>
 <p><strong>ThongDinh -ft- DatDinh</strong></p>
 <hr />
@@ -1055,105 +1164,186 @@
 <li>Get to know Rust</li>
 <li>History of Rust</li>
 <li>Notable features</li>
-<li>How Rust invovles in our world</li>
 <li>Get dive deeper to know Rust</li>
-<li>Why Rust is memory safety</li>
-<li>Why Rust is fast</li>
+<li>How Rust archives memory safety</li>
+</ul>
+<hr />
+<!-- _class: slide-base invert-->
+<h2 id="a-get-to-know-rust">A. Get to know Rust</h2>
+<ul>
+<li>History of Rust</li>
+<li>Notable features</li>
+</ul>
+<hr />
+<!-- _class: slide-base invert-->
+<h2 id="history-of-rust">History of Rust</h2>
+<ul>
+<li>When: 2006</li>
+<li>Who: Graydon Hoare, engineer at <em>Mozilla Research</em></li>
+<li>What: <ul>
+<li>Offered high performance of C/C++ </li>
+<li>With guaranteed memory safety</li>
+</ul>
+</li>
+<li>Which:<ul>
+<li>linux kernel, OS, OS-utilities</li>
+<li>block chain, wasm</li>
+<li>backend</li>
+<li>...
+<img alt="top-right" src="images/author.png" /></li>
+</ul>
+</li>
+</ul>
+<hr />
+<!-- _class: slide-base invert-->
+<h2 id="rust-inside">Rust inside</h2>
+<p><img alt="bg height: 80%" src="images/which.excalidraw.svg" /></p>
+<hr />
+<!-- _class: slide-base invert-->
+<h2 id="sponsors">Sponsors</h2>
+<p><img alt="bg height: 60%" src="images/sponsor.png" /></p>
+<hr />
+<!-- _class: slide-base invert-->
+<h2 id="notable-features">Notable Features</h2>
+<p><img alt="bg height: 50%" src="images/features.excalidraw.svg" /></p>
+<hr />
+<!-- _class: slide-base invert-->
+<h2 id="memory-safety-rust-vs-cc">Memory Safety. Rust vs C/C++</h2>
+<ul>
+<li>C/C++ easily to have error:</li>
+<li>
+<p>dangling pointers:</p>
+<ul>
+<li>use-after-free</li>
+<li>double-free</li>
+<li>buffer overflows</li>
+</ul>
+</li>
+<li>
+<p>Rust Compiler:</p>
+</li>
+<li>Throws errors on compilation if it detect codes violate it's rules. </li>
+<li>Virtually guaranteed to be memory-safe if compile successfully</li>
+</ul>
+<hr />
+<!-- _class: slide-base invert-->
+<h2 id="memory-safety-rust-vs-javago">Memory Safety. Rust vs Java/Go</h2>
+<ul>
+<li>Java/Go use GC:</li>
+<li>Automatically finds and removes unused objects in the heap.</li>
+<li>Pros:<ul>
+<li>Ease of Development + Platform Independence</li>
+</ul>
+</li>
+<li>
+<p>Cons:</p>
+<ul>
+<li>CPU Overhead + Unpredictable Pauses + extra memory for GC (bloat)</li>
+</ul>
+</li>
+<li>
+<p>Rust use NO GC:</p>
+</li>
+<li>no runtime overhead</li>
+<li>no extra memory</li>
+</ul>
+<hr />
+<!-- _class: slide-base invert-->
+<h2 id="performance">Performance</h2>
+<ul>
+<li>Build to native machine code --&gt; fast ~ C/C++</li>
+<li>No GC -&gt; faster than Java, Go</li>
+<li>Zero-cost abstraction (same as C++ if not using vtable)</li>
+<li>Fearless concurency by the advantage of Ownership model</li>
+</ul>
+<hr />
+<!-- _class: slide-base invert-->
+<h2 id="performance_1">Performance</h2>
+<p><img alt="bg height: 55%" src="images/performance.png" /></p>
+<p><a href="https://medium.com/star-gazers/benchmarking-low-level-i-o-c-c-rust-golang-java-python-9a0d505f85f7">source</a></p>
+<hr />
+<!-- _class: slide-base invert-->
+<h2 id="performance-benchmark-vs-c">Performance: benchmark vs C</h2>
+<p>https://programming-language-benchmarks.vercel.app/c-vs-rust</p>
+<hr />
+<!-- _class: slide-base invert-->
+<h2 id="performance-benchmark-vs-go">Performance: benchmark vs GO</h2>
+<p><img alt="bg height: 65%" src="images/rust-vs-go-http-performance-2025.svg" /></p>
+<p><a href="https://markaicode.com/rust-vs-go-performance-benchmarks-microservices-2025/?utm_source=chatgpt.com">source</a></p>
+<hr />
+<!-- _class: slide-base invert-->
+<h2 id="concurrency">Concurrency</h2>
+<ul>
+<li>"Fearless Concurrency":</li>
+<li>No data race by the advantage of Ownership model</li>
+<li>Offers modern concurrency paradigms:</li>
+<li>Message passing via Channel</li>
+<li>async/await</li>
+</ul>
+<hr />
+<!-- _class: slide-base invert-->
+<h2 id="speed-concurrent-programming">Speed: concurrent programming</h2>
+<p><img alt="" src="images/concurency_cmp.drawio.svg" /></p>
+<ul>
+<li>source: trust me bro</li>
 </ul>
 <hr />
 <!-- _class: slide-base invert-->
 <h2 id="take-away-1">Take away 1:</h2>
 <ul>
-<li>Pros:
-    memory safe
-    speed</li>
-<li>Cons:
-    hard to learn
-    cost time to compile</li>
+<li>Pros:<ul>
+<li>Guarantee to be memory safe</li>
+<li>Offer high speed approximate to C/C++</li>
+</ul>
+</li>
+<li>Cons:<ul>
+<li>Hard to learn at the beginning</li>
+<li>Compilation cost a lot of time due to checking alot of rules</li>
+</ul>
+</li>
+</ul>
+<hr />
+<!-- _class: slide-base invert-->
+<h2 id="b-dive-deeper">B. Dive deeper</h2>
+<ul>
+<li>How Rust archives memory safety</li>
 </ul>
 <hr />
 <!-- _class: slide-base invert-->
 <h2 id="memory-unsafety-in-cc">Memory unsafety in C/C++</h2>
-<ul>
-<li><strong>Dangling pointers</strong>: accessing memory after freeing</li>
-<li><strong>Double free</strong>: freeing the same memory twice.</li>
-<li><strong>Memory leaks</strong>: never freeing memory.</li>
-<li>Data Races in Multithreading</li>
-<li>Buffer Overflows / Out-of-Bounds Access</li>
-</ul>
-<hr />
-<!-- _class: slide-base invert-->
-<h2 id="garbage-collection-in-java">Garbage Collection in Java</h2>
-<ul>
-<li>Automatically finds and removes unused objects in the heap.</li>
-<li>Pros:</li>
-<li>Ease of Development</li>
-<li>Platform Independence.</li>
-<li>Cons:</li>
-<li>Unpredictable Pauses</li>
-<li>CPU Overhead</li>
-<li>Bloat: extra memory for GC</li>
-</ul>
+<p><img alt="bg height: 90%" src="images/unsafe.excalidraw.svg" /></p>
 <hr />
 <!-- _class: slide-base invert-->
 <h2 id="how-rust-archives-memory-safety">How Rust archives memory safety</h2>
-<p><img alt="bg height: 40%" src="../images/rules.png" /></p>
+<p><img alt="bg width: 40%" src="images/rules.png" /></p>
 <hr />
 <!-- _class: slide-base invert-->
 <h2 id="how-rust-archives-memory-safety_1">How Rust archives memory safety</h2>
-<ul>
-<li>Ownership model</li>
-<li>Lifetimes</li>
-<li>Communicate threads for sharing data</li>
-</ul>
+<p><img alt="bg height: 70%" src="images/archives.excalidraw.svg" /></p>
 <hr />
 <!-- _class: slide-base invert-->
 <h2 id="ownership-model">Ownership model</h2>
-<ul>
-<li>Enforce safety at compile time by RULES</li>
-<li>reference and mutable-reference</li>
-<li>Value can only be edited from 1 point</li>
-</ul>
+<p><img alt="bg height: 70%" src="images/ownership2.excalidraw.svg" /></p>
 <hr />
 <!-- _class: slide-base invert-->
 <h2 id="ownership-model_1">Ownership model</h2>
-<p><img alt="bg height: 95%" src="../images/ownership.excalidraw.svg" /></p>
+<p><img alt="bg height: 95%" src="images/ownership.excalidraw.svg" /></p>
 <hr />
 <!-- _class: slide-base invert-->
 <h2 id="lifetime">Lifetime</h2>
-<p><img alt="bg height: 95%" src="../images/lifetime.excalidraw.svg" /></p>
+<p><img alt="bg height: 95%" src="images/lifetime.excalidraw.svg" /></p>
 <hr />
 <!-- _class: slide-base invert-->
 <h2 id="multithread">Multithread</h2>
-<ul>
-<li>“Do not communicate by sharing memory
-instead, share memory by communicating.”</li>
-</ul>
+<p><img alt="bg height: 100%" src="images/sync_send.excalidraw.svg" /></p>
 <hr />
 <!-- _class: slide-base invert-->
-<h2 id="multithread_1">Multithread</h2>
-<p><img alt="bg height: 100%" src="../images/threads.excalidraw.svg" /></p>
+<h2 id="multithread-sharing-ownership">Multithread. Sharing Ownership</h2>
+<p><img alt="bg height: 100%" src="images/threads.excalidraw.svg" /></p>
 <hr />
 <!-- _class: slide-base invert-->
-<h2 id="speed">Speed</h2>
-<ul>
-<li>Build to native machine code --&gt; fast ~ C/C++</li>
-<li>No GC -&gt; faster than Java, Go, Python</li>
-<li>Zero-cost abstraction (same as C++)</li>
-<li>Optimized LLVM Backend (compiler)</li>
-<li>Support concurrent programming</li>
-</ul>
-<hr />
-<!-- _class: slide-base invert-->
-<h2 id="speed-benchmark-vs-c">Speed benchmark vs C</h2>
-<p>https://programming-language-benchmarks.vercel.app/c-vs-rust</p>
-<hr />
-<!-- _class: slide-base invert-->
-<h2 id="speed-benchmark-vs-go">Speed benchmark vs GO</h2>
-<p><img alt="bg height: 65%" src="../images/rust-vs-go-http-performance-2025.svg" /></p>
-<ul>
-<li>https://markaicode.com/rust-vs-go-performance-benchmarks-microservices-2025/?utm_source=chatgpt.com</li>
-</ul>
+<h2 id="multithread-sharing-reference">Multithread. Sharing Reference</h2>
+<p><img alt="bg height: 100%" src="images/share_ref.excalidraw.svg" /></p>
 <hr />
 <!-- _class: slide-base invert-->
 <h2 id="q-a">Q &amp; A</h2>
