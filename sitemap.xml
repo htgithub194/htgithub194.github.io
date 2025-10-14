@@ -2,126 +2,130 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://htgithub194.github.io/</loc>
-         <lastmod>2025-09-04</lastmod>
+         <lastmod>2025-10-14</lastmod>
     </url>
     <url>
          <loc>https://htgithub194.github.io/tags/</loc>
-         <lastmod>2025-09-04</lastmod>
+         <lastmod>2025-10-14</lastmod>
+    </url>
+    <url>
+         <loc>https://htgithub194.github.io/kernel/crash_recovery/crash_recovery/</loc>
+         <lastmod>2025-10-14</lastmod>
     </url>
     <url>
          <loc>https://htgithub194.github.io/kernel/hijack/hijack/</loc>
-         <lastmod>2025-09-04</lastmod>
+         <lastmod>2025-10-14</lastmod>
     </url>
     <url>
          <loc>https://htgithub194.github.io/kernel/linker_cache/linker_cache/</loc>
-         <lastmod>2025-09-04</lastmod>
+         <lastmod>2025-10-14</lastmod>
     </url>
     <url>
          <loc>https://htgithub194.github.io/kernel/mini_alpine/mini_alpine/</loc>
-         <lastmod>2025-09-04</lastmod>
+         <lastmod>2025-10-14</lastmod>
     </url>
     <url>
          <loc>https://htgithub194.github.io/kernel/preempt/preempt/</loc>
-         <lastmod>2025-09-04</lastmod>
+         <lastmod>2025-10-14</lastmod>
     </url>
     <url>
          <loc>https://htgithub194.github.io/kernel/watchdog/watchdog/</loc>
-         <lastmod>2025-09-04</lastmod>
+         <lastmod>2025-10-14</lastmod>
     </url>
     <url>
          <loc>https://htgithub194.github.io/networking/docker_network/images/docker_network/</loc>
-         <lastmod>2025-09-04</lastmod>
+         <lastmod>2025-10-14</lastmod>
     </url>
     <url>
          <loc>https://htgithub194.github.io/networking/qemu_network/qemu/</loc>
-         <lastmod>2025-09-04</lastmod>
+         <lastmod>2025-10-14</lastmod>
     </url>
     <url>
          <loc>https://htgithub194.github.io/networking/tunnel/tunnel/</loc>
-         <lastmod>2025-09-04</lastmod>
+         <lastmod>2025-10-14</lastmod>
     </url>
     <url>
          <loc>https://htgithub194.github.io/programming_concept/conditional_variable/conditional_variable/</loc>
-         <lastmod>2025-09-04</lastmod>
+         <lastmod>2025-10-14</lastmod>
     </url>
     <url>
          <loc>https://htgithub194.github.io/programming_concept/dependency_injection/dependency_injection/</loc>
-         <lastmod>2025-09-04</lastmod>
+         <lastmod>2025-10-14</lastmod>
     </url>
     <url>
          <loc>https://htgithub194.github.io/rust/async/async/</loc>
-         <lastmod>2025-09-04</lastmod>
+         <lastmod>2025-10-14</lastmod>
     </url>
     <url>
          <loc>https://htgithub194.github.io/rust/axum/FromRef/</loc>
-         <lastmod>2025-09-04</lastmod>
+         <lastmod>2025-10-14</lastmod>
     </url>
     <url>
          <loc>https://htgithub194.github.io/rust/axum/axum/</loc>
-         <lastmod>2025-09-04</lastmod>
+         <lastmod>2025-10-14</lastmod>
     </url>
     <url>
          <loc>https://htgithub194.github.io/rust/axum/back_pressure/</loc>
-         <lastmod>2025-09-04</lastmod>
+         <lastmod>2025-10-14</lastmod>
     </url>
     <url>
          <loc>https://htgithub194.github.io/rust/axum/extractor/</loc>
-         <lastmod>2025-09-04</lastmod>
+         <lastmod>2025-10-14</lastmod>
     </url>
     <url>
          <loc>https://htgithub194.github.io/rust/axum/handler/</loc>
-         <lastmod>2025-09-04</lastmod>
+         <lastmod>2025-10-14</lastmod>
     </url>
     <url>
          <loc>https://htgithub194.github.io/rust/clone/derive_clone/</loc>
-         <lastmod>2025-09-04</lastmod>
+         <lastmod>2025-10-14</lastmod>
     </url>
     <url>
          <loc>https://htgithub194.github.io/rust/closure/closure/</loc>
-         <lastmod>2025-09-04</lastmod>
+         <lastmod>2025-10-14</lastmod>
     </url>
     <url>
          <loc>https://htgithub194.github.io/rust/database/database/</loc>
-         <lastmod>2025-09-04</lastmod>
+         <lastmod>2025-10-14</lastmod>
     </url>
     <url>
          <loc>https://htgithub194.github.io/rust/database/modql/</loc>
-         <lastmod>2025-09-04</lastmod>
+         <lastmod>2025-10-14</lastmod>
     </url>
     <url>
          <loc>https://htgithub194.github.io/rust/database/seaquerry/</loc>
-         <lastmod>2025-09-04</lastmod>
+         <lastmod>2025-10-14</lastmod>
     </url>
     <url>
          <loc>https://htgithub194.github.io/rust/database/sqlx/</loc>
-         <lastmod>2025-09-04</lastmod>
+         <lastmod>2025-10-14</lastmod>
     </url>
     <url>
          <loc>https://htgithub194.github.io/rust/enums/enums/</loc>
-         <lastmod>2025-09-04</lastmod>
+         <lastmod>2025-10-14</lastmod>
     </url>
     <url>
          <loc>https://htgithub194.github.io/rust/introduce/introduce/</loc>
-         <lastmod>2025-09-04</lastmod>
+         <lastmod>2025-10-14</lastmod>
     </url>
     <url>
          <loc>https://htgithub194.github.io/rust/lifetime/lifetime/</loc>
-         <lastmod>2025-09-04</lastmod>
+         <lastmod>2025-10-14</lastmod>
     </url>
     <url>
          <loc>https://htgithub194.github.io/rust/memory_layout/memory_layout/</loc>
-         <lastmod>2025-09-04</lastmod>
+         <lastmod>2025-10-14</lastmod>
     </url>
     <url>
          <loc>https://htgithub194.github.io/rust/pinning/pinning/</loc>
-         <lastmod>2025-09-04</lastmod>
+         <lastmod>2025-10-14</lastmod>
     </url>
     <url>
          <loc>https://htgithub194.github.io/rust/send_sync/send_sync/</loc>
-         <lastmod>2025-09-04</lastmod>
+         <lastmod>2025-10-14</lastmod>
     </url>
     <url>
          <loc>https://htgithub194.github.io/rust/trai_bound_and_dispatching/trai_bound_and_dispatching/</loc>
-         <lastmod>2025-09-04</lastmod>
+         <lastmod>2025-10-14</lastmod>
     </url>
 </urlset>
