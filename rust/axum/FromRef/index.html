@@ -1061,13 +1061,15 @@
 <ul>
 <li>
 <p>When using <code>Axum</code>, let's declare a <code>State</code> like:</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#[derive(Clone)]</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#[derive(Clone)]</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">struct</span><span class="w"> </span><span class="nc">AppState</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="n">db</span><span class="p">:</span><span class="w"> </span><span class="nc">Database</span><span class="p">,</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="n">cf</span><span class="p">:</span><span class="w"> </span><span class="nc">Config</span><span class="p">,</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">}</span>
 </code></pre></div>
-* Now, suppose one of your handlers only needs access to <code>db</code>.
+</li>
+<li>
+<p>Suppose one of your handlers only needs access to <code>db</code>.
 You could store separate <code>Arc&lt;Database&gt;</code> and <code>Arc&lt;Config&gt;</code> in the router, but that’s messy.</p>
 <p><img alt="fromref" src="../images/fromref_problem.excalidraw.svg" /></p>
 </li>
@@ -1089,6 +1091,7 @@ You could store separate <code>Arc&lt;Database&gt;</code> and <code>Arc&lt;Confi
 <ul>
 <li>
 <p>The key point is if a handler has an <code>AppState</code> — how can it turn that into a <code>Database</code>?</p>
+<p><img alt="fromref" src="../images/fromref_flow.excalidraw.svg" /></p>
 </li>
 <li>
 <p>That’s where this trait comes in:
