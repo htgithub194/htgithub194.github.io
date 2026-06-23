@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="https://htgithub194.github.io/feed_style.xsl" type="text/xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <tabi:metadata xmlns:tabi="https://github.com/welpo/tabi">
+        <tabi:base_url>https:&#x2F;&#x2F;htgithub194.github.io&#x2F;</tabi:base_url>
+        <tabi:separator>
+            •
+        </tabi:separator>
+        <tabi:about_feeds>This is a web feed, also known as an Atom feed. Subscribe by copying the URL from the address bar into your newsreader. Visit About Feeds to learn more and get started. It&#x27;s free.</tabi:about_feeds>
+        <tabi:visit_the_site>Visit website</tabi:visit_the_site>
+        <tabi:recent_posts>Recent posts</tabi:recent_posts>
+        <tabi:last_updated_on>Updated on $DATE</tabi:last_updated_on>
+        <tabi:default_theme></tabi:default_theme>
+        <tabi:post_listing_date>date</tabi:post_listing_date>
+        <tabi:current_section>linux</tabi:current_section>
+    </tabi:metadata><title>htgithub194 - linux</title>
+    <link href="https://htgithub194.github.io/tags/linux/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://htgithub194.github.io/tags/linux/" rel="alternate" type="text/html"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2026-05-01T00:00:00+00:00</updated>
+    <id>https://htgithub194.github.io/tags/linux/atom.xml</id><entry xml:lang="en">
+        <title>Crash Recovery</title>
+        <published>2026-05-01T00:00:00+00:00</published>
+        <updated>2026-05-01T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://htgithub194.github.io/blog/kernel/crash-recovery/" type="text/html"/>
+        <id>https://htgithub194.github.io/blog/kernel/crash-recovery/</id>
+        <summary type="html">The way Linux Kernel can quickly recover from a crash and also support capturing the contents of system memory for further debugging</summary>
+        </entry><entry xml:lang="en">
+        <title>iPXE chains bootloader</title>
+        <published>2026-01-10T00:00:00+00:00</published>
+        <updated>2026-01-10T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://htgithub194.github.io/blog/kernel/ipxe-chain-bootloader/" type="text/html"/>
+        <id>https://htgithub194.github.io/blog/kernel/ipxe-chain-bootloader/</id>
+        <summary type="html">How iPXE is used on embedded system as a bootloader over LAN</summary>
+        </entry><entry xml:lang="en">
+        <title>Minimal Qemu node from Alpine</title>
+        <published>2025-12-11T00:00:00+00:00</published>
+        <updated>2025-12-11T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://htgithub194.github.io/blog/kernel/mini-alpine/" type="text/html"/>
+        <id>https://htgithub194.github.io/blog/kernel/mini-alpine/</id>
+        <summary type="html">Let&#x27;s create a minimal Qemu image with Alpine and boot it up. This small foot-print image should be good for create  a cluster lab later !</summary>
+        </entry><entry xml:lang="en">
+        <title>Linux watchdog module</title>
+        <published>2025-08-01T00:00:00+00:00</published>
+        <updated>2025-08-01T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://htgithub194.github.io/blog/kernel/watchdog/" type="text/html"/>
+        <id>https://htgithub194.github.io/blog/kernel/watchdog/</id>
+        <summary type="html">Ever wondered how your system automatically recovers when it hangs? Let&#x27;s explore the watchdog—a clever hardware guardian that reboots your machine if it stops responding.</summary>
+        </entry>
+</feed>

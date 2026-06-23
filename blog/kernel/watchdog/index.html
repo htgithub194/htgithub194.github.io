@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8"><meta http-equiv="Content-Security-Policy"
+content="default-src 'self';font-src &#x27;self&#x27; data:;img-src &#x27;self&#x27; https:&#x2F;&#x2F;* data:;media-src &#x27;self&#x27;;style-src &#x27;self&#x27;;frame-src player.vimeo.com https:&#x2F;&#x2F;www.youtube-nocookie.com;connect-src 'self';script-src 'self' 'self'">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="https://htgithub194.github.io/">
+
+    
+    <title>
+htgithub194 • Linux watchdog module</title>
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+        
+            <link rel="stylesheet" href="https://htgithub194.github.io/custom_subset.css?h=0b9535a28bc3d5bf2321">
+        
+    
+
+    
+        <link rel="stylesheet" href="https://htgithub194.github.io/main.css?h=fe8c9607d92b0cda0f8f" />
+
+    <meta name="color-scheme" content="light dark" />
+        <meta name="description" content="Ever wondered how your system automatically recovers when it hangs? Let&#x27;s explore the watchdog—a clever hardware guardian that reboots your machine if it stops responding." />
+        <meta property="og:description" content="Ever wondered how your system automatically recovers when it hangs? Let&#x27;s explore the watchdog—a clever hardware guardian that reboots your machine if it stops responding." />
+
+    
+
+    <meta property="og:title" content="Linux watchdog module" />
+    <meta property="og:type" content="article" />
+
+    
+<meta property="og:locale" content="en_GB" />
+
+    <meta property="og:url" content="https:&#x2F;&#x2F;htgithub194.github.io&#x2F;blog&#x2F;kernel&#x2F;watchdog&#x2F;" /><meta property="og:site_name" content="htgithub194">
+        <noscript><link rel="stylesheet" href="https://htgithub194.github.io/no_js.css"/></noscript>
+        <script type="text/javascript" src="https://htgithub194.github.io/js/initializeTheme.min.js"></script>
+        <script defer src="https://htgithub194.github.io/js/themeSwitcher.min.js"></script><script defer src="https://htgithub194.github.io/search_index.en.js?h=93b52bdf7c9416ac67a9"></script>
+        <script defer src="https://htgithub194.github.io/js/searchElasticlunr.min.js?h=3626c0ef99daa745b31e"></script>
+
+        
+    
+</head>
+
+
+<body>
+    <header>
+    <nav class="navbar">
+        <div class="nav-title">
+            <a class="home-title" href="https://htgithub194.github.io">htgithub194</a>
+        </div>
+            <div class="nav-navs">
+                <ul>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://htgithub194.github.io/blog/">Blog
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://htgithub194.github.io/tags/">Tags
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://htgithub194.github.io/about/">About
+                                </a>
+                            </li>
+                        <li class="menu-icons-container">
+                        <ul class="menu-icons-group">
+                            <li class="js menu-icon">
+                                <div role="button" tabindex="0" id="search-button" class="search-icon interactive-icon" title="Click or press $SHORTCUT to open search" aria-label="Click or press $SHORTCUT to open search">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                        <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                                    </svg>
+                                </div>
+                            </li>
+
+                            
+                            
+
+                            <li class="theme-switcher-wrapper js"><div
+        title="Toggle dark&#x2F;light mode"
+        class="theme-switcher"
+        tabindex="0"
+        role="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+    </div><div
+        title="Reset mode to default"
+        class="theme-resetter arrow"
+        tabindex="0"
+        role="button"
+        aria-hidden="true"
+        aria-label="Reset mode to default">
+    </div>
+
+</li>
+</ul>
+                    </li>
+                </ul>
+            </div>
+        
+    </nav>
+</header>
+
+    <div class="content">
+
+        
+        
+
+
+
+
+<main>
+    <article class="h-entry">
+        <h1 class="p-name article-title">
+            Linux watchdog module
+        </h1>
+        <a class="u-url u-uid" href="https://htgithub194.github.io/blog/kernel/watchdog/"></a>
+
+        <ul class="meta"><span class="hidden p-author h-card">
+<a rel="author" href="https:&#x2F;&#x2F;htgithub194.github.io&#x2F;" class="u-url " title=""></a>
+</span>
+<li><time class="dt-published" datetime="2025-08-01">1st Aug 2025</time></li><li title="167 words"><span class='separator' aria-hidden='true'>•</span>1 min read</li><li class="tag"><span class='separator' aria-hidden='true'>•</span>Tags:&nbsp;</li><li class="tag"><a class="p-category" href="https://htgithub194.github.io/tags/linux/">linux</a>,&nbsp;</li><li class="tag"><a class="p-category" href="https://htgithub194.github.io/tags/watchdog/">watchdog</a></li>
+        </ul>
+            <p class="p-summary" hidden>Ever wondered how your system automatically recovers when it hangs? Let&#x27;s explore the watchdog—a clever hardware guardian that reboots your machine if it stops responding.</p><section class="e-content body"><h1 id="watchdog">Watchdog</h1>
+<ul>
+<li>
+<p>Watchdog is a Hardware device arms to reset the machine if the machine does not send PING to watchdog after a period of time.</p>
+</li>
+<li>
+<p>Watchdog holds a Counter Register</p>
+<ul>
+<li>
+<p>Counter initialy is set to a value (e.g: 600 sec)</p>
+</li>
+<li>
+<p>Counter is decreased over time</p>
+</li>
+<li>
+<p>If Counter = 0, Watchdog trigger machine to reboot</p>
+</li>
+<li>
+<p>When machine send PING to Watchdog, Counter is reloaded (set back to 600 sec)</p>
+</li>
+</ul>
+<p><img src="https://htgithub194.github.io/blog/kernel/watchdog/images/watchdog.dio.svg" alt="watchdog" /></p>
+</li>
+<li>
+<p>When watchdog kernel module is loaded, it will check if Watchdog device is running or not?</p>
+<ul>
+<li>E.g:
+<a href="https://github.com/torvalds/linux/blob/38fec10eb60d687e30c8c6b5420d86e8149f7557/drivers/watchdog/iTCO_wdt.c#L593" title="/v6.14/drivers/watchdog/iTCO_wdt.c">iTCO_wdt_probe</a></li>
+</ul>
+<pre data-lang="C" class="language-C z-code"><code class="language-C" data-lang="C"><span class="z-source z-c"><span class="z-storage z-modifier z-c">static</span> <span class="z-storage z-type z-c">int</span> <span class="z-meta z-function z-c"><span class="z-entity z-name z-function z-c">iTCO_wdt_probe</span></span><span class="z-meta z-function z-parameters z-c"><span class="z-meta z-group z-c"><span class="z-punctuation z-section z-group z-begin z-c">(</span></span></span><span class="z-meta z-function z-parameters z-c"><span class="z-meta z-group z-c"><span class="z-storage z-type z-c">struct</span> platform_device <span class="z-keyword z-operator z-c">*</span><span class="z-variable z-parameter z-c">pdev</span><span class="z-punctuation z-section z-group z-end z-c">)</span></span></span><span class="z-meta z-function z-c"> </span><span class="z-meta z-function z-c"><span class="z-meta z-block z-c"><span class="z-punctuation z-section z-block z-begin z-c">{</span></span></span><span class="z-meta z-function z-c"><span class="z-meta z-block z-c">
+</span></span></span><span class="z-source z-c"><span class="z-meta z-function z-c"><span class="z-meta z-block z-c">    <span class="z-keyword z-operator z-variadic z-c">...</span>
+</span></span></span><span class="z-source z-c"><span class="z-meta z-function z-c"><span class="z-meta z-block z-c">
+</span></span></span><span class="z-source z-c"><span class="z-meta z-function z-c"><span class="z-meta z-block z-c">    <span class="z-keyword z-control z-c">if</span> <span class="z-meta z-group z-c"><span class="z-punctuation z-section z-group z-begin z-c">(</span><span class="z-keyword z-operator z-arithmetic z-c">!</span><span class="z-meta z-function-call z-c"><span class="z-variable z-function z-c">iTCO_wdt_set_running</span><span class="z-meta z-group z-c"><span class="z-punctuation z-section z-group z-begin z-c">(</span></span></span><span class="z-meta z-function-call z-c"><span class="z-meta z-group z-c">p</span></span><span class="z-meta z-function-call z-c"><span class="z-meta z-group z-c"><span class="z-punctuation z-section z-group z-end z-c">)</span></span></span><span class="z-punctuation z-section z-group z-end z-c">)</span></span> <span class="z-meta z-block z-c"><span class="z-punctuation z-section z-block z-begin z-c">{</span>
+</span></span></span></span><span class="z-source z-c"><span class="z-meta z-function z-c"><span class="z-meta z-block z-c"><span class="z-meta z-block z-c">        <span class="z-comment z-block z-c"><span class="z-punctuation z-definition z-comment z-c">/*</span>
+</span></span></span></span></span><span class="z-source z-c"><span class="z-meta z-function z-c"><span class="z-meta z-block z-c"><span class="z-meta z-block z-c"><span class="z-comment z-block z-c">        <span class="z-punctuation z-definition z-comment z-c">*</span> If the watchdog was not running set NO_REBOOT now to
+</span></span></span></span></span><span class="z-source z-c"><span class="z-meta z-function z-c"><span class="z-meta z-block z-c"><span class="z-meta z-block z-c"><span class="z-comment z-block z-c">        <span class="z-punctuation z-definition z-comment z-c">*</span> prevent later reboots.
+</span></span></span></span></span><span class="z-source z-c"><span class="z-meta z-function z-c"><span class="z-meta z-block z-c"><span class="z-meta z-block z-c"><span class="z-comment z-block z-c">        <span class="z-punctuation z-definition z-comment z-c">*/</span></span>
+</span></span></span></span><span class="z-source z-c"><span class="z-meta z-function z-c"><span class="z-meta z-block z-c"><span class="z-meta z-block z-c">        p<span class="z-punctuation z-accessor z-c">-&gt;</span><span class="z-meta z-function-call z-c"><span class="z-variable z-function z-c">update_no_reboot_bit</span><span class="z-meta z-group z-c"><span class="z-punctuation z-section z-group z-begin z-c">(</span></span></span><span class="z-meta z-function-call z-c"><span class="z-meta z-group z-c">p<span class="z-punctuation z-accessor z-c">-&gt;</span>no_reboot_priv<span class="z-punctuation z-separator z-c">,</span> <span class="z-constant z-language z-c">true</span></span></span><span class="z-meta z-function-call z-c"><span class="z-meta z-group z-c"><span class="z-punctuation z-section z-group z-end z-c">)</span></span></span><span class="z-punctuation z-terminator z-c">;</span>
+</span></span></span></span><span class="z-source z-c"><span class="z-meta z-function z-c"><span class="z-meta z-block z-c"><span class="z-meta z-block z-c">    <span class="z-punctuation z-section z-block z-end z-c">}</span></span>
+</span></span></span><span class="z-source z-c"><span class="z-meta z-function z-c"><span class="z-meta z-block z-c">    
+</span></span></span><span class="z-source z-c"><span class="z-meta z-function z-c"><span class="z-meta z-block z-c">    <span class="z-keyword z-operator z-variadic z-c">...</span>
+</span></span></span><span class="z-source z-c"><span class="z-meta z-function z-c"><span class="z-meta z-block z-c"></span></span><span class="z-meta z-function z-c"><span class="z-meta z-block z-c"><span class="z-punctuation z-section z-block z-end z-c">}</span></span></span>
+</span></code></pre>
+</li>
+<li>
+<p>Use PING from Kernel via: <em>CONFIG_WATCHDOG_HANDLE_BOOT_ENABLED</em></p>
+<ul>
+<li>
+<p>Some Linux distro will force to has Watchdog running after boot.</p>
+</li>
+<li>
+<p>So, it requires PING to keep the COUNTER away from zero</p>
+</li>
+<li>
+<p>PING can come from process in UserSpace</p>
+</li>
+<li>
+<p>OR, PING from KERNEL via <em>CONFIG_WATCHDOG_HANDLE_BOOT_ENABLED</em>:</p>
+<ul>
+<li>
+<p>The config get kernel to send ping to Watchdog after boot.</p>
+</li>
+<li>
+<p>Kernel will stop send PING when UserSpace starts to send it's first PING.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </section>
+
+        
+        
+        
+
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+        </article>
+</main>
+
+
+<span id="copy-success" class="hidden">
+        Copied!
+    </span>
+    <span id="copy-init" class="hidden">
+        Copy code to clipboard
+    </span>
+    <script defer src="https://htgithub194.github.io/js/copyCodeToClipboard.min.js"></script>
+
+
+    </div>
+    <footer>
+    <section>
+        <nav class="socials nav-navs">
+        </nav>
+
+        
+        <nav class="nav-navs">
+        </nav>
+
+        <div class="credits">
+            <small>
+                
+
+                
+                Powered by
+                <a rel="" 
+
+ href="https://www.getzola.org">Zola</a>
+                &amp;
+                <a rel="" 
+
+ href="https://github.com/welpo/tabi">tabi</a>
+
+                </small>
+        </div>
+    </section>
+
+    <div id="searchModal" class="search-modal js" role="dialog" aria-labelledby="modalTitle">
+    <h1 id="modalTitle" class="visually-hidden">Search</h1>
+    <div id="modal-content">
+        <div id="searchBar">
+            <div class="search-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                </svg>
+            </div>
+            <input id="searchInput" role="combobox" autocomplete="off" spellcheck="false" aria-expanded="false" aria-controls="results-container" placeholder="Search…"/>
+            <div id="clear-search" class="close-icon interactive-icon" tabindex="0" role="button" title="Clear search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </div>
+        </div>
+        <div id="results-container">
+            <div id="results-info"><span id="zero_results"> No results</span>
+                <span id="one_results"> $NUMBER result</span>
+                <span id="many_results"> $NUMBER results</span><span id="two_results"> $NUMBER results</span>
+                <span id="few_results"> $NUMBER results</span>
+            </div>
+            <div id="results" role="listbox"></div>
+        </div>
+    </div>
+</div>
+</footer>
+
+
+    
+    
+</body>
+
+</html>

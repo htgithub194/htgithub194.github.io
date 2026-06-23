@@ -1,143 +1,180 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="https://htgithub194.github.io/sitemap_style.xsl" type="text/xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://htgithub194.github.io/</loc>
-         <lastmod>2026-02-23</lastmod>
+        <loc>https://htgithub194.github.io/</loc>
     </url>
     <url>
-         <loc>https://htgithub194.github.io/tags/</loc>
-         <lastmod>2026-02-23</lastmod>
+        <loc>https://htgithub194.github.io/blog/</loc>
     </url>
     <url>
-         <loc>https://htgithub194.github.io/kernel/crash_recovery/crash_recovery/</loc>
-         <lastmod>2026-02-23</lastmod>
+        <loc>https://htgithub194.github.io/blog/kernel/</loc>
     </url>
     <url>
-         <loc>https://htgithub194.github.io/kernel/hijack/hijack/</loc>
-         <lastmod>2026-02-23</lastmod>
+        <loc>https://htgithub194.github.io/blog/kernel/crash-recovery/</loc>
+        <lastmod>2026-05-01</lastmod>
     </url>
     <url>
-         <loc>https://htgithub194.github.io/kernel/ipxe_chain_bootloader/ipxe_chain_bootloader/</loc>
-         <lastmod>2026-02-23</lastmod>
+        <loc>https://htgithub194.github.io/blog/kernel/ipxe-chain-bootloader/</loc>
+        <lastmod>2026-01-10</lastmod>
     </url>
     <url>
-         <loc>https://htgithub194.github.io/kernel/linker_cache/linker_cache/</loc>
-         <lastmod>2026-02-23</lastmod>
+        <loc>https://htgithub194.github.io/blog/kernel/mini-alpine/</loc>
+        <lastmod>2025-12-11</lastmod>
     </url>
     <url>
-         <loc>https://htgithub194.github.io/kernel/mini_alpine/mini_alpine/</loc>
-         <lastmod>2026-02-23</lastmod>
+        <loc>https://htgithub194.github.io/blog/kernel/preempt/</loc>
+        <lastmod>2026-04-10</lastmod>
     </url>
     <url>
-         <loc>https://htgithub194.github.io/kernel/preempt/preempt/</loc>
-         <lastmod>2026-02-23</lastmod>
+        <loc>https://htgithub194.github.io/blog/kernel/watchdog/</loc>
+        <lastmod>2025-08-01</lastmod>
     </url>
     <url>
-         <loc>https://htgithub194.github.io/kernel/watchdog/watchdog/</loc>
-         <lastmod>2026-02-23</lastmod>
+        <loc>https://htgithub194.github.io/blog/networking/</loc>
     </url>
     <url>
-         <loc>https://htgithub194.github.io/networking/docker_network/images/docker_network/</loc>
-         <lastmod>2026-02-23</lastmod>
+        <loc>https://htgithub194.github.io/blog/networking/qemu-network/</loc>
+        <lastmod>2025-10-03</lastmod>
     </url>
     <url>
-         <loc>https://htgithub194.github.io/networking/load_balancer/ipvs_load_balancer/</loc>
-         <lastmod>2026-02-23</lastmod>
+        <loc>https://htgithub194.github.io/blog/networking/tunnel/</loc>
+        <lastmod>2025-04-29</lastmod>
     </url>
     <url>
-         <loc>https://htgithub194.github.io/networking/qemu_network/qemu/</loc>
-         <lastmod>2026-02-23</lastmod>
+        <loc>https://htgithub194.github.io/blog/page/1/</loc>
     </url>
     <url>
-         <loc>https://htgithub194.github.io/networking/tunnel/tunnel/</loc>
-         <lastmod>2026-02-23</lastmod>
+        <loc>https://htgithub194.github.io/blog/page/2/</loc>
     </url>
     <url>
-         <loc>https://htgithub194.github.io/programming_concept/conditional_variable/conditional_variable/</loc>
-         <lastmod>2026-02-23</lastmod>
+        <loc>https://htgithub194.github.io/blog/page/3/</loc>
     </url>
     <url>
-         <loc>https://htgithub194.github.io/programming_concept/dependency_injection/dependency_injection/</loc>
-         <lastmod>2026-02-23</lastmod>
+        <loc>https://htgithub194.github.io/blog/page/4/</loc>
     </url>
     <url>
-         <loc>https://htgithub194.github.io/programming_concept/design_patterns/observer_mediator/</loc>
-         <lastmod>2026-02-23</lastmod>
+        <loc>https://htgithub194.github.io/blog/page/5/</loc>
     </url>
     <url>
-         <loc>https://htgithub194.github.io/rust/async/async/</loc>
-         <lastmod>2026-02-23</lastmod>
+        <loc>https://htgithub194.github.io/blog/programming_concept/</loc>
     </url>
     <url>
-         <loc>https://htgithub194.github.io/rust/axum/FromRef/</loc>
-         <lastmod>2026-02-23</lastmod>
+        <loc>https://htgithub194.github.io/blog/programming_concept/conditional-variable/</loc>
+        <lastmod>2025-05-03</lastmod>
     </url>
     <url>
-         <loc>https://htgithub194.github.io/rust/axum/axum/</loc>
-         <lastmod>2026-02-23</lastmod>
+        <loc>https://htgithub194.github.io/blog/programming_concept/dependency-injection/</loc>
+        <lastmod>2025-06-01</lastmod>
     </url>
     <url>
-         <loc>https://htgithub194.github.io/rust/axum/back_pressure/</loc>
-         <lastmod>2026-02-23</lastmod>
+        <loc>https://htgithub194.github.io/blog/programming_concept/design-patterns/</loc>
+        <lastmod>2025-11-03</lastmod>
     </url>
     <url>
-         <loc>https://htgithub194.github.io/rust/axum/extractor/</loc>
-         <lastmod>2026-02-23</lastmod>
+        <loc>https://htgithub194.github.io/blog/rust/</loc>
     </url>
     <url>
-         <loc>https://htgithub194.github.io/rust/axum/handler/</loc>
-         <lastmod>2026-02-23</lastmod>
+        <loc>https://htgithub194.github.io/blog/rust/async/</loc>
+        <lastmod>2025-03-10</lastmod>
     </url>
     <url>
-         <loc>https://htgithub194.github.io/rust/clone/derive_clone/</loc>
-         <lastmod>2026-02-23</lastmod>
+        <loc>https://htgithub194.github.io/blog/rust/axum/</loc>
     </url>
     <url>
-         <loc>https://htgithub194.github.io/rust/closure/closure/</loc>
-         <lastmod>2026-02-23</lastmod>
+        <loc>https://htgithub194.github.io/blog/rust/axum/axum-overview/</loc>
+        <lastmod>2025-06-16</lastmod>
     </url>
     <url>
-         <loc>https://htgithub194.github.io/rust/database/database/</loc>
-         <lastmod>2026-02-23</lastmod>
+        <loc>https://htgithub194.github.io/blog/rust/axum/extractor/</loc>
+        <lastmod>2025-03-04</lastmod>
     </url>
     <url>
-         <loc>https://htgithub194.github.io/rust/database/modql/</loc>
-         <lastmod>2026-02-23</lastmod>
+        <loc>https://htgithub194.github.io/blog/rust/axum/fromref/</loc>
+        <lastmod>2025-11-02</lastmod>
     </url>
     <url>
-         <loc>https://htgithub194.github.io/rust/database/seaquerry/</loc>
-         <lastmod>2026-02-23</lastmod>
+        <loc>https://htgithub194.github.io/blog/rust/axum/handler/</loc>
+        <lastmod>2025-03-28</lastmod>
     </url>
     <url>
-         <loc>https://htgithub194.github.io/rust/database/sqlx/</loc>
-         <lastmod>2026-02-23</lastmod>
+        <loc>https://htgithub194.github.io/blog/rust/clone/</loc>
+        <lastmod>2025-03-20</lastmod>
     </url>
     <url>
-         <loc>https://htgithub194.github.io/rust/enums/enums/</loc>
-         <lastmod>2026-02-23</lastmod>
+        <loc>https://htgithub194.github.io/blog/rust/closure/</loc>
+        <lastmod>2025-02-12</lastmod>
     </url>
     <url>
-         <loc>https://htgithub194.github.io/rust/introduce/introduce/</loc>
-         <lastmod>2026-02-23</lastmod>
+        <loc>https://htgithub194.github.io/blog/rust/enums/</loc>
+        <lastmod>2025-03-03</lastmod>
     </url>
     <url>
-         <loc>https://htgithub194.github.io/rust/lifetime/lifetime/</loc>
-         <lastmod>2026-02-23</lastmod>
+        <loc>https://htgithub194.github.io/blog/rust/introduce/</loc>
+        <lastmod>2025-09-20</lastmod>
     </url>
     <url>
-         <loc>https://htgithub194.github.io/rust/memory_layout/memory_layout/</loc>
-         <lastmod>2026-02-23</lastmod>
+        <loc>https://htgithub194.github.io/blog/rust/lifetime/</loc>
+        <lastmod>2025-01-06</lastmod>
     </url>
     <url>
-         <loc>https://htgithub194.github.io/rust/pinning/pinning/</loc>
-         <lastmod>2026-02-23</lastmod>
+        <loc>https://htgithub194.github.io/blog/rust/memory-layout/</loc>
+        <lastmod>2025-02-19</lastmod>
     </url>
     <url>
-         <loc>https://htgithub194.github.io/rust/send_sync/send_sync/</loc>
-         <lastmod>2026-02-23</lastmod>
+        <loc>https://htgithub194.github.io/blog/rust/send-sync/</loc>
+        <lastmod>2025-03-06</lastmod>
     </url>
     <url>
-         <loc>https://htgithub194.github.io/rust/trai_bound_and_dispatching/trai_bound_and_dispatching/</loc>
-         <lastmod>2026-02-23</lastmod>
+        <loc>https://htgithub194.github.io/blog/rust/trai-bound-and-dispatching/</loc>
+        <lastmod>2025-02-16</lastmod>
+    </url>
+    <url>
+        <loc>https://htgithub194.github.io/tags/</loc>
+    </url>
+    <url>
+        <loc>https://htgithub194.github.io/tags/alpine/</loc>
+    </url>
+    <url>
+        <loc>https://htgithub194.github.io/tags/async/</loc>
+    </url>
+    <url>
+        <loc>https://htgithub194.github.io/tags/axum/</loc>
+    </url>
+    <url>
+        <loc>https://htgithub194.github.io/tags/backend/</loc>
+    </url>
+    <url>
+        <loc>https://htgithub194.github.io/tags/cluster/</loc>
+    </url>
+    <url>
+        <loc>https://htgithub194.github.io/tags/concurrency/</loc>
+    </url>
+    <url>
+        <loc>https://htgithub194.github.io/tags/ipxe/</loc>
+    </url>
+    <url>
+        <loc>https://htgithub194.github.io/tags/kexec/</loc>
+    </url>
+    <url>
+        <loc>https://htgithub194.github.io/tags/linux/</loc>
+    </url>
+    <url>
+        <loc>https://htgithub194.github.io/tags/network/</loc>
+    </url>
+    <url>
+        <loc>https://htgithub194.github.io/tags/overlay-network/</loc>
+    </url>
+    <url>
+        <loc>https://htgithub194.github.io/tags/qemu/</loc>
+    </url>
+    <url>
+        <loc>https://htgithub194.github.io/tags/rust/</loc>
+    </url>
+    <url>
+        <loc>https://htgithub194.github.io/tags/tunnel/</loc>
+    </url>
+    <url>
+        <loc>https://htgithub194.github.io/tags/watchdog/</loc>
     </url>
 </urlset>

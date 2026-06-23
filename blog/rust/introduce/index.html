@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8"><meta http-equiv="Content-Security-Policy"
+content="default-src 'self';font-src &#x27;self&#x27; data:;img-src &#x27;self&#x27; https:&#x2F;&#x2F;* data:;media-src &#x27;self&#x27;;style-src &#x27;self&#x27;;frame-src player.vimeo.com https:&#x2F;&#x2F;www.youtube-nocookie.com;connect-src 'self';script-src 'self' 'self'">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="https://htgithub194.github.io/">
+
+    
+    <title>
+htgithub194 • An introduction to Rust</title>
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+        
+            <link rel="stylesheet" href="https://htgithub194.github.io/custom_subset.css?h=0b9535a28bc3d5bf2321">
+        
+    
+
+    
+        <link rel="stylesheet" href="https://htgithub194.github.io/main.css?h=fe8c9607d92b0cda0f8f" />
+
+    <meta name="color-scheme" content="light dark" />
+        <meta name="description" content="" />
+        <meta property="og:description" content="" />
+
+    
+
+    <meta property="og:title" content="An introduction to Rust" />
+    <meta property="og:type" content="article" />
+
+    
+<meta property="og:locale" content="en_GB" />
+
+    <meta property="og:url" content="https:&#x2F;&#x2F;htgithub194.github.io&#x2F;blog&#x2F;rust&#x2F;introduce&#x2F;" /><meta property="og:site_name" content="htgithub194">
+        <noscript><link rel="stylesheet" href="https://htgithub194.github.io/no_js.css"/></noscript>
+        <script type="text/javascript" src="https://htgithub194.github.io/js/initializeTheme.min.js"></script>
+        <script defer src="https://htgithub194.github.io/js/themeSwitcher.min.js"></script><script defer src="https://htgithub194.github.io/search_index.en.js?h=93b52bdf7c9416ac67a9"></script>
+        <script defer src="https://htgithub194.github.io/js/searchElasticlunr.min.js?h=3626c0ef99daa745b31e"></script>
+
+        
+    
+</head>
+
+
+<body>
+    <header>
+    <nav class="navbar">
+        <div class="nav-title">
+            <a class="home-title" href="https://htgithub194.github.io">htgithub194</a>
+        </div>
+            <div class="nav-navs">
+                <ul>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://htgithub194.github.io/blog/">Blog
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://htgithub194.github.io/tags/">Tags
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://htgithub194.github.io/about/">About
+                                </a>
+                            </li>
+                        <li class="menu-icons-container">
+                        <ul class="menu-icons-group">
+                            <li class="js menu-icon">
+                                <div role="button" tabindex="0" id="search-button" class="search-icon interactive-icon" title="Click or press $SHORTCUT to open search" aria-label="Click or press $SHORTCUT to open search">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                        <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                                    </svg>
+                                </div>
+                            </li>
+
+                            
+                            
+
+                            <li class="theme-switcher-wrapper js"><div
+        title="Toggle dark&#x2F;light mode"
+        class="theme-switcher"
+        tabindex="0"
+        role="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+    </div><div
+        title="Reset mode to default"
+        class="theme-resetter arrow"
+        tabindex="0"
+        role="button"
+        aria-hidden="true"
+        aria-label="Reset mode to default">
+    </div>
+
+</li>
+</ul>
+                    </li>
+                </ul>
+            </div>
+        
+    </nav>
+</header>
+
+    <div class="content">
+
+        
+        
+
+
+
+
+<main>
+    <article class="h-entry">
+        <h1 class="p-name article-title">
+            An introduction to Rust
+        </h1>
+        <a class="u-url u-uid" href="https://htgithub194.github.io/blog/rust/introduce/"></a>
+
+        <ul class="meta"><span class="hidden p-author h-card">
+<a rel="author" href="https:&#x2F;&#x2F;htgithub194.github.io&#x2F;" class="u-url " title=""></a>
+</span>
+<li><time class="dt-published" datetime="2025-09-20">20th Sep 2025</time></li><li title="555 words"><span class='separator' aria-hidden='true'>•</span>3 min read</li>
+        </ul><section class="e-content body"><hr />
+<h2 id="marp-truetheme-defaultclass-invertstyle-import-theme-css-paginate-true">marp: true
+theme: default
+class: invert
+style: |
+@import './theme.css';
+paginate: true</h2>
+<style>
+img[alt~="top-right"] {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+</style>
+<h1 id="brieft-introduction-to-rust">Brieft introduction to Rust</h1>
+<p><strong>ThongDinh -ft- DatDinh</strong></p>
+<hr />
+<!-- _class: slide-base invert-->
+<h2 id="contents">Contents</h2>
+<ul>
+<li>Get to know Rust
+<ul>
+<li>History of Rust</li>
+<li>Notable features</li>
+</ul>
+</li>
+<li>Get dive deeper to know Rust
+<ul>
+<li>How Rust archives memory safety</li>
+</ul>
+</li>
+</ul>
+<hr />
+<!-- _class: slide-base invert-->
+<h2 id="a-get-to-know-rust">A. Get to know Rust</h2>
+<ul>
+<li>History of Rust</li>
+<li>Notable features</li>
+</ul>
+<hr />
+<!-- _class: slide-base invert-->
+<h2 id="history-of-rust">History of Rust</h2>
+<ul>
+<li>When: 2006</li>
+<li>Who: Graydon Hoare, engineer at <em>Mozilla Research</em></li>
+<li>What:
+<ul>
+<li>Offered high performance of C/C++</li>
+<li>With guaranteed memory safety</li>
+</ul>
+</li>
+<li>Which:
+<ul>
+<li>linux kernel, OS, OS-utilities</li>
+<li>block chain, wasm</li>
+<li>backend</li>
+<li>...
+<img src="https://htgithub194.github.io/blog/rust/introduce/images/author.png" alt="top-right" /></li>
+</ul>
+</li>
+</ul>
+<hr />
+<!-- _class: slide-base invert-->
+<h2 id="rust-inside">Rust inside</h2>
+<p><img src="https://htgithub194.github.io/blog/rust/introduce/images/which.excalidraw.svg" alt="bg height: 80%" /></p>
+<hr />
+<!-- _class: slide-base invert-->
+<h2 id="sponsors">Sponsors</h2>
+<p><img src="https://htgithub194.github.io/blog/rust/introduce/images/sponsor.png" alt="bg height: 60%" /></p>
+<hr />
+<!-- _class: slide-base invert-->
+<h2 id="notable-features">Notable Features</h2>
+<p><img src="https://htgithub194.github.io/blog/rust/introduce/images/features.excalidraw.svg" alt="bg height: 50%" /></p>
+<hr />
+<!-- _class: slide-base invert-->
+<h2 id="memory-safety-rust-vs-c-c">Memory Safety. Rust vs C/C++</h2>
+<ul>
+<li>
+<p>C/C++ easily to have error:</p>
+<ul>
+<li>dangling pointers:
+<ul>
+<li>use-after-free</li>
+<li>double-free</li>
+<li>buffer overflows</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Rust Compiler:</p>
+<ul>
+<li>Throws errors on compilation if it detect codes violate it's rules.</li>
+<li>Virtually guaranteed to be memory-safe if compile successfully</li>
+</ul>
+</li>
+</ul>
+<hr />
+<!-- _class: slide-base invert-->
+<h2 id="memory-safety-rust-vs-java-go">Memory Safety. Rust vs Java/Go</h2>
+<ul>
+<li>
+<p>Java/Go use GC:</p>
+<ul>
+<li>Automatically finds and removes unused objects in the heap.</li>
+<li>Pros:
+<ul>
+<li>Ease of Development + Platform Independence</li>
+</ul>
+</li>
+<li>Cons:
+<ul>
+<li>CPU Overhead + Unpredictable Pauses + extra memory for GC (bloat)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Rust use NO GC:</p>
+<ul>
+<li>no runtime overhead</li>
+<li>no extra memory</li>
+</ul>
+</li>
+</ul>
+<hr />
+<!-- _class: slide-base invert-->
+<h2 id="performance">Performance</h2>
+<ul>
+<li>Build to native machine code --&gt; fast ~ C/C++</li>
+<li>No GC -&gt; faster than Java, Go</li>
+<li>Zero-cost abstraction (same as C++ if not using vtable)</li>
+<li>Fearless concurency by the advantage of Ownership model</li>
+</ul>
+<hr />
+<!-- _class: slide-base invert-->
+<h2 id="performance-1">Performance</h2>
+<p><img src="https://htgithub194.github.io/blog/rust/introduce/images/performance.png" alt="bg height: 55%" /></p>
+<p><a href="https://medium.com/star-gazers/benchmarking-low-level-i-o-c-c-rust-golang-java-python-9a0d505f85f7">source</a></p>
+<hr />
+<!-- _class: slide-base invert-->
+<h2 id="performance-benchmark-vs-c">Performance: benchmark vs C</h2>
+<p>https://programming-language-benchmarks.vercel.app/c-vs-rust</p>
+<hr />
+<!-- _class: slide-base invert-->
+<h2 id="performance-benchmark-vs-go">Performance: benchmark vs GO</h2>
+<p><img src="https://htgithub194.github.io/blog/rust/introduce/images/rust-vs-go-http-performance-2025.svg" alt="bg height: 65%" /></p>
+<p><a href="https://markaicode.com/rust-vs-go-performance-benchmarks-microservices-2025/?utm_source=chatgpt.com">source</a></p>
+<hr />
+<!-- _class: slide-base invert-->
+<h2 id="concurrency">Concurrency</h2>
+<ul>
+<li>"Fearless Concurrency":
+<ul>
+<li>No data race by the advantage of Ownership model</li>
+</ul>
+</li>
+<li>Offers modern concurrency paradigms:
+<ul>
+<li>Message passing via Channel</li>
+<li>async/await</li>
+</ul>
+</li>
+</ul>
+<hr />
+<!-- _class: slide-base invert-->
+<h2 id="speed-concurrent-programming">Speed: concurrent programming</h2>
+<p><img src="https://htgithub194.github.io/blog/rust/introduce/images/concurency_cmp.drawio.svg" alt="" /></p>
+<ul>
+<li>source: trust me bro</li>
+</ul>
+<hr />
+<!-- _class: slide-base invert-->
+<h2 id="take-away-1">Take away 1:</h2>
+<ul>
+<li>Pros:
+<ul>
+<li>Guarantee to be memory safe</li>
+<li>Offer high speed approximate to C/C++</li>
+</ul>
+</li>
+<li>Cons:
+<ul>
+<li>Hard to learn at the beginning</li>
+<li>Compilation cost a lot of time due to checking alot of rules</li>
+</ul>
+</li>
+</ul>
+<hr />
+<!-- _class: slide-base invert-->
+<h2 id="b-dive-deeper">B. Dive deeper</h2>
+<ul>
+<li>How Rust archives memory safety</li>
+</ul>
+<hr />
+<!-- _class: slide-base invert-->
+<h2 id="memory-unsafety-in-c-c">Memory unsafety in C/C++</h2>
+<p><img src="https://htgithub194.github.io/blog/rust/introduce/images/unsafe.excalidraw.svg" alt="bg height: 90%" /></p>
+<hr />
+<!-- _class: slide-base invert-->
+<h2 id="how-rust-archives-memory-safety">How Rust archives memory safety</h2>
+<p><img src="https://htgithub194.github.io/blog/rust/introduce/images/rules.png" alt="bg width: 40%" /></p>
+<hr />
+<!-- _class: slide-base invert-->
+<h2 id="how-rust-archives-memory-safety-1">How Rust archives memory safety</h2>
+<p><img src="https://htgithub194.github.io/blog/rust/introduce/images/archives.excalidraw.svg" alt="bg height: 70%" /></p>
+<hr />
+<!-- _class: slide-base invert-->
+<h2 id="ownership-model">Ownership model</h2>
+<p><img src="https://htgithub194.github.io/blog/rust/introduce/images/ownership2.excalidraw.svg" alt="bg height: 70%" /></p>
+<hr />
+<!-- _class: slide-base invert-->
+<h2 id="ownership-model-1">Ownership model</h2>
+<p><img src="https://htgithub194.github.io/blog/rust/introduce/images/ownership.excalidraw.svg" alt="bg height: 95%" /></p>
+<hr />
+<!-- _class: slide-base invert-->
+<h2 id="lifetime">Lifetime</h2>
+<p><img src="https://htgithub194.github.io/blog/rust/introduce/images/lifetime.excalidraw.svg" alt="bg height: 95%" /></p>
+<hr />
+<!-- _class: slide-base invert-->
+<h2 id="multithread">Multithread</h2>
+<p><img src="https://htgithub194.github.io/blog/rust/introduce/images/sync_send.excalidraw.svg" alt="bg height: 100%" /></p>
+<hr />
+<!-- _class: slide-base invert-->
+<h2 id="multithread-sharing-ownership">Multithread. Sharing Ownership</h2>
+<p><img src="https://htgithub194.github.io/blog/rust/introduce/images/threads.excalidraw.svg" alt="bg height: 100%" /></p>
+<hr />
+<!-- _class: slide-base invert-->
+<h2 id="multithread-sharing-reference">Multithread. Sharing Reference</h2>
+<p><img src="https://htgithub194.github.io/blog/rust/introduce/images/share_ref.excalidraw.svg" alt="bg height: 100%" /></p>
+<hr />
+<!-- _class: slide-base invert-->
+<h2 id="q-a">Q &amp; A</h2>
+<p>Thank you !!!</p>
+
+        </section>
+
+        
+        
+        
+
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+        </article>
+</main>
+
+
+<span id="copy-success" class="hidden">
+        Copied!
+    </span>
+    <span id="copy-init" class="hidden">
+        Copy code to clipboard
+    </span>
+    <script defer src="https://htgithub194.github.io/js/copyCodeToClipboard.min.js"></script>
+
+
+    </div>
+    <footer>
+    <section>
+        <nav class="socials nav-navs">
+        </nav>
+
+        
+        <nav class="nav-navs">
+        </nav>
+
+        <div class="credits">
+            <small>
+                
+
+                
+                Powered by
+                <a rel="" 
+
+ href="https://www.getzola.org">Zola</a>
+                &amp;
+                <a rel="" 
+
+ href="https://github.com/welpo/tabi">tabi</a>
+
+                </small>
+        </div>
+    </section>
+
+    <div id="searchModal" class="search-modal js" role="dialog" aria-labelledby="modalTitle">
+    <h1 id="modalTitle" class="visually-hidden">Search</h1>
+    <div id="modal-content">
+        <div id="searchBar">
+            <div class="search-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                </svg>
+            </div>
+            <input id="searchInput" role="combobox" autocomplete="off" spellcheck="false" aria-expanded="false" aria-controls="results-container" placeholder="Search…"/>
+            <div id="clear-search" class="close-icon interactive-icon" tabindex="0" role="button" title="Clear search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </div>
+        </div>
+        <div id="results-container">
+            <div id="results-info"><span id="zero_results"> No results</span>
+                <span id="one_results"> $NUMBER result</span>
+                <span id="many_results"> $NUMBER results</span><span id="two_results"> $NUMBER results</span>
+                <span id="few_results"> $NUMBER results</span>
+            </div>
+            <div id="results" role="listbox"></div>
+        </div>
+    </div>
+</div>
+</footer>
+
+
+    
+    
+</body>
+
+</html>
